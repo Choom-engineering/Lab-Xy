@@ -1,7 +1,7 @@
 // XY Studio service worker: l'app s'ouvre hors ligne une fois chargée.
 // L'interface est servie depuis le réseau quand il répond (pour recevoir les mises à jour),
 // le reste (fichiers versionnés, machines, polices) depuis le cache, rempli au fil de l'usage.
-const VERSION = '14';
+const VERSION = '15';
 const CACHE = 'xy-studio-' + VERSION;
 const SHELL = ['./', 'index.html', 'app.bundle.js?v=' + VERSION,
   'machines/index.json', 'manifest.webmanifest', 'icons/icon-192.png', 'icons/icon-512.png'];

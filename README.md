@@ -1,62 +1,69 @@
 # LAB_XY
 
-Les machines du catalogue Open-XY, jouables dans le navigateur avec un OP-XY branché en USB en mode contrôleur MIDI, sans flasher de firmware.
+**Play Open-XY machines in your browser — no need to flash your OP-XY.**
 
-## Lancer sur ton ordinateur
+👉 **[lab-xy.netlify.app](https://lab-xy.netlify.app)** · 🐞 [Report a bug or suggest an idea](https://github.com/Choom-engineering/Lab-Xy/issues) · 🇫🇷 [Version française](README.fr.md)
 
-Double-clique sur `index.html` : l'app s'ouvre dans ton navigateur, sans serveur ni Python. Utilise Chrome ou Edge (Web MIDI). Au premier clic sur **Turn on**, Chrome demande l'accès aux appareils MIDI : accepte. Si la demande n'apparaît pas, autorise le MIDI pour les fichiers locaux dans `chrome://settings/content/midiDevices`.
+![LAB_XY in the browser](docs/screenshot.png)
 
-## Publier pour d'autres utilisateurs
+LAB_XY is a web groovebox built around the community machines of [Open-XY](https://github.com/etcetc000/open-xy). Try them with your OP-XY as a USB MIDI controller, with any MIDI keyboard, or with no hardware at all.
 
-Tout est statique : n'importe quel hébergement HTTPS convient (GitHub Pages, Cloudflare Pages, Netlify).
-Avec GitHub Pages : pousser ce dossier dans un dépôt, puis Settings → Pages → Deploy from a branch → `main` / racine.
-HTTPS est requis pour Web MIDI hors `localhost`.
+> **Beta.** Machines run from the same code as on the device, but sound and behaviour can differ slightly from a real OP-XY. Feedback is very welcome.
 
-## Séquenceur
+## Features
 
-- **Pas** : appui bref pour poser ou retirer ; tenu pour éditer. Tenu, une note la place, plusieurs font un accord (jusqu'à 6 notes).
-- **P-locks** : pas tenu + encodeur sur une page de son (Son, Machine, Page 2, Enveloppe) ; le réglage ne vaut que pour ce pas, appliqué à l'échantillon près. Pas tenu + touche M de la page affichée : efface ses p-locks. À la souris, Maj+clic garde un pas tenu.
-- **Conditions** (Instrument M4, encodeur 4) : probabilités, 1:2 à 4:4, Fill / Sans fill (touche Fill, ou Q), 1er passage / Après le 1er.
-- **Latch** (Players M2) : les notes jouées restent tenues jusqu'à être rejouées.
-- **Arrange** : 16 motifs A à P (M1), morceau en lignes motif × répétitions (M2), copier (M3, appuyer deux fois) et effacer (M4, appuyer deux fois). En lecture, un nouveau motif démarre à la fin du motif en cours.
+- **56 machines**: the Open-XY community catalogue plus four built-in engines (drums, analog, FM, string)
+- **8 tracks** and a **64-step sequencer** with p-locks, chords per step, trig conditions, Fill and latch
+- **Arrange**: 16 patterns (A to P) chained into a song
+- **Punch-in effects** with their own visuals: repeat, roll, reverse, tape stop, filters, bits, gate
+- **Players**: arpeggiator and chords
+- **WAV recording** and **share links** that hold the whole project
+- **Installable** as an app, works **offline**
+- English and French interface
 
-## Punch-in effects
+## Getting started
 
-Mode **Punch** : les pas 1 à 8 (à l'écran ou sur l'OP-XY) se tiennent pour jouer un effet sur tout le son ; les touches 1 à 8 du clavier marchent dans tous les modes. Repeat et Roll rejouent une tranche (division réglable), Reverse lit à l'envers, Tape stop ralentit jusqu'à l'arrêt, Low pass et High pass balaient un filtre, Bits dégrade, Gate hache le son. Les effets se combinent ; chacun a son animation à l'écran, et un bandeau rappelle les effets actifs dans les autres modes.
+1. Open **[lab-xy.netlify.app](https://lab-xy.netlify.app)** in **Chrome** or **Edge**. Web MIDI is not available in Safari.
+2. Click **turn on** and allow MIDI access when the browser asks.
+3. Play:
+   - **OP-XY**: plug it in over USB and put it in controller mode (COM, then M2). Click **assign keys** once to map its keys; the mapping is remembered.
+   - **Another MIDI controller**: same thing, notes work straight away.
+   - **No hardware**: computer keyboard (A to K for notes, Z / X for octave, Space for play / stop) or the on-screen keys.
 
-## Encodeurs
+To install it, use **Install the app** at the top of the page. To play offline, click **make available offline** in the Machines panel.
 
-La détection relatif/absolu est automatique et suit les derniers messages reçus. Si un encodeur répond mal, choisir son codage à la main dans **Touches et encodeurs MIDI** ; les valeurs reçues s'y affichent pour vérifier.
+## Reporting a bug
 
-## App installable et hors ligne
+Open an [issue](https://github.com/Choom-engineering/Lab-Xy/issues) and include:
 
-Servi en HTTPS (Netlify, GitHub Pages…), le site s'installe comme une app : Chrome ou Edge affichent **Install the app** en haut de la page, ou l'icône d'installation dans la barre d'adresse. L'app s'ouvre ensuite dans sa propre fenêtre, depuis une icône sur le bureau, sans Python ni serveur local.
+- your browser and system, and the controller you use (OP-XY, other, none);
+- the machine and what you did just before the problem;
+- for encoder problems: the diagnostic line shown under **MIDI keys and encoders** while you turn the faulty encoder.
 
-Le service worker (`sw.js`) garde l'app et chaque machine utilisée ; **Make available offline**, dans le panneau Machines, télécharge les 56 machines d'un coup (environ 7 Mo) pour jouer sans connexion.
+## Known limitations
 
-**Publier une mise à jour** :
-1. Modifier les sources (`app.js`, `i18n.js`, `worklet.js`), puis lancer `python tools/build.py`, qui régénère `app.bundle.js` et les scripts des machines.
-2. Augmenter le numéro de version : `VERSION` dans `sw.js` et dans `app.js`, et `app.bundle.js?v=` dans `index.html`. Sinon les visiteurs gardent l'ancienne version en cache.
+- The browser preview of the Open-XY SDK does not emulate the OP-XY's own envelopes, filters, LFOs and effects, so a machine can sound slightly different on the device.
+- The OP-XY's −, + and Shift keys send no MIDI in controller mode: set the octave on screen and use Mix mode to mute tracks.
+- Sample and Com modes are not implemented.
 
-## Langues
+## Run it locally
 
-L'interface démarre en anglais ; le sélecteur EN | FR en haut retient le choix. Les textes sont écrits en français dans le code et traduits par `i18n.js` (dictionnaire français → anglais) : un nouveau texte s'écrit `L('…')` et prend son entrée dans le dictionnaire.
+Download the repository and double-click `index.html`: it runs without a server. Use Chrome or Edge. If the MIDI prompt does not appear for local files, allow it in `chrome://settings/content/midiDevices`.
 
-## Contenu
+## For developers
 
-- `index.html`, `app.js` (source) et `app.bundle.js` (généré par `tools/build.py`, c'est lui que la page charge) : l'interface, le séquenceur (8 pistes, jusqu'à 64 pas), Players (arpège, accords), Projects.
-- `worklet.js` : l'audio. Les machines tournent dans l'hôte WebAssembly du SDK Open-XY (`sdk/browser/engine.mjs`), avec des notes datées à l'échantillon près ; les moteurs intégrés (Batterie, Analog, FM, Corde) sont écrits ici.
-- `machines/` : 55 machines compilées, chacune avec son manifeste, son artwork d'écran et sa licence. Voir `CREDITS.md`.
-- `sdk/` : modules hôtes du SDK Open-XY (MIT), copiés sans modification.
+- `index.html`, `app.js` (source) and `app.bundle.js` (generated, loaded by the page): interface, sequencer, players, projects.
+- `i18n.js`: interface texts are written in French in the code and translated by a French → English dictionary; wrap new texts in `L('…')`.
+- `worklet.js`: audio. Machines run in the Open-XY SDK WebAssembly host (`sdk/browser/engine.mjs`) with sample-accurate notes; the built-in engines and punch-in effects live here.
+- `machines/`: compiled machines, each with its manifest, screen artwork and licence. See [CREDITS.md](CREDITS.md).
+- `sdk/`: Open-XY SDK host modules (MIT), unchanged.
 
-## Mettre à jour les machines
+**Publishing a change**: edit the sources, run `python tools/build.py` to regenerate `app.bundle.js` and the machine scripts, then raise the version (`VERSION` in `sw.js` and `app.js`, `?v=` in `index.html` and in the `i18n.js` import) so visitors don't keep the old version in cache.
 
-Avec le SDK Open-XY cloné et Clang (wasm32) installé : `python sdk.py preview --machine <dossier> --out <sortie>` pour chaque machine du catalogue, puis copier `engine.wasm`, `panel.svg`, le manifeste et la licence dans `machines/<id>/` et régénérer `machines/index.json`.
+**Updating machines**: with the Open-XY SDK cloned and Clang (wasm32) installed, run `python sdk.py preview --machine <folder> --out <output>` for each machine, copy `engine.wasm`, `panel.svg`, the manifest and the licence into `machines/<id>/`, and regenerate `machines/index.json`.
 
-## Limites connues
+## Credits
 
-- L'aperçu navigateur du SDK n'émule pas les enveloppes, filtres, LFO et effets du système de l'OP-XY : une machine peut sonner un peu différemment sur l'appareil.
-- Les touches −, + et Shift de l'OP-XY n'envoient pas de MIDI en mode contrôleur ; l'octave se règle à l'écran, et le mode Mix sert à couper les pistes.
-- Arrange, Sample et Com ne sont pas implémentés.
+Machines belong to their authors and keep their own licences (see [CREDITS.md](CREDITS.md)). Thanks to the Open-XY community.
 
-LAB_XY n'est ni affilié à teenage engineering ni approuvé par elle. OP-XY est une marque de son propriétaire.
+LAB_XY is an independent project, not affiliated with or endorsed by teenage engineering. OP-XY is a trademark of its owner.

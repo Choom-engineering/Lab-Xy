@@ -2,7 +2,7 @@
 import { createControls, shownControls } from './sdk/browser/controls.mjs';
 import { PreviewDisplay, SvgDisplay, NoteActivity } from './sdk/browser/display.mjs';
 import { selectArtwork } from './sdk/browser/graphics.mjs';
-import { LANG, L, setLang, translatePage } from './i18n.js?v=14';
+import { LANG, L, setLang, translatePage } from './i18n.js?v=15';
 
 const $ = id => document.getElementById(id);
 const cl = (x, a = 0, b = 1) => Math.max(a, Math.min(b, x));
@@ -106,7 +106,7 @@ function defaultState() {
   return { v: 2, bpm: 112, swing: .08, metro: 0, track: 0, oct: 0, mode: 'instrument', sub: 0, selStep: 0, page: 0, follow: 1,
     tracks: t, fx: { div: 2, fb: .38, mix: .3, tone: .55 }, master: .8, projectIdx: 0, pat: 0, song: [], songMode: 0 };
 }
-const VERSION = '14';
+const VERSION = '15';
 // Remise à zéro : ?reset dans l'adresse, ou le bouton « Réinitialiser ».
 if (new URLSearchParams(location.search).has('reset')) {
   try { localStorage.removeItem('xy-studio-v2'); } catch (e) {}
@@ -1276,7 +1276,7 @@ function renderBrowser() {
     list.append(b);
   };
   const bi = BUILTINS.filter(match), ma = MACHINES.filter(match);
-  if (bi.length) { const h = document.createElement('div'); h.className = 'grp-t'; h.textContent = 'Moteurs LAB_XY'; list.append(h); bi.forEach(m => card(m.id, m, L('intégré'))); }
+  if (bi.length) { const h = document.createElement('div'); h.className = 'grp-t'; h.textContent = L('Moteurs LAB_XY'); list.append(h); bi.forEach(m => card(m.id, m, L('intégré'))); }
   if (ma.length) { const h = document.createElement('div'); h.className = 'grp-t'; h.textContent = L('Machines Open-XY'); list.append(h); ma.forEach(m => card('m:' + m.id, m, m.maintainer)); }
   if (!bi.length && !ma.length) list.innerHTML = '<p class="note">Aucune machine ne correspond.</p>';
   $('mCount').textContent = L('Piste ') + (S.track + 1) + ' · ' + MACHINES.length + L(' machines');
