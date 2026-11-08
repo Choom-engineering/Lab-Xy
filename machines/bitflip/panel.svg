@@ -1,0 +1,165 @@
+<g id="bitflip_panel">
+<!-- SDK two-page header: keep this block before machine artwork below y=38. -->
+<path d="M0,0 L480,0 L480,38 L0,38 Z" fill="#000000"/>
+<path id="bitflip_node_0" transform="matrix(1 0 0 1 0 0)" d="M0,0 L60,0 L60,20 L0,20 Z" fill="#000000" stroke="#000000" stroke-width="0.5"/>
+<path id="bitflip_node_1" transform="matrix(1 0 0 1 60 0)" d="M0,0 L60,0 L60,20 L0,20 Z" fill="#323232" stroke="#323232" stroke-width="0.5"/>
+<path id="bitflip_node_2" transform="matrix(1 0 0 1 120 0)" d="M0,0 L60,0 L60,20 L0,20 Z" fill="#4B4B4B" stroke="#4B4B4B" stroke-width="0.5"/>
+<path id="bitflip_node_3" transform="matrix(1 0 0 1 180 0)" d="M0,0 L60,0 L60,20 L0,20 Z" fill="#646464" stroke="#646464" stroke-width="0.5"/>
+<path id="bitflip_node_4" transform="matrix(1 0 0 1 240 0)" d="M0,0 L60,0 L60,20 L0,20 Z" fill="#7D7D7D" stroke="#7D7D7D" stroke-width="0.5"/>
+<path id="bitflip_node_5" transform="matrix(1 0 0 1 300 0)" d="M0,0 L60,0 L60,20 L0,20 Z" fill="#969696" stroke="#969696" stroke-width="0.5"/>
+<path id="bitflip_node_6" transform="matrix(1 0 0 1 360 0)" d="M0,0 L60,0 L60,20 L0,20 Z" fill="#AFAFAF" stroke="#AFAFAF" stroke-width="0.5"/>
+<path id="bitflip_node_7" transform="matrix(1 0 0 1 420 0)" d="M0,0 L60,0 L60,20 L0,20 Z" fill="#CDCDCD" stroke="#CDCDCD" stroke-width="0.5"/>
+<text id="bitflip_text_0" transform="matrix(1 0 0 1 5 10)" fill="#CBCBCB" font-family="UniversNextPro-Light" font-size="10px">-</text>
+<text id="bitflip_text_1" transform="matrix(1 0 0 1 125 10)" fill="#CBCBCB" font-family="UniversNextPro-Light" font-size="10px">-</text>
+<text id="bitflip_text_2" transform="matrix(1 0 0 1 245 10)" fill="#000000" font-family="UniversNextPro-Light" font-size="10px">-</text>
+<text id="bitflip_text_3" transform="matrix(1 0 0 1 365 10)" fill="#000000" font-family="UniversNextPro-Light" font-size="10px">-</text>
+<text id="bitflip_text_4" transform="matrix(1 0 0 1 65 17.4)" fill="#CBCBCB" font-family="UniversNextPro-Light" font-size="20px">-</text>
+<text id="bitflip_text_5" transform="matrix(1 0 0 1 185 17.4)" fill="#CBCBCB" font-family="UniversNextPro-Light" font-size="20px">-</text>
+<text id="bitflip_text_6" transform="matrix(1 0 0 1 305 17.4)" fill="#000000" font-family="UniversNextPro-Light" font-size="20px">-</text>
+<text id="bitflip_text_7" transform="matrix(1 0 0 1 425 17.4)" fill="#000000" font-family="UniversNextPro-Light" font-size="20px">-</text>
+<text id="bitflip_text_8" transform="matrix(1 0 0 1 5 33)" fill="#5A5A5A" font-family="UniversNextPro-Light" font-size="10px">-</text>
+<text id="bitflip_text_9" transform="matrix(1 0 0 1 125 33)" fill="#5A5A5A" font-family="UniversNextPro-Light" font-size="10px">-</text>
+<text id="bitflip_text_10" transform="matrix(1 0 0 1 245 33)" fill="#5A5A5A" font-family="UniversNextPro-Light" font-size="10px">-</text>
+<text id="bitflip_text_11" transform="matrix(1 0 0 1 365 33)" fill="#5A5A5A" font-family="UniversNextPro-Light" font-size="10px">-</text>
+<text id="bitflip_text_12" transform="matrix(1 0 0 1 65 33)" fill="#707070" font-family="UniversNextPro-Light" font-size="13px">-</text>
+<text id="bitflip_text_13" transform="matrix(1 0 0 1 185 33)" fill="#707070" font-family="UniversNextPro-Light" font-size="13px">-</text>
+<text id="bitflip_text_14" transform="matrix(1 0 0 1 305 33)" fill="#707070" font-family="UniversNextPro-Light" font-size="13px">-</text>
+<text id="bitflip_text_15" transform="matrix(1 0 0 1 425 33)" fill="#707070" font-family="UniversNextPro-Light" font-size="13px">-</text>
+<path d="M0 38h480v182h-480Z" fill="#000000" stroke="none" stroke-width="1"/>
+<path d="M14.0 45.0h6.0v1.5h-6.0Z M14.0 46.5h1.5v1.5h-1.5Z M20.0 46.5h1.5v1.5h-1.5Z M14.0 48.0h1.5v1.5h-1.5Z M20.0 48.0h1.5v1.5h-1.5Z M14.0 49.5h6.0v1.5h-6.0Z M14.0 51.0h1.5v1.5h-1.5Z M20.0 51.0h1.5v1.5h-1.5Z M14.0 52.5h1.5v1.5h-1.5Z M20.0 52.5h1.5v1.5h-1.5Z M14.0 54.0h6.0v1.5h-6.0Z" fill="#8bffc8" stroke="none" stroke-width="1"/>
+<path d="M23.0 45.0h4.5v1.5h-4.5Z M24.5 46.5h1.5v1.5h-1.5Z M24.5 48.0h1.5v1.5h-1.5Z M24.5 49.5h1.5v1.5h-1.5Z M24.5 51.0h1.5v1.5h-1.5Z M24.5 52.5h1.5v1.5h-1.5Z M23.0 54.0h4.5v1.5h-4.5Z" fill="#8bffc8" stroke="none" stroke-width="1"/>
+<path d="M29.0 45.0h7.5v1.5h-7.5Z M32.0 46.5h1.5v1.5h-1.5Z M32.0 48.0h1.5v1.5h-1.5Z M32.0 49.5h1.5v1.5h-1.5Z M32.0 51.0h1.5v1.5h-1.5Z M32.0 52.5h1.5v1.5h-1.5Z M32.0 54.0h1.5v1.5h-1.5Z" fill="#8bffc8" stroke="none" stroke-width="1"/>
+<path d="M38.0 45.0h7.5v1.5h-7.5Z M38.0 46.5h1.5v1.5h-1.5Z M38.0 48.0h1.5v1.5h-1.5Z M38.0 49.5h6.0v1.5h-6.0Z M38.0 51.0h1.5v1.5h-1.5Z M38.0 52.5h1.5v1.5h-1.5Z M38.0 54.0h1.5v1.5h-1.5Z" fill="#8bffc8" stroke="none" stroke-width="1"/>
+<path d="M47.0 45.0h1.5v1.5h-1.5Z M47.0 46.5h1.5v1.5h-1.5Z M47.0 48.0h1.5v1.5h-1.5Z M47.0 49.5h1.5v1.5h-1.5Z M47.0 51.0h1.5v1.5h-1.5Z M47.0 52.5h1.5v1.5h-1.5Z M47.0 54.0h7.5v1.5h-7.5Z" fill="#8bffc8" stroke="none" stroke-width="1"/>
+<path d="M56.0 45.0h4.5v1.5h-4.5Z M57.5 46.5h1.5v1.5h-1.5Z M57.5 48.0h1.5v1.5h-1.5Z M57.5 49.5h1.5v1.5h-1.5Z M57.5 51.0h1.5v1.5h-1.5Z M57.5 52.5h1.5v1.5h-1.5Z M56.0 54.0h4.5v1.5h-4.5Z" fill="#8bffc8" stroke="none" stroke-width="1"/>
+<path d="M62.0 45.0h6.0v1.5h-6.0Z M62.0 46.5h1.5v1.5h-1.5Z M68.0 46.5h1.5v1.5h-1.5Z M62.0 48.0h1.5v1.5h-1.5Z M68.0 48.0h1.5v1.5h-1.5Z M62.0 49.5h6.0v1.5h-6.0Z M62.0 51.0h1.5v1.5h-1.5Z M62.0 52.5h1.5v1.5h-1.5Z M62.0 54.0h1.5v1.5h-1.5Z" fill="#8bffc8" stroke="none" stroke-width="1"/>
+<path d="M227 47h1v1h-1Z M231 47h1v1h-1Z M227 48h1v1h-1Z M231 48h1v1h-1Z M227 49h1v1h-1Z M231 49h1v1h-1Z M227 50h1v1h-1Z M229 50h1v1h-1Z M231 50h1v1h-1Z M227 51h1v1h-1Z M229 51h1v1h-1Z M231 51h1v1h-1Z M227 52h2v1h-2Z M230 52h2v1h-2Z M227 53h1v1h-1Z M231 53h1v1h-1Z" fill="#586d75" stroke="none" stroke-width="1"/>
+<path d="M234 47h3v1h-3Z M233 48h1v1h-1Z M237 48h1v1h-1Z M233 49h1v1h-1Z M237 49h1v1h-1Z M233 50h1v1h-1Z M237 50h1v1h-1Z M233 51h1v1h-1Z M237 51h1v1h-1Z M233 52h1v1h-1Z M237 52h1v1h-1Z M234 53h3v1h-3Z" fill="#586d75" stroke="none" stroke-width="1"/>
+<path d="M239 47h4v1h-4Z M239 48h1v1h-1Z M243 48h1v1h-1Z M239 49h1v1h-1Z M243 49h1v1h-1Z M239 50h4v1h-4Z M239 51h1v1h-1Z M241 51h1v1h-1Z M239 52h1v1h-1Z M242 52h1v1h-1Z M239 53h1v1h-1Z M243 53h1v1h-1Z" fill="#586d75" stroke="none" stroke-width="1"/>
+<path d="M245 47h1v1h-1Z M245 48h1v1h-1Z M245 49h1v1h-1Z M245 50h1v1h-1Z M245 51h1v1h-1Z M245 52h1v1h-1Z M245 53h5v1h-5Z" fill="#586d75" stroke="none" stroke-width="1"/>
+<path d="M251 47h4v1h-4Z M251 48h1v1h-1Z M255 48h1v1h-1Z M251 49h1v1h-1Z M255 49h1v1h-1Z M251 50h1v1h-1Z M255 50h1v1h-1Z M251 51h1v1h-1Z M255 51h1v1h-1Z M251 52h1v1h-1Z M255 52h1v1h-1Z M251 53h4v1h-4Z" fill="#586d75" stroke="none" stroke-width="1"/>
+<path d="M411 46h6v2h2v8h-2v2h-6v-2h-2v-8h2Z" fill="none" stroke="#ffe68a" stroke-width="1"/>
+<path d="M18 103h2v2h-2Z" fill="#263c40" stroke="none" stroke-width="1"/>
+<path d="M92 77h2v2h-2Z" fill="#263c40" stroke="none" stroke-width="1"/>
+<path d="M188 110h2v2h-2Z" fill="#263c40" stroke="none" stroke-width="1"/>
+<path d="M329 77h2v2h-2Z" fill="#263c40" stroke="none" stroke-width="1"/>
+<path d="M461 113h2v2h-2Z" fill="#263c40" stroke="none" stroke-width="1"/>
+<path id="bitflip_node_8" d="M-64 0v-8h8v-8h8v-8h8v-8h8v-8h8v-8h16v-8h16v8h16v8h8v8h8v8h8v8h8v8h8v8Z" fill="#263c40" stroke="none" stroke-width="1"/>
+<path id="bitflip_node_9" d="M-64 0v-8h8v-8h8v-8h8v-8h8v-8h8v-8h16v-8h16v8h16v8h8v8h8v8h8v8h8v8h8v8Z" fill="#263c40" stroke="none" stroke-width="1"/>
+<path id="bitflip_node_10" d="M-64 0v-8h8v-8h8v-8h8v-8h8v-8h8v-8h16v-8h16v8h16v8h8v8h8v8h8v8h8v8h8v8Z" fill="#263c40" stroke="none" stroke-width="1"/>
+<path id="bitflip_node_11" d="M-64 0v-8h8v-8h8v-8h8v-8h8v-8h8v-8h16v-8h16v8h16v8h8v8h8v8h8v8h8v8h8v8Z" fill="#263c40" stroke="none" stroke-width="1"/>
+<path id="bitflip_node_12" d="M-64 0v-8h8v-8h8v-8h8v-8h8v-8h8v-8h16v-8h16v8h16v8h8v8h8v8h8v8h8v8h8v8Z" fill="#263c40" stroke="none" stroke-width="1"/>
+<path id="bitflip_node_13" d="M-26 0v-8h8v-6h8v-4h14v4h8v6h10v8Z" fill="#586d75" stroke="none" stroke-width="1"/>
+<path id="bitflip_node_14" d="M-26 0v-8h8v-6h8v-4h14v4h8v6h10v8Z" fill="#586d75" stroke="none" stroke-width="1"/>
+<path id="bitflip_node_15" d="M-26 0v-8h8v-6h8v-4h14v4h8v6h10v8Z" fill="#586d75" stroke="none" stroke-width="1"/>
+<path id="bitflip_node_16" d="M-26 0v-8h8v-6h8v-4h14v4h8v6h10v8Z" fill="#586d75" stroke="none" stroke-width="1"/>
+<path d="M0 184h480v36h-480Z" fill="#263c40" stroke="none" stroke-width="1"/>
+<path d="M0 181h480v4h-480Z" fill="#8bffc8" stroke="none" stroke-width="1"/>
+<path id="bitflip_node_17" d="M-16 4H16 M-16 20H16 M0 4V20 M-16 20V36 M16 20V36" fill="none" stroke="#586d75" stroke-width="1"/>
+<path id="bitflip_node_18" d="M-16 4H16 M-16 20H16 M0 4V20 M-16 20V36 M16 20V36" fill="none" stroke="#586d75" stroke-width="1"/>
+<path id="bitflip_node_19" d="M-16 4H16 M-16 20H16 M0 4V20 M-16 20V36 M16 20V36" fill="none" stroke="#586d75" stroke-width="1"/>
+<path id="bitflip_node_20" d="M-16 4H16 M-16 20H16 M0 4V20 M-16 20V36 M16 20V36" fill="none" stroke="#586d75" stroke-width="1"/>
+<path id="bitflip_node_21" d="M-16 4H16 M-16 20H16 M0 4V20 M-16 20V36 M16 20V36" fill="none" stroke="#586d75" stroke-width="1"/>
+<path id="bitflip_node_22" d="M-16 4H16 M-16 20H16 M0 4V20 M-16 20V36 M16 20V36" fill="none" stroke="#586d75" stroke-width="1"/>
+<path id="bitflip_node_23" d="M-16 4H16 M-16 20H16 M0 4V20 M-16 20V36 M16 20V36" fill="none" stroke="#586d75" stroke-width="1"/>
+<path id="bitflip_node_24" d="M-16 4H16 M-16 20H16 M0 4V20 M-16 20V36 M16 20V36" fill="none" stroke="#586d75" stroke-width="1"/>
+<path id="bitflip_node_25" d="M-16 4H16 M-16 20H16 M0 4V20 M-16 20V36 M16 20V36" fill="none" stroke="#586d75" stroke-width="1"/>
+<path id="bitflip_node_26" d="M-16 4H16 M-16 20H16 M0 4V20 M-16 20V36 M16 20V36" fill="none" stroke="#586d75" stroke-width="1"/>
+<path id="bitflip_node_27" d="M-16 4H16 M-16 20H16 M0 4V20 M-16 20V36 M16 20V36" fill="none" stroke="#586d75" stroke-width="1"/>
+<path id="bitflip_node_28" d="M-16 4H16 M-16 20H16 M0 4V20 M-16 20V36 M16 20V36" fill="none" stroke="#586d75" stroke-width="1"/>
+<path id="bitflip_node_29" d="M-16 4H16 M-16 20H16 M0 4V20 M-16 20V36 M16 20V36" fill="none" stroke="#586d75" stroke-width="1"/>
+<path id="bitflip_node_30" d="M-16 4H16 M-16 20H16 M0 4V20 M-16 20V36 M16 20V36" fill="none" stroke="#586d75" stroke-width="1"/>
+<path id="bitflip_node_31" d="M-16 4H16 M-16 20H16 M0 4V20 M-16 20V36 M16 20V36" fill="none" stroke="#586d75" stroke-width="1"/>
+<path id="bitflip_node_32" d="M-16 4H16 M-16 20H16 M0 4V20 M-16 20V36 M16 20V36" fill="none" stroke="#586d75" stroke-width="1"/>
+<path id="bitflip_node_33" d="M-16-28H16V-20H-16Z M-12-20V0H12V-20 M-7-16V-4 M-3-16V-4" fill="none" stroke="#8bffc8" stroke-width="2"/>
+<path id="bitflip_node_34" d="M-14-28H14V0H-14Z M-10-24H10V-4H-10Z M-8-22L8-6 M8-22L-8-6" fill="none" stroke="#ff9fbc" stroke-width="2"/>
+<path id="bitflip_node_35" d="M-32 0H32V16H-32Z M-16 0V16 M0 0V16 M16 0V16 M-28 4H-20 M4 4H12 M20 4H28 M-11 4H-5V8H-8V10 M-8 12V14" fill="none" stroke="#ffe68a" stroke-width="1"/>
+<path id="bitflip_node_36" d="M-32 0H32V16H-32Z M-16 0V16 M0 0V16 M16 0V16 M-28 4H-20 M4 4H12 M20 4H28 M-11 4H-5V8H-8V10 M-8 12V14" fill="none" stroke="#ffe68a" stroke-width="1"/>
+<path id="bitflip_node_37" d="M-6 -5h2v-2h8v2h2v10h-2v2h-8v-2h-2Z" fill="none" stroke="#ffe68a" stroke-width="1"/>
+<path id="bitflip_node_38" d="M-4 -5h2v-2h4v2h2v10h-2v2h-4v-2h-2Z" fill="none" stroke="#ffe68a" stroke-width="1"/>
+<path id="bitflip_node_39" d="M-2 -5h2v-2h0v2h2v10h-2v2h0v-2h-2Z" fill="none" stroke="#ffe68a" stroke-width="1"/>
+<path id="bitflip_node_40" d="M-4 -5h2v-2h4v2h2v10h-2v2h-4v-2h-2Z" fill="none" stroke="#ffe68a" stroke-width="1"/>
+<path id="bitflip_node_41" d="M-6 -5h2v-2h8v2h2v10h-2v2h-8v-2h-2Z" fill="none" stroke="#ffe68a" stroke-width="1"/>
+<path id="bitflip_node_42" d="M-4 -5h2v-2h4v2h2v10h-2v2h-4v-2h-2Z" fill="none" stroke="#ffe68a" stroke-width="1"/>
+<path id="bitflip_node_43" d="M-2 -5h2v-2h0v2h2v10h-2v2h0v-2h-2Z" fill="none" stroke="#ffe68a" stroke-width="1"/>
+<path id="bitflip_node_44" d="M-4 -5h2v-2h4v2h2v10h-2v2h-4v-2h-2Z" fill="none" stroke="#ffe68a" stroke-width="1"/>
+<path id="bitflip_node_45" d="M-6 -5h2v-2h8v2h2v10h-2v2h-8v-2h-2Z" fill="none" stroke="#ffe68a" stroke-width="1"/>
+<path id="bitflip_node_46" d="M-4 -5h2v-2h4v2h2v10h-2v2h-4v-2h-2Z" fill="none" stroke="#ffe68a" stroke-width="1"/>
+<path id="bitflip_node_47" d="M-2 -5h2v-2h0v2h2v10h-2v2h0v-2h-2Z" fill="none" stroke="#ffe68a" stroke-width="1"/>
+<path id="bitflip_node_48" d="M-4 -5h2v-2h4v2h2v10h-2v2h-4v-2h-2Z" fill="none" stroke="#ffe68a" stroke-width="1"/>
+<path id="bitflip_node_49" d="M-6 -5h2v-2h8v2h2v10h-2v2h-8v-2h-2Z" fill="none" stroke="#ffe68a" stroke-width="1"/>
+<path id="bitflip_node_50" d="M-4 -5h2v-2h4v2h2v10h-2v2h-4v-2h-2Z" fill="none" stroke="#ffe68a" stroke-width="1"/>
+<path id="bitflip_node_51" d="M-2 -5h2v-2h0v2h2v10h-2v2h0v-2h-2Z" fill="none" stroke="#ffe68a" stroke-width="1"/>
+<path id="bitflip_node_52" d="M-4 -5h2v-2h4v2h2v10h-2v2h-4v-2h-2Z" fill="none" stroke="#ffe68a" stroke-width="1"/>
+<path id="bitflip_node_53" d="M-6 -5h2v-2h8v2h2v10h-2v2h-8v-2h-2Z" fill="none" stroke="#ffe68a" stroke-width="1"/>
+<path id="bitflip_node_54" d="M-4 -5h2v-2h4v2h2v10h-2v2h-4v-2h-2Z" fill="none" stroke="#ffe68a" stroke-width="1"/>
+<path id="bitflip_node_55" d="M-2 -5h2v-2h0v2h2v10h-2v2h0v-2h-2Z" fill="none" stroke="#ffe68a" stroke-width="1"/>
+<path id="bitflip_node_56" d="M-4 -5h2v-2h4v2h2v10h-2v2h-4v-2h-2Z" fill="none" stroke="#ffe68a" stroke-width="1"/>
+<path id="bitflip_node_57" d="M-6 -5h2v-2h8v2h2v10h-2v2h-8v-2h-2Z" fill="none" stroke="#ffe68a" stroke-width="1"/>
+<path id="bitflip_node_58" d="M-4 -5h2v-2h4v2h2v10h-2v2h-4v-2h-2Z" fill="none" stroke="#ffe68a" stroke-width="1"/>
+<path id="bitflip_node_59" d="M-2 -5h2v-2h0v2h2v10h-2v2h0v-2h-2Z" fill="none" stroke="#ffe68a" stroke-width="1"/>
+<path id="bitflip_node_60" d="M-4 -5h2v-2h4v2h2v10h-2v2h-4v-2h-2Z" fill="none" stroke="#ffe68a" stroke-width="1"/>
+<path id="bitflip_node_61" d="M-6 -40h10v2h-10Z M-8 -38h16v2h-16Z M-8 -36h20v2h-20Z" fill="#8bffc8" stroke="none" stroke-width="1"/>
+<path id="bitflip_node_62" d="M-6 -34h12v2h-12Z M-6 -32h8v2h-8Z M4 -32h4v2h-4Z M-4 -30h16v2h-16Z M-6 -28h14v2h-14Z" fill="#ffe68a" stroke="none" stroke-width="1"/>
+<path id="bitflip_node_63" d="M2 -32h2v2h-2Z" fill="#000000" stroke="none" stroke-width="1"/>
+<path id="bitflip_node_64" d="M-10 -26h14v2h-14Z" fill="#ff9fbc" stroke="none" stroke-width="1"/>
+<path id="bitflip_node_65" d="M-6 -24h12v2h-12Z M-6 -22h12v2h-12Z M-6 -20h12v2h-12Z M-8 -18h14v2h-14Z M-6 -16h12v2h-12Z" fill="#7cbfff" stroke="none" stroke-width="1"/>
+<path id="bitflip_node_66" d="M-6 -24h4v2h-4Z M4 -24h4v2h-4Z M-8 -22h6v2h-6Z M4 -22h4v2h-4Z M-8 -20h4v2h-4Z M4 -20h6v2h-6Z M-8 -18h4v2h-4Z M6 -18h4v2h-4Z M-4 -16h4v2h-4Z M2 -16h4v2h-4Z M-4 -14h4v2h-4Z M2 -14h4v2h-4Z M-4 -12h4v2h-4Z M2 -12h4v2h-4Z M-4 -10h4v2h-4Z M2 -10h4v2h-4Z M-4 -8h4v2h-4Z M2 -8h4v2h-4Z M-4 -6h4v2h-4Z M2 -6h4v2h-4Z" fill="#7cbfff" stroke="none" stroke-width="1"/>
+<path id="bitflip_node_67" d="M-8 -16h4v2h-4Z M6 -16h4v2h-4Z M-8 -14h4v2h-4Z M6 -14h4v2h-4Z" fill="#ffe68a" stroke="none" stroke-width="1"/>
+<path id="bitflip_node_68" d="M-4 -4h12v2h-12Z M-4 -2h12v2h-12Z" fill="#e5f3e8" stroke="none" stroke-width="1"/>
+<path id="bitflip_node_69" d="M-6 -24h4v2h-4Z M4 -24h6v2h-6Z M-8 -22h6v2h-6Z M4 -22h6v2h-6Z M-10 -20h6v2h-6Z M8 -20h4v2h-4Z M-12 -18h6v2h-6Z M-4 -16h4v2h-4Z M2 -16h4v2h-4Z M-6 -14h6v2h-6Z M2 -14h6v2h-6Z M-6 -12h4v2h-4Z M4 -12h6v2h-6Z M-8 -10h6v2h-6Z M4 -10h4v2h-4Z M-10 -8h6v2h-6Z M-10 -6h4v2h-4Z" fill="#7cbfff" stroke="none" stroke-width="1"/>
+<path id="bitflip_node_70" d="M10 -24h4v2h-4Z M10 -22h4v2h-4Z M-12 -16h4v2h-4Z M-12 -14h4v2h-4Z" fill="#ffe68a" stroke="none" stroke-width="1"/>
+<path id="bitflip_node_71" d="M8 -10h6v2h-6Z M8 -8h6v2h-6Z M-12 -4h6v2h-6Z M-12 -2h6v2h-6Z" fill="#e5f3e8" stroke="none" stroke-width="1"/>
+<path id="bitflip_node_72" d="M-6 -24h4v2h-4Z M4 -24h4v2h-4Z M-8 -22h6v2h-6Z M4 -22h4v2h-4Z M-8 -20h4v2h-4Z M4 -20h6v2h-6Z M-6 -18h2v2h-2Z M6 -18h2v2h-2Z M-4 -16h4v2h-4Z M2 -16h4v2h-4Z M-4 -14h4v2h-4Z M2 -14h4v2h-4Z M-4 -12h4v2h-4Z M2 -12h6v2h-6Z M-4 -10h4v2h-4Z M4 -10h4v2h-4Z M-4 -8h4v2h-4Z M4 -8h4v2h-4Z M-6 -6h6v2h-6Z M4 -6h4v2h-4Z M4 -4h2v2h-2Z" fill="#7cbfff" stroke="none" stroke-width="1"/>
+<path id="bitflip_node_73" d="M-10 -18h4v2h-4Z M8 -18h4v2h-4Z M-10 -16h4v2h-4Z M8 -16h4v2h-4Z" fill="#ffe68a" stroke="none" stroke-width="1"/>
+<path id="bitflip_node_74" d="M-6 -4h6v2h-6Z M6 -4h6v2h-6Z M-6 -2h6v2h-6Z M6 -2h6v2h-6Z" fill="#e5f3e8" stroke="none" stroke-width="1"/>
+<path id="bitflip_node_75" d="M-6 -24h4v2h-4Z M4 -24h4v2h-4Z M-6 -22h4v2h-4Z M4 -22h6v2h-6Z M-8 -20h4v2h-4Z M6 -20h6v2h-6Z M8 -18h4v2h-4Z M-4 -16h4v2h-4Z M2 -16h4v2h-4Z M8 -16h2v2h-2Z M-4 -14h4v2h-4Z M2 -14h6v2h-6Z M-8 -12h8v2h-8Z M4 -12h4v2h-4Z M-4 -10h2v2h-2Z M4 -10h6v2h-6Z M6 -8h6v2h-6Z M8 -6h4v2h-4Z M8 -4h2v2h-2Z" fill="#7cbfff" stroke="none" stroke-width="1"/>
+<path id="bitflip_node_76" d="M-10 -24h4v2h-4Z M-10 -22h4v2h-4Z M10 -16h4v2h-4Z M10 -14h4v2h-4Z" fill="#ffe68a" stroke="none" stroke-width="1"/>
+<path id="bitflip_node_77" d="M-10 -10h6v2h-6Z M-10 -8h6v2h-6Z M10 -4h4v2h-4Z M10 -2h4v2h-4Z" fill="#e5f3e8" stroke="none" stroke-width="1"/>
+<path id="bitflip_node_78" d="M-6 -24h4v2h-4Z M4 -24h4v2h-4Z M-8 -22h6v2h-6Z M4 -22h4v2h-4Z M-8 -20h4v2h-4Z M4 -20h6v2h-6Z M-6 -18h2v2h-2Z M6 -18h2v2h-2Z M-4 -16h4v2h-4Z M2 -16h4v2h-4Z M-4 -14h4v2h-4Z M2 -14h4v2h-4Z M-4 -12h4v2h-4Z M2 -12h4v2h-4Z M-4 -10h4v2h-4Z M2 -10h4v2h-4Z M-4 -8h4v2h-4Z M2 -8h4v2h-4Z M-4 -6h4v2h-4Z M2 -6h6v2h-6Z" fill="#7cbfff" stroke="none" stroke-width="1"/>
+<path id="bitflip_node_79" d="M-10 -18h4v2h-4Z M8 -18h4v2h-4Z M-10 -16h4v2h-4Z M8 -16h4v2h-4Z" fill="#ffe68a" stroke="none" stroke-width="1"/>
+<path id="bitflip_node_80" d="M-6 -4h6v2h-6Z M4 -4h6v2h-6Z M-6 -2h6v2h-6Z M4 -2h6v2h-6Z" fill="#e5f3e8" stroke="none" stroke-width="1"/>
+<path id="bitflip_node_81" d="M-8 -24h6v2h-6Z M4 -24h6v2h-6Z M-8 -22h6v2h-6Z M4 -22h6v2h-6Z M8 -20h4v2h-4Z M-4 -16h4v2h-4Z M2 -16h4v2h-4Z M-6 -14h6v2h-6Z M2 -14h6v2h-6Z M-8 -12h6v2h-6Z M4 -12h6v2h-6Z M-8 -10h4v2h-4Z M6 -10h6v2h-6Z" fill="#7cbfff" stroke="none" stroke-width="1"/>
+<path id="bitflip_node_82" d="M-8 -28h4v2h-4Z M-8 -26h4v2h-4Z M10 -24h4v2h-4Z M10 -22h4v2h-4Z" fill="#ffe68a" stroke="none" stroke-width="1"/>
+<path id="bitflip_node_83" d="M-10 -8h6v2h-6Z M8 -8h6v2h-6Z M-10 -6h6v2h-6Z M8 -6h6v2h-6Z" fill="#e5f3e8" stroke="none" stroke-width="1"/>
+<path id="bitflip_node_84" d="M-2 0H2 M0-2V2" fill="none" stroke="#ffe68a" stroke-width="1"/>
+<path id="bitflip_node_85" d="M-2 0H2 M0-2V2" fill="none" stroke="#ffe68a" stroke-width="1"/>
+<path id="bitflip_node_86" d="M-2 0H2 M0-2V2" fill="none" stroke="#ffe68a" stroke-width="1"/>
+<path id="bitflip_node_87" d="M-2 0H2 M0-2V2" fill="none" stroke="#ffe68a" stroke-width="1"/>
+<path id="bitflip_node_88" d="M1.5 0.0h4.5v1.5h-4.5Z M0.0 1.5h1.5v1.5h-1.5Z M4.5 1.5h3.0v1.5h-3.0Z M0.0 3.0h1.5v1.5h-1.5Z M3.0 3.0h1.5v1.5h-1.5Z M6.0 3.0h1.5v1.5h-1.5Z M0.0 4.5h1.5v1.5h-1.5Z M3.0 4.5h1.5v1.5h-1.5Z M6.0 4.5h1.5v1.5h-1.5Z M0.0 6.0h3.0v1.5h-3.0Z M6.0 6.0h1.5v1.5h-1.5Z M0.0 7.5h1.5v1.5h-1.5Z M6.0 7.5h1.5v1.5h-1.5Z M1.5 9.0h4.5v1.5h-4.5Z" fill="#ffe68a" stroke="none" stroke-width="1"/>
+<path id="bitflip_node_89" d="M1.5 0.0h1.5v1.5h-1.5Z M0.0 1.5h3.0v1.5h-3.0Z M1.5 3.0h1.5v1.5h-1.5Z M1.5 4.5h1.5v1.5h-1.5Z M1.5 6.0h1.5v1.5h-1.5Z M1.5 7.5h1.5v1.5h-1.5Z M0.0 9.0h4.5v1.5h-4.5Z" fill="#ffe68a" stroke="none" stroke-width="1"/>
+<path id="bitflip_node_90" d="M1.5 0.0h4.5v1.5h-4.5Z M0.0 1.5h1.5v1.5h-1.5Z M6.0 1.5h1.5v1.5h-1.5Z M6.0 3.0h1.5v1.5h-1.5Z M4.5 4.5h1.5v1.5h-1.5Z M3.0 6.0h1.5v1.5h-1.5Z M1.5 7.5h1.5v1.5h-1.5Z M0.0 9.0h7.5v1.5h-7.5Z" fill="#ffe68a" stroke="none" stroke-width="1"/>
+<path id="bitflip_node_91" d="M0.0 0.0h6.0v1.5h-6.0Z M6.0 1.5h1.5v1.5h-1.5Z M6.0 3.0h1.5v1.5h-1.5Z M1.5 4.5h4.5v1.5h-4.5Z M6.0 6.0h1.5v1.5h-1.5Z M6.0 7.5h1.5v1.5h-1.5Z M0.0 9.0h6.0v1.5h-6.0Z" fill="#ffe68a" stroke="none" stroke-width="1"/>
+<path id="bitflip_node_92" d="M4.5 0.0h1.5v1.5h-1.5Z M3.0 1.5h3.0v1.5h-3.0Z M1.5 3.0h1.5v1.5h-1.5Z M4.5 3.0h1.5v1.5h-1.5Z M0.0 4.5h1.5v1.5h-1.5Z M4.5 4.5h1.5v1.5h-1.5Z M0.0 6.0h7.5v1.5h-7.5Z M4.5 7.5h1.5v1.5h-1.5Z M4.5 9.0h1.5v1.5h-1.5Z" fill="#ffe68a" stroke="none" stroke-width="1"/>
+<path id="bitflip_node_93" d="M0.0 0.0h7.5v1.5h-7.5Z M0.0 1.5h1.5v1.5h-1.5Z M0.0 3.0h1.5v1.5h-1.5Z M0.0 4.5h6.0v1.5h-6.0Z M6.0 6.0h1.5v1.5h-1.5Z M6.0 7.5h1.5v1.5h-1.5Z M0.0 9.0h6.0v1.5h-6.0Z" fill="#ffe68a" stroke="none" stroke-width="1"/>
+<path id="bitflip_node_94" d="M1.5 0.0h4.5v1.5h-4.5Z M0.0 1.5h1.5v1.5h-1.5Z M0.0 3.0h1.5v1.5h-1.5Z M0.0 4.5h6.0v1.5h-6.0Z M0.0 6.0h1.5v1.5h-1.5Z M6.0 6.0h1.5v1.5h-1.5Z M0.0 7.5h1.5v1.5h-1.5Z M6.0 7.5h1.5v1.5h-1.5Z M1.5 9.0h4.5v1.5h-4.5Z" fill="#ffe68a" stroke="none" stroke-width="1"/>
+<path id="bitflip_node_95" d="M0.0 0.0h7.5v1.5h-7.5Z M6.0 1.5h1.5v1.5h-1.5Z M4.5 3.0h1.5v1.5h-1.5Z M3.0 4.5h1.5v1.5h-1.5Z M1.5 6.0h1.5v1.5h-1.5Z M1.5 7.5h1.5v1.5h-1.5Z M1.5 9.0h1.5v1.5h-1.5Z" fill="#ffe68a" stroke="none" stroke-width="1"/>
+<path id="bitflip_node_96" d="M1.5 0.0h4.5v1.5h-4.5Z M0.0 1.5h1.5v1.5h-1.5Z M6.0 1.5h1.5v1.5h-1.5Z M0.0 3.0h1.5v1.5h-1.5Z M6.0 3.0h1.5v1.5h-1.5Z M1.5 4.5h4.5v1.5h-4.5Z M0.0 6.0h1.5v1.5h-1.5Z M6.0 6.0h1.5v1.5h-1.5Z M0.0 7.5h1.5v1.5h-1.5Z M6.0 7.5h1.5v1.5h-1.5Z M1.5 9.0h4.5v1.5h-4.5Z" fill="#ffe68a" stroke="none" stroke-width="1"/>
+<path id="bitflip_node_97" d="M1.5 0.0h4.5v1.5h-4.5Z M0.0 1.5h1.5v1.5h-1.5Z M6.0 1.5h1.5v1.5h-1.5Z M0.0 3.0h1.5v1.5h-1.5Z M6.0 3.0h1.5v1.5h-1.5Z M1.5 4.5h6.0v1.5h-6.0Z M6.0 6.0h1.5v1.5h-1.5Z M6.0 7.5h1.5v1.5h-1.5Z M1.5 9.0h4.5v1.5h-4.5Z" fill="#ffe68a" stroke="none" stroke-width="1"/>
+<path id="bitflip_node_98" d="M1.5 0.0h4.5v1.5h-4.5Z M0.0 1.5h1.5v1.5h-1.5Z M4.5 1.5h3.0v1.5h-3.0Z M0.0 3.0h1.5v1.5h-1.5Z M3.0 3.0h1.5v1.5h-1.5Z M6.0 3.0h1.5v1.5h-1.5Z M0.0 4.5h1.5v1.5h-1.5Z M3.0 4.5h1.5v1.5h-1.5Z M6.0 4.5h1.5v1.5h-1.5Z M0.0 6.0h3.0v1.5h-3.0Z M6.0 6.0h1.5v1.5h-1.5Z M0.0 7.5h1.5v1.5h-1.5Z M6.0 7.5h1.5v1.5h-1.5Z M1.5 9.0h4.5v1.5h-4.5Z" fill="#ffe68a" stroke="none" stroke-width="1"/>
+<path id="bitflip_node_99" d="M1.5 0.0h1.5v1.5h-1.5Z M0.0 1.5h3.0v1.5h-3.0Z M1.5 3.0h1.5v1.5h-1.5Z M1.5 4.5h1.5v1.5h-1.5Z M1.5 6.0h1.5v1.5h-1.5Z M1.5 7.5h1.5v1.5h-1.5Z M0.0 9.0h4.5v1.5h-4.5Z" fill="#ffe68a" stroke="none" stroke-width="1"/>
+<path id="bitflip_node_100" d="M1.5 0.0h4.5v1.5h-4.5Z M0.0 1.5h1.5v1.5h-1.5Z M6.0 1.5h1.5v1.5h-1.5Z M6.0 3.0h1.5v1.5h-1.5Z M4.5 4.5h1.5v1.5h-1.5Z M3.0 6.0h1.5v1.5h-1.5Z M1.5 7.5h1.5v1.5h-1.5Z M0.0 9.0h7.5v1.5h-7.5Z" fill="#ffe68a" stroke="none" stroke-width="1"/>
+<path id="bitflip_node_101" d="M0.0 0.0h6.0v1.5h-6.0Z M6.0 1.5h1.5v1.5h-1.5Z M6.0 3.0h1.5v1.5h-1.5Z M1.5 4.5h4.5v1.5h-4.5Z M6.0 6.0h1.5v1.5h-1.5Z M6.0 7.5h1.5v1.5h-1.5Z M0.0 9.0h6.0v1.5h-6.0Z" fill="#ffe68a" stroke="none" stroke-width="1"/>
+<path id="bitflip_node_102" d="M4.5 0.0h1.5v1.5h-1.5Z M3.0 1.5h3.0v1.5h-3.0Z M1.5 3.0h1.5v1.5h-1.5Z M4.5 3.0h1.5v1.5h-1.5Z M0.0 4.5h1.5v1.5h-1.5Z M4.5 4.5h1.5v1.5h-1.5Z M0.0 6.0h7.5v1.5h-7.5Z M4.5 7.5h1.5v1.5h-1.5Z M4.5 9.0h1.5v1.5h-1.5Z" fill="#ffe68a" stroke="none" stroke-width="1"/>
+<path id="bitflip_node_103" d="M0.0 0.0h7.5v1.5h-7.5Z M0.0 1.5h1.5v1.5h-1.5Z M0.0 3.0h1.5v1.5h-1.5Z M0.0 4.5h6.0v1.5h-6.0Z M6.0 6.0h1.5v1.5h-1.5Z M6.0 7.5h1.5v1.5h-1.5Z M0.0 9.0h6.0v1.5h-6.0Z" fill="#ffe68a" stroke="none" stroke-width="1"/>
+<path id="bitflip_node_104" d="M1.5 0.0h4.5v1.5h-4.5Z M0.0 1.5h1.5v1.5h-1.5Z M0.0 3.0h1.5v1.5h-1.5Z M0.0 4.5h6.0v1.5h-6.0Z M0.0 6.0h1.5v1.5h-1.5Z M6.0 6.0h1.5v1.5h-1.5Z M0.0 7.5h1.5v1.5h-1.5Z M6.0 7.5h1.5v1.5h-1.5Z M1.5 9.0h4.5v1.5h-4.5Z" fill="#ffe68a" stroke="none" stroke-width="1"/>
+<path id="bitflip_node_105" d="M0.0 0.0h7.5v1.5h-7.5Z M6.0 1.5h1.5v1.5h-1.5Z M4.5 3.0h1.5v1.5h-1.5Z M3.0 4.5h1.5v1.5h-1.5Z M1.5 6.0h1.5v1.5h-1.5Z M1.5 7.5h1.5v1.5h-1.5Z M1.5 9.0h1.5v1.5h-1.5Z" fill="#ffe68a" stroke="none" stroke-width="1"/>
+<path id="bitflip_node_106" d="M1.5 0.0h4.5v1.5h-4.5Z M0.0 1.5h1.5v1.5h-1.5Z M6.0 1.5h1.5v1.5h-1.5Z M0.0 3.0h1.5v1.5h-1.5Z M6.0 3.0h1.5v1.5h-1.5Z M1.5 4.5h4.5v1.5h-4.5Z M0.0 6.0h1.5v1.5h-1.5Z M6.0 6.0h1.5v1.5h-1.5Z M0.0 7.5h1.5v1.5h-1.5Z M6.0 7.5h1.5v1.5h-1.5Z M1.5 9.0h4.5v1.5h-4.5Z" fill="#ffe68a" stroke="none" stroke-width="1"/>
+<path id="bitflip_node_107" d="M1.5 0.0h4.5v1.5h-4.5Z M0.0 1.5h1.5v1.5h-1.5Z M6.0 1.5h1.5v1.5h-1.5Z M0.0 3.0h1.5v1.5h-1.5Z M6.0 3.0h1.5v1.5h-1.5Z M1.5 4.5h6.0v1.5h-6.0Z M6.0 6.0h1.5v1.5h-1.5Z M6.0 7.5h1.5v1.5h-1.5Z M1.5 9.0h4.5v1.5h-4.5Z" fill="#ffe68a" stroke="none" stroke-width="1"/>
+<path id="bitflip_node_108" d="M-2 -2h4v4h-4Z" fill="#263c40" stroke="none" stroke-width="1"/>
+<path id="bitflip_node_109" d="M-2 -2h4v4h-4Z" fill="#263c40" stroke="none" stroke-width="1"/>
+<path id="bitflip_node_110" d="M-2 -2h4v4h-4Z" fill="#263c40" stroke="none" stroke-width="1"/>
+<path id="bitflip_node_111" d="M-2 -2h4v4h-4Z" fill="#263c40" stroke="none" stroke-width="1"/>
+<path id="bitflip_node_112" d="M-2 -2h4v4h-4Z" fill="#263c40" stroke="none" stroke-width="1"/>
+<path id="bitflip_node_113" d="M-2 -2h4v4h-4Z" fill="#263c40" stroke="none" stroke-width="1"/>
+<path id="bitflip_node_114" d="M-2 -2h4v4h-4Z" fill="#263c40" stroke="none" stroke-width="1"/>
+<path id="bitflip_node_115" d="M-2 -2h4v4h-4Z" fill="#263c40" stroke="none" stroke-width="1"/>
+<circle id="bitflip_palette_0" cx="640" cy="0" r="1" fill="#000000" stroke="#000000" stroke-width="1"/>
+<circle id="bitflip_palette_1" cx="640" cy="0" r="1" fill="#263c40" stroke="#263c40" stroke-width="1"/>
+<circle id="bitflip_palette_2" cx="640" cy="0" r="1" fill="#586d75" stroke="#586d75" stroke-width="1"/>
+<circle id="bitflip_palette_3" cx="640" cy="0" r="1" fill="#8bffc8" stroke="#8bffc8" stroke-width="1"/>
+<circle id="bitflip_palette_4" cx="640" cy="0" r="1" fill="#7cbfff" stroke="#7cbfff" stroke-width="1"/>
+<circle id="bitflip_palette_5" cx="640" cy="0" r="1" fill="#ffe68a" stroke="#ffe68a" stroke-width="1"/>
+<circle id="bitflip_palette_6" cx="640" cy="0" r="1" fill="#e5f3e8" stroke="#e5f3e8" stroke-width="1"/>
+<circle id="bitflip_palette_7" cx="640" cy="0" r="1" fill="#ff9fbc" stroke="#ff9fbc" stroke-width="1"/>
+</g>

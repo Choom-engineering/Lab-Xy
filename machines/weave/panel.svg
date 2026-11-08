@@ -1,0 +1,80 @@
+<g id="weave_panel">
+<!-- SDK two-page header: keep this block before machine artwork below y=38. -->
+<path d="M0,0 L480,0 L480,38 L0,38 Z" fill="#000000"/>
+<path id="weave_node_2" transform="matrix(1 0 0 1 0 0)" d="M0,0 L60,0 L60,20 L0,20 Z" fill="#000000" stroke="#000000" stroke-width="0.5"/>
+<path id="weave_node_3" transform="matrix(1 0 0 1 60 0)" d="M0,0 L60,0 L60,20 L0,20 Z" fill="#323232" stroke="#323232" stroke-width="0.5"/>
+<path id="weave_node_4" transform="matrix(1 0 0 1 120 0)" d="M0,0 L60,0 L60,20 L0,20 Z" fill="#4B4B4B" stroke="#4B4B4B" stroke-width="0.5"/>
+<path id="weave_node_5" transform="matrix(1 0 0 1 180 0)" d="M0,0 L60,0 L60,20 L0,20 Z" fill="#646464" stroke="#646464" stroke-width="0.5"/>
+<path id="weave_node_6" transform="matrix(1 0 0 1 240 0)" d="M0,0 L60,0 L60,20 L0,20 Z" fill="#7D7D7D" stroke="#7D7D7D" stroke-width="0.5"/>
+<path id="weave_node_7" transform="matrix(1 0 0 1 300 0)" d="M0,0 L60,0 L60,20 L0,20 Z" fill="#969696" stroke="#969696" stroke-width="0.5"/>
+<path id="weave_node_8" transform="matrix(1 0 0 1 360 0)" d="M0,0 L60,0 L60,20 L0,20 Z" fill="#AFAFAF" stroke="#AFAFAF" stroke-width="0.5"/>
+<path id="weave_node_9" transform="matrix(1 0 0 1 420 0)" d="M0,0 L60,0 L60,20 L0,20 Z" fill="#CDCDCD" stroke="#CDCDCD" stroke-width="0.5"/>
+<text id="weave_text_0" transform="matrix(1 0 0 1 5 10)" fill="#CBCBCB" font-family="UniversNextPro-Light" font-size="10px">-</text>
+<text id="weave_text_1" transform="matrix(1 0 0 1 125 10)" fill="#CBCBCB" font-family="UniversNextPro-Light" font-size="10px">-</text>
+<text id="weave_text_2" transform="matrix(1 0 0 1 245 10)" fill="#000000" font-family="UniversNextPro-Light" font-size="10px">-</text>
+<text id="weave_text_3" transform="matrix(1 0 0 1 365 10)" fill="#000000" font-family="UniversNextPro-Light" font-size="10px">-</text>
+<text id="weave_text_4" transform="matrix(1 0 0 1 65 17.4)" fill="#CBCBCB" font-family="UniversNextPro-Light" font-size="20px">-</text>
+<text id="weave_text_5" transform="matrix(1 0 0 1 185 17.4)" fill="#CBCBCB" font-family="UniversNextPro-Light" font-size="20px">-</text>
+<text id="weave_text_6" transform="matrix(1 0 0 1 305 17.4)" fill="#000000" font-family="UniversNextPro-Light" font-size="20px">-</text>
+<text id="weave_text_7" transform="matrix(1 0 0 1 425 17.4)" fill="#000000" font-family="UniversNextPro-Light" font-size="20px">-</text>
+<text id="weave_text_8" transform="matrix(1 0 0 1 5 33)" fill="#5A5A5A" font-family="UniversNextPro-Light" font-size="10px">-</text>
+<text id="weave_text_9" transform="matrix(1 0 0 1 125 33)" fill="#5A5A5A" font-family="UniversNextPro-Light" font-size="10px">-</text>
+<text id="weave_text_10" transform="matrix(1 0 0 1 245 33)" fill="#5A5A5A" font-family="UniversNextPro-Light" font-size="10px">-</text>
+<text id="weave_text_11" transform="matrix(1 0 0 1 365 33)" fill="#5A5A5A" font-family="UniversNextPro-Light" font-size="10px">-</text>
+<text id="weave_text_12" transform="matrix(1 0 0 1 65 33)" fill="#707070" font-family="UniversNextPro-Light" font-size="13px">-</text>
+<text id="weave_text_13" transform="matrix(1 0 0 1 185 33)" fill="#707070" font-family="UniversNextPro-Light" font-size="13px">-</text>
+<text id="weave_text_14" transform="matrix(1 0 0 1 305 33)" fill="#707070" font-family="UniversNextPro-Light" font-size="13px">-</text>
+<text id="weave_text_15" transform="matrix(1 0 0 1 425 33)" fill="#707070" font-family="UniversNextPro-Light" font-size="13px">-</text>
+<text id="weave_text_16" transform="matrix(1 0 0 1 65 17.4)" fill="#CBCBCB" font-family="UniversNextPro-Light" font-size="13px">-</text>
+<!-- Warp, harmonic #646464: 34 threads, paired for va. -->
+<path id="weave_node_10" transform="matrix(1 0 0 1 40 44)" d="M-0.6,0 L0.6,0 L0.6,170 L-0.6,170 Z" fill="#1E1E1E" stroke="#1E1E1E" stroke-width="0.2"/>
+<path id="weave_node_11" transform="matrix(1 0 0 1 40 44)" d="M-0.6,0 L0.6,0 L0.6,170 L-0.6,170 Z" fill="#1E1E1E" stroke="#1E1E1E" stroke-width="0.2"/>
+<path id="weave_node_12" transform="matrix(1 0 0 1 65 44)" d="M-0.6,0 L0.6,0 L0.6,170 L-0.6,170 Z" fill="#1E1E1E" stroke="#1E1E1E" stroke-width="0.2"/>
+<path id="weave_node_13" transform="matrix(1 0 0 1 65 44)" d="M-0.6,0 L0.6,0 L0.6,170 L-0.6,170 Z" fill="#1E1E1E" stroke="#1E1E1E" stroke-width="0.2"/>
+<path id="weave_node_14" transform="matrix(1 0 0 1 90 44)" d="M-0.6,0 L0.6,0 L0.6,170 L-0.6,170 Z" fill="#1E1E1E" stroke="#1E1E1E" stroke-width="0.2"/>
+<path id="weave_node_15" transform="matrix(1 0 0 1 90 44)" d="M-0.6,0 L0.6,0 L0.6,170 L-0.6,170 Z" fill="#1E1E1E" stroke="#1E1E1E" stroke-width="0.2"/>
+<path id="weave_node_16" transform="matrix(1 0 0 1 115 44)" d="M-0.6,0 L0.6,0 L0.6,170 L-0.6,170 Z" fill="#1E1E1E" stroke="#1E1E1E" stroke-width="0.2"/>
+<path id="weave_node_17" transform="matrix(1 0 0 1 115 44)" d="M-0.6,0 L0.6,0 L0.6,170 L-0.6,170 Z" fill="#1E1E1E" stroke="#1E1E1E" stroke-width="0.2"/>
+<path id="weave_node_18" transform="matrix(1 0 0 1 140 44)" d="M-0.6,0 L0.6,0 L0.6,170 L-0.6,170 Z" fill="#1E1E1E" stroke="#1E1E1E" stroke-width="0.2"/>
+<path id="weave_node_19" transform="matrix(1 0 0 1 140 44)" d="M-0.6,0 L0.6,0 L0.6,170 L-0.6,170 Z" fill="#1E1E1E" stroke="#1E1E1E" stroke-width="0.2"/>
+<path id="weave_node_20" transform="matrix(1 0 0 1 165 44)" d="M-0.6,0 L0.6,0 L0.6,170 L-0.6,170 Z" fill="#1E1E1E" stroke="#1E1E1E" stroke-width="0.2"/>
+<path id="weave_node_21" transform="matrix(1 0 0 1 165 44)" d="M-0.6,0 L0.6,0 L0.6,170 L-0.6,170 Z" fill="#1E1E1E" stroke="#1E1E1E" stroke-width="0.2"/>
+<path id="weave_node_22" transform="matrix(1 0 0 1 190 44)" d="M-0.6,0 L0.6,0 L0.6,170 L-0.6,170 Z" fill="#1E1E1E" stroke="#1E1E1E" stroke-width="0.2"/>
+<path id="weave_node_23" transform="matrix(1 0 0 1 190 44)" d="M-0.6,0 L0.6,0 L0.6,170 L-0.6,170 Z" fill="#1E1E1E" stroke="#1E1E1E" stroke-width="0.2"/>
+<path id="weave_node_24" transform="matrix(1 0 0 1 215 44)" d="M-0.6,0 L0.6,0 L0.6,170 L-0.6,170 Z" fill="#1E1E1E" stroke="#1E1E1E" stroke-width="0.2"/>
+<path id="weave_node_25" transform="matrix(1 0 0 1 215 44)" d="M-0.6,0 L0.6,0 L0.6,170 L-0.6,170 Z" fill="#1E1E1E" stroke="#1E1E1E" stroke-width="0.2"/>
+<path id="weave_node_26" transform="matrix(1 0 0 1 240 44)" d="M-0.6,0 L0.6,0 L0.6,170 L-0.6,170 Z" fill="#1E1E1E" stroke="#1E1E1E" stroke-width="0.2"/>
+<path id="weave_node_27" transform="matrix(1 0 0 1 240 44)" d="M-0.6,0 L0.6,0 L0.6,170 L-0.6,170 Z" fill="#1E1E1E" stroke="#1E1E1E" stroke-width="0.2"/>
+<path id="weave_node_28" transform="matrix(1 0 0 1 265 44)" d="M-0.6,0 L0.6,0 L0.6,170 L-0.6,170 Z" fill="#1E1E1E" stroke="#1E1E1E" stroke-width="0.2"/>
+<path id="weave_node_29" transform="matrix(1 0 0 1 265 44)" d="M-0.6,0 L0.6,0 L0.6,170 L-0.6,170 Z" fill="#1E1E1E" stroke="#1E1E1E" stroke-width="0.2"/>
+<path id="weave_node_30" transform="matrix(1 0 0 1 290 44)" d="M-0.6,0 L0.6,0 L0.6,170 L-0.6,170 Z" fill="#1E1E1E" stroke="#1E1E1E" stroke-width="0.2"/>
+<path id="weave_node_31" transform="matrix(1 0 0 1 290 44)" d="M-0.6,0 L0.6,0 L0.6,170 L-0.6,170 Z" fill="#1E1E1E" stroke="#1E1E1E" stroke-width="0.2"/>
+<path id="weave_node_32" transform="matrix(1 0 0 1 315 44)" d="M-0.6,0 L0.6,0 L0.6,170 L-0.6,170 Z" fill="#1E1E1E" stroke="#1E1E1E" stroke-width="0.2"/>
+<path id="weave_node_33" transform="matrix(1 0 0 1 315 44)" d="M-0.6,0 L0.6,0 L0.6,170 L-0.6,170 Z" fill="#1E1E1E" stroke="#1E1E1E" stroke-width="0.2"/>
+<path id="weave_node_34" transform="matrix(1 0 0 1 340 44)" d="M-0.6,0 L0.6,0 L0.6,170 L-0.6,170 Z" fill="#1E1E1E" stroke="#1E1E1E" stroke-width="0.2"/>
+<path id="weave_node_35" transform="matrix(1 0 0 1 340 44)" d="M-0.6,0 L0.6,0 L0.6,170 L-0.6,170 Z" fill="#1E1E1E" stroke="#1E1E1E" stroke-width="0.2"/>
+<path id="weave_node_36" transform="matrix(1 0 0 1 365 44)" d="M-0.6,0 L0.6,0 L0.6,170 L-0.6,170 Z" fill="#1E1E1E" stroke="#1E1E1E" stroke-width="0.2"/>
+<path id="weave_node_37" transform="matrix(1 0 0 1 365 44)" d="M-0.6,0 L0.6,0 L0.6,170 L-0.6,170 Z" fill="#1E1E1E" stroke="#1E1E1E" stroke-width="0.2"/>
+<path id="weave_node_38" transform="matrix(1 0 0 1 390 44)" d="M-0.6,0 L0.6,0 L0.6,170 L-0.6,170 Z" fill="#1E1E1E" stroke="#1E1E1E" stroke-width="0.2"/>
+<path id="weave_node_39" transform="matrix(1 0 0 1 390 44)" d="M-0.6,0 L0.6,0 L0.6,170 L-0.6,170 Z" fill="#1E1E1E" stroke="#1E1E1E" stroke-width="0.2"/>
+<path id="weave_node_40" transform="matrix(1 0 0 1 415 44)" d="M-0.6,0 L0.6,0 L0.6,170 L-0.6,170 Z" fill="#1E1E1E" stroke="#1E1E1E" stroke-width="0.2"/>
+<path id="weave_node_41" transform="matrix(1 0 0 1 415 44)" d="M-0.6,0 L0.6,0 L0.6,170 L-0.6,170 Z" fill="#1E1E1E" stroke="#1E1E1E" stroke-width="0.2"/>
+<path id="weave_node_42" transform="matrix(1 0 0 1 440 44)" d="M-0.6,0 L0.6,0 L0.6,170 L-0.6,170 Z" fill="#1E1E1E" stroke="#1E1E1E" stroke-width="0.2"/>
+<path id="weave_node_43" transform="matrix(1 0 0 1 440 44)" d="M-0.6,0 L0.6,0 L0.6,170 L-0.6,170 Z" fill="#1E1E1E" stroke="#1E1E1E" stroke-width="0.2"/>
+<!-- The wave, morph #CDCDCD: two halves, each a thin ribbon drawn at scale 2. -->
+<path id="weave_node_0" transform="matrix(1 0 0 1 140 129)" d="M-50,-0.3 L-46.7742,-0.3 L-43.5484,-0.3 L-40.3226,-0.3 L-37.0968,-0.3 L-33.871,-0.3 L-30.6452,-0.3 L-27.4194,-0.3 L-24.1935,-0.3 L-20.9677,-0.3 L-17.7419,-0.3 L-14.5161,-0.3 L-11.2903,-0.3 L-8.0645,-0.3 L-4.8387,-0.3 L-1.6129,-0.3 L1.6129,-0.3 L4.8387,-0.3 L8.0645,-0.3 L11.2903,-0.3 L14.5161,-0.3 L17.7419,-0.3 L20.9677,-0.3 L24.1935,-0.3 L27.4194,-0.3 L30.6452,-0.3 L33.871,-0.3 L37.0968,-0.3 L40.3226,-0.3 L43.5484,-0.3 L46.7742,-0.3 L50,-0.3 L50,0.3 L46.7742,0.3 L43.5484,0.3 L40.3226,0.3 L37.0968,0.3 L33.871,0.3 L30.6452,0.3 L27.4194,0.3 L24.1935,0.3 L20.9677,0.3 L17.7419,0.3 L14.5161,0.3 L11.2903,0.3 L8.0645,0.3 L4.8387,0.3 L1.6129,0.3 L-1.6129,0.3 L-4.8387,0.3 L-8.0645,0.3 L-11.2903,0.3 L-14.5161,0.3 L-17.7419,0.3 L-20.9677,0.3 L-24.1935,0.3 L-27.4194,0.3 L-30.6452,0.3 L-33.871,0.3 L-37.0968,0.3 L-40.3226,0.3 L-43.5484,0.3 L-46.7742,0.3 L-50,0.3 Z" fill="none" stroke="#646464" stroke-width="0.5" stroke-linejoin="round"/>
+<path id="weave_node_1" transform="matrix(1 0 0 1 340 129)" d="M-50,-0.3 L-46.7742,-0.3 L-43.5484,-0.3 L-40.3226,-0.3 L-37.0968,-0.3 L-33.871,-0.3 L-30.6452,-0.3 L-27.4194,-0.3 L-24.1935,-0.3 L-20.9677,-0.3 L-17.7419,-0.3 L-14.5161,-0.3 L-11.2903,-0.3 L-8.0645,-0.3 L-4.8387,-0.3 L-1.6129,-0.3 L1.6129,-0.3 L4.8387,-0.3 L8.0645,-0.3 L11.2903,-0.3 L14.5161,-0.3 L17.7419,-0.3 L20.9677,-0.3 L24.1935,-0.3 L27.4194,-0.3 L30.6452,-0.3 L33.871,-0.3 L37.0968,-0.3 L40.3226,-0.3 L43.5484,-0.3 L46.7742,-0.3 L50,-0.3 L50,0.3 L46.7742,0.3 L43.5484,0.3 L40.3226,0.3 L37.0968,0.3 L33.871,0.3 L30.6452,0.3 L27.4194,0.3 L24.1935,0.3 L20.9677,0.3 L17.7419,0.3 L14.5161,0.3 L11.2903,0.3 L8.0645,0.3 L4.8387,0.3 L1.6129,0.3 L-1.6129,0.3 L-4.8387,0.3 L-8.0645,0.3 L-11.2903,0.3 L-14.5161,0.3 L-17.7419,0.3 L-20.9677,0.3 L-24.1935,0.3 L-27.4194,0.3 L-30.6452,0.3 L-33.871,0.3 L-37.0968,0.3 L-40.3226,0.3 L-43.5484,0.3 L-46.7742,0.3 L-50,0.3 Z" fill="none" stroke="#646464" stroke-width="0.5" stroke-linejoin="round"/>
+<!-- Palette: the wave (0-3) and the threads (4-11), parked off screen. -->
+<circle id="weave_palette_0" transform="matrix(1 0 0 1 640 300)" cx="0" cy="0" r="1" fill="#000000" stroke="#646464" stroke-width="0.5"/>
+<circle id="weave_palette_1" transform="matrix(1 0 0 1 640 300)" cx="0" cy="0" r="1" fill="#000000" stroke="#969696" stroke-width="0.6"/>
+<circle id="weave_palette_2" transform="matrix(1 0 0 1 640 300)" cx="0" cy="0" r="1" fill="#000000" stroke="#CDCDCD" stroke-width="0.7"/>
+<circle id="weave_palette_3" transform="matrix(1 0 0 1 640 300)" cx="0" cy="0" r="1" fill="#000000" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle id="weave_palette_4" transform="matrix(1 0 0 1 640 300)" cx="0" cy="0" r="1" fill="#1E1E1E" stroke="#1E1E1E" stroke-width="0.2"/>
+<circle id="weave_palette_5" transform="matrix(1 0 0 1 640 300)" cx="0" cy="0" r="1" fill="#282828" stroke="#282828" stroke-width="0.2"/>
+<circle id="weave_palette_6" transform="matrix(1 0 0 1 640 300)" cx="0" cy="0" r="1" fill="#323232" stroke="#323232" stroke-width="0.2"/>
+<circle id="weave_palette_7" transform="matrix(1 0 0 1 640 300)" cx="0" cy="0" r="1" fill="#464646" stroke="#464646" stroke-width="0.2"/>
+<circle id="weave_palette_8" transform="matrix(1 0 0 1 640 300)" cx="0" cy="0" r="1" fill="#5A5A5A" stroke="#5A5A5A" stroke-width="0.2"/>
+<circle id="weave_palette_9" transform="matrix(1 0 0 1 640 300)" cx="0" cy="0" r="1" fill="#6E6E6E" stroke="#6E6E6E" stroke-width="0.2"/>
+<circle id="weave_palette_10" transform="matrix(1 0 0 1 640 300)" cx="0" cy="0" r="1" fill="#828282" stroke="#828282" stroke-width="0.2"/>
+<circle id="weave_palette_11" transform="matrix(1 0 0 1 640 300)" cx="0" cy="0" r="1" fill="#969696" stroke="#969696" stroke-width="0.2"/>
+</g>

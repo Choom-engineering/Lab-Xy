@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>LAB_XY</title>
+<meta name="description" content="Jouez les machines Open-XY dans le navigateur avec votre OP-XY en contrôleur MIDI, sans flasher de firmware.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='6' fill='%23111113'/%3E%3Cg transform='rotate(-14 19 24)'%3E%3Crect x='12' y='8' width='14' height='4.4' rx='2.2' fill='%23e2e2e5'/%3E%3Cpath d='M14.6 12.4 V32.5 a4.4 4.4 0 0 0 8.8 0 V12.4' fill='none' stroke='%23e2e2e5' stroke-width='3'/%3E%3Cpath d='M16.6 23 H21.4 V32.5 a2.4 2.4 0 0 1 -4.8 0 Z' fill='%23e2e2e5'/%3E%3C/g%3E%3Cpath d='M34.5 8.5 Q34.5 14.5 40.5 14.5 Q34.5 14.5 34.5 20.5 Q34.5 14.5 28.5 14.5 Q34.5 14.5 34.5 8.5Z' fill='%23e2e2e5'/%3E%3Cpath d='M39 23.4 Q39 27 42.6 27 Q39 27 39 30.6 Q39 27 35.4 27 Q39 27 39 23.4Z' fill='%23e2e2e5'/%3E%3Cpath d='M31 31.1 Q31 33.5 33.4 33.5 Q31 33.5 31 35.9 Q31 33.5 28.6 33.5 Q31 33.5 31 31.1Z' fill='%23e2e2e5'/%3E%3C/svg%3E">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#0e0e11">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@200;300;400;500;600&display=swap">
+<style>
+/* LAB_XY : un panneau noir posé sur un fond gris clair. Tout est plat : traits fins pour les formes,
+   aplats pour les volumes, minuscules pour les étiquettes, grands chiffres fins pour les valeurs.
+   Chaque piste a sa couleur poudrée ; la piste sélectionnée colore l'instrument (--tc). */
+:root{
+  --page:#e2e2e5; --page-ink:#111113; --page-muted:#6b6a72; --rule:#c8c7ce; --field:#ededf0;
+  --panel:#0e0e11; --panel-ink:#ebe8ef; --panel-muted:#7f7b89; --panel-line:#25242b; --panel-faint:#3b3943;
+  --tc:#c47a72; --rec:#d9534a; --ok:#7f9c8b;
+  --ui:"Figtree",system-ui,-apple-system,"Segoe UI",sans-serif;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --page:#151518; --page-ink:#ebe8ef; --page-muted:#8a8693; --rule:#2b2a31; --field:#1d1d21; --panel:#0a0a0c; --panel-line:#232229; color-scheme:dark}}
+:root[data-theme="dark"]{--page:#151518; --page-ink:#ebe8ef; --page-muted:#8a8693; --rule:#2b2a31; --field:#1d1d21; --panel:#0a0a0c; --panel-line:#232229; color-scheme:dark}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html,body{background:var(--page)}
+body{margin:0;color:var(--page-ink);font:400 15px/1.45 var(--ui);font-variant-numeric:tabular-nums;
+  padding:18px max(16px,env(safe-area-inset-left,0px)) 56px max(16px,env(safe-area-inset-right,0px))}
+button,select,input{font:inherit;color:inherit}
+button:focus-visible,select:focus-visible,input:focus-visible,[tabindex]:focus-visible{outline:2px solid var(--tc);outline-offset:2px}
+.wrap{max-width:1320px;margin:0 auto;display:grid;gap:18px}
+.mono{font-variant-numeric:tabular-nums}
+.cap,.engr{font-size:13px;font-weight:400;color:var(--panel-muted);text-transform:lowercase;letter-spacing:0}
+
+/* en-tête : logo, liens, réglages */
+.top{display:flex;flex-wrap:wrap;align-items:center;gap:12px 24px;color:var(--page-ink)}
+.brand{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit}
+.logo svg{width:44px;height:44px;flex:none}
+.logo b{font-size:21px;font-weight:600;letter-spacing:.02em}
+.brand>span{color:var(--page-muted);font-size:14px;max-width:46ch}
+.conn{display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;margin-left:auto}
+.btn{background:transparent;border:1px solid var(--rule);border-radius:999px;padding:6px 14px;font-weight:500;font-size:13.5px;cursor:pointer;text-transform:lowercase;color:var(--page-ink)}
+.btn:hover{border-color:var(--page-ink)}
+.btn.primary{background:var(--page-ink);color:var(--page);border-color:var(--page-ink)}
+.btn.small{padding:4px 11px;font-size:13px}
+.btn.on{background:var(--rec);border-color:var(--rec);color:#fff}
+select{background:transparent;border:1px solid var(--rule);border-radius:999px;padding:5px 12px;font-size:13.5px;max-width:230px;color:var(--page-ink)}
+.status{display:flex;align-items:center;gap:7px;font-size:13px;color:var(--page-muted)}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--rule)} .dot.on{background:var(--ok)} .dot.err{background:var(--rec)}
+.lang{display:inline-flex;gap:2px}
+.lang .btn{border-color:transparent;padding:4px 8px;text-transform:uppercase;font-size:12px;color:var(--page-muted)}
+.lang .btn.sel{color:var(--page-ink);border-color:var(--page-ink)}
+.sharebox{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:10px 0}
+.sharebox .engr{color:var(--page-muted)}
+.sharebox input{flex:1;min-width:0;background:var(--field);border:0;border-radius:6px;padding:7px 10px;font-size:12.5px}
+.banner{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center;justify-content:space-between;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:12px 0;font-size:14.5px}
+.banner span{flex:1;min-width:200px;max-width:90ch}
+
+/* l'instrument */
+.deck{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:18px;align-items:start}
+@media (max-width:1100px){.deck{grid-template-columns:1fr}}
+.plate{background:var(--panel);color:var(--panel-ink);border-radius:4px;padding:30px 30px 26px;display:grid;gap:26px;min-width:0}
+.zone{display:grid;gap:12px;min-width:0}
+.zone-h{display:flex;align-items:center;gap:10px}
+.upper{display:grid;grid-template-columns:150px minmax(0,1fr) 150px;gap:28px;align-items:start}
+@media (max-width:820px){.upper{grid-template-columns:1fr}.upper .left,.upper .right{order:2}.modes{grid-template-columns:repeat(3,1fr)}}
+
+/* touches : plates, sans boîte */
+.key{display:grid;justify-items:center;gap:6px;background:none;border:0;padding:0;cursor:pointer;min-width:0;color:var(--panel-ink)}
+.key .face{width:100%;display:grid;place-items:center}
+.key .lbl{font-size:14px;color:var(--panel-muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%;text-transform:lowercase}
+.key.lit .lbl{color:var(--panel-ink)}
+/* modes : liste d'onglets */
+.modes{display:grid;grid-template-columns:1fr;gap:2px}
+.modes .key{justify-items:start}
+.modes .key .face{display:none}
+.modes .key .lbl{font-size:17px;padding:3px 0 4px;border-bottom:1.5px solid transparent}
+.modes .key:hover .lbl{color:var(--panel-ink)}
+.modes .key.lit .lbl{color:var(--panel-ink);border-bottom-color:var(--tc)}
+.modes .key:last-child{grid-column:auto}
+/* sous-pages M1–M4 : onglets soulignés */
+.mkeys{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+.mkeys .key .face{display:none}
+.mkeys .key .lbl{font-size:15px;padding-bottom:5px;border-bottom:1.5px solid var(--panel-line);width:100%;text-align:center}
+.mkeys .key.lit .lbl{color:var(--panel-ink);border-bottom-color:var(--tc)}
+/* transport : icônes au trait */
+.right{display:grid;gap:22px;justify-items:stretch}
+.transport{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.transport .key svg,#kFill svg{width:34px;height:34px;display:block}
+.ico{fill:none;stroke:var(--panel-muted);stroke-width:1.6}
+.key:hover .ico{stroke:var(--panel-ink)}
+.key.lit .ico{fill:var(--tc);stroke:var(--tc)}
+.key.rec.lit .ico{fill:var(--rec);stroke:var(--rec)}
+#kFill{justify-items:start}
+#kFill .face{width:auto}
+#kFill.lit .ico,#kFill.down .ico{fill:var(--tc);stroke:var(--tc)}
+.readouts{display:grid;grid-template-columns:auto auto;justify-content:start;gap:22px}
+.readout{display:grid;gap:0}
+.readout b{font-size:46px;font-weight:200;line-height:1;letter-spacing:-.02em;color:var(--panel-ink)}
+.readout .cap{font-size:13px}
+.oct{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.oct .key .face{height:28px;border:1px solid var(--panel-faint);border-radius:999px}
+.oct .key .glyph{font-size:18px;font-weight:300;line-height:1}
+.oct .key:hover .face{border-color:var(--panel-ink)}
+#importBtn{color:var(--panel-ink);border-color:var(--panel-faint)}
+
+/* écran : simplement un peu plus noir que le panneau */
+.center{display:grid;gap:18px;min-width:0}
+.screen-frame{background:#050506;border-radius:3px;padding:0;box-shadow:0 0 0 1px var(--panel-line)}
+.screen-frame svg{display:block;width:100%;height:auto;aspect-ratio:480/220;max-width:100%;background:#050506;border-radius:3px}
+
+/* encodeurs : disque plein, anneau fin, arc de valeur */
+.encs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+.enc{display:grid;justify-items:center;gap:1px;cursor:ns-resize;touch-action:none;user-select:none;min-width:0}
+.enc svg{width:78px;height:78px;max-width:100%}
+.enc .ring{fill:none;stroke:var(--panel-line);stroke-width:1.6}
+/* Les 4 encodeurs : la couleur de la piste, de plus en plus claire de 1 à 4. */
+.enc{--ec:var(--tc)}
+@supports (color:color-mix(in oklab,red,white)){
+  .enc:nth-child(2){--ec:color-mix(in oklab,var(--tc),#fff 18%)}
+  .enc:nth-child(3){--ec:color-mix(in oklab,var(--tc),#fff 36%)}
+  .enc:nth-child(4){--ec:color-mix(in oklab,var(--tc),#fff 54%)}
+}
+.enc .arc{fill:none;stroke:var(--ec);stroke-width:3;stroke-linecap:round}
+.enc .disc{fill:var(--ec);opacity:.92}
+.enc .hole{fill:var(--panel)}
+.enc .tip{fill:var(--panel)}
+.enc .lab{font-size:15px;color:var(--panel-muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%;text-transform:lowercase}
+.enc .val{font-size:13px;color:var(--panel-ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}
+.enc.off .disc{fill:var(--panel-faint)} .enc.off .arc{stroke:transparent} .enc.off{cursor:default}
+
+/* pistes : une barre de couleur qui sert aussi de vumètre */
+.tracks{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:12px}
+@media (max-width:640px){.tracks{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.tk{justify-items:stretch}
+.tk .face{display:grid;grid-template-columns:12px minmax(0,1fr);grid-template-rows:auto auto;column-gap:10px;text-align:left;place-items:start}
+.tk .bar{grid-row:1/3;width:12px;height:52px;border-radius:2px;background:color-mix(in srgb,var(--c) 30%,var(--panel));position:relative;overflow:hidden}
+.tk .bar i{position:absolute;left:0;right:0;bottom:0;height:0;background:var(--c)}
+.tk .num{font-size:32px;font-weight:200;line-height:1;color:var(--panel-muted)}
+.tk .eng{font-size:13px;color:var(--panel-muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%;text-transform:lowercase}
+.tk.sel .bar{background:var(--c)}
+.tk.sel .num{color:var(--panel-ink)}
+.tk.sel .eng{color:var(--panel-ink)}
+.tk.mute .bar{background:transparent;box-shadow:inset 0 0 0 1.5px var(--c)}
+.tk.mute .eng::before{content:"muted · "}
+:root[lang="fr"] .tk.mute .eng::before{content:"muet · "}
+.tk.loading .eng{color:var(--tc)}
+
+/* séquence */
+.seq-head{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;justify-content:space-between}
+.pages{display:flex;gap:4px}
+.pg{background:none;border:0;border-bottom:1.5px solid var(--panel-line);padding:0 8px 3px;font-size:14px;color:var(--panel-muted);cursor:pointer}
+.pg.sel{color:var(--panel-ink);border-bottom-color:var(--tc)}
+.pg.dis{opacity:.35}
+.pg.play{color:var(--tc)}
+.steps-wrap{overflow-x:auto}
+.steps{display:grid;grid-template-columns:repeat(16,minmax(34px,1fr));gap:6px;min-width:620px}
+.st{position:relative;aspect-ratio:1/1;max-height:62px;border-radius:2px;border:1.5px solid var(--panel-faint);background:transparent;padding:4px;
+  display:flex;flex-direction:column;justify-content:space-between;align-items:flex-start;font-size:11px;color:var(--panel-muted);cursor:pointer;min-width:0}
+.st:nth-child(4n+1){border-color:var(--panel-muted)}
+.st .i{font-size:10.5px;white-space:nowrap;overflow:hidden;max-width:100%}
+.st .nt{font-size:11.5px;white-space:nowrap;overflow:hidden;max-width:100%;text-transform:lowercase}
+.st.has{background:var(--tc);border-color:var(--tc);color:var(--panel)}
+.st.sel{box-shadow:0 0 0 1.5px var(--panel),0 0 0 3px var(--panel-ink)}
+.st.held{background:var(--panel-ink);border-color:var(--panel-ink);color:var(--panel)}
+.st.play::after{content:"";position:absolute;left:-1.5px;right:-1.5px;bottom:-7px;height:2px;background:var(--panel-ink)}
+.st.out{opacity:.22}
+.st.lk::before{content:"";position:absolute;top:4px;right:4px;width:5px;height:5px;border-radius:50%;background:currentColor}
+
+/* clavier : traits fins */
+.kb-wrap{overflow-x:auto}
+.kb{position:relative;height:82px;min-width:600px;user-select:none;cursor:pointer;touch-action:none}
+.kb .w{position:absolute;top:0;height:82px;background:transparent;border:1px solid var(--panel-faint);border-left-width:0;
+  display:flex;align-items:flex-end;justify-content:center;font-size:10.5px;color:var(--panel-muted);padding-bottom:6px}
+.kb .w:first-child{border-left-width:1px}
+.kb .b{position:absolute;top:0;height:50px;background:var(--panel-faint);border-radius:0 0 2px 2px;z-index:2}
+.kb .on{background:var(--tc)!important;color:var(--panel)}
+
+/* panneaux sur fond clair */
+.panel{display:grid;gap:14px;min-width:0;border-top:1.5px solid var(--page-ink);padding-top:14px}
+.panel h2{font-size:20px;margin:0;font-weight:500;letter-spacing:-.01em;text-transform:lowercase}
+.panel .engr{color:var(--page-muted)}
+.phead{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;justify-content:space-between}
+.browser{position:sticky;top:12px;max-height:calc(100vh - 24px);grid-template-rows:auto auto 1fr}
+@media (max-width:1100px){.browser{position:static;max-height:none}}
+.search{width:100%;background:var(--field);border:0;border-radius:999px;padding:8px 14px;font-size:14px}
+.mlist{overflow-y:auto;display:grid;align-content:start;min-height:0;max-height:70vh}
+.mc{display:grid;grid-template-columns:12px minmax(0,1fr);column-gap:10px;row-gap:2px;text-align:left;padding:10px 2px 11px;border-bottom:1px solid var(--rule);cursor:pointer}
+.mc::before{content:"";grid-row:1;width:10px;height:10px;margin-top:6px;border-radius:2px;border:1.5px solid var(--rule)}
+.mc>*{grid-column:2}
+.mc:hover .t b{text-decoration:underline;text-underline-offset:3px}
+.mc.cur::before{background:var(--tc);border-color:var(--tc)}
+.mc .t{display:flex;justify-content:space-between;gap:8px;align-items:baseline;grid-row:1}
+.mc .t b{font-size:15px;font-weight:500;text-transform:lowercase}
+.mc .t span{font-size:12px;color:var(--page-muted);white-space:nowrap}
+.mc .d{font-size:13px;color:var(--page-muted);line-height:1.4}
+.mc .p{font-size:12px;color:var(--page-muted);opacity:.8;text-transform:lowercase}
+.grp-t{font-size:13px;color:var(--page-muted);padding:16px 0 6px;border-bottom:1px solid var(--rule);text-transform:lowercase}
+.presets{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.wizard{display:none;flex-wrap:wrap;gap:10px 16px;align-items:center;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:12px 0}
+.wizard.on{display:flex}
+.wizard .ask{font-size:20px;font-weight:300}
+.wizard .ask b{font-weight:500;border-bottom:2px solid var(--tc)}
+.keygrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:0 18px}
+.kc{display:flex;justify-content:space-between;align-items:center;gap:6px;padding:6px 0;border-bottom:1px solid var(--rule);font-size:14px;min-width:0}
+.kc .cc{font-size:12px;color:var(--page-muted)}
+.kc.set .cc{color:var(--page-ink)}
+.kc.learn{border-bottom-color:var(--tc);box-shadow:0 1.5px 0 var(--tc)}
+.kc.hit span:first-child{color:var(--tc)}
+.grp{grid-column:1/-1;margin-top:10px;color:var(--page-muted)!important;font-size:13px}
+.note{font-size:14px;color:var(--page-muted);max-width:85ch;margin:0;line-height:1.55}
+.encset{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center}
+.enc-debug{font-size:12.5px;color:var(--page-muted);min-width:0;overflow-wrap:anywhere}
+.fid-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:12px 30px}
+.fid-grid ul{margin:6px 0 0;padding-left:18px;display:grid;gap:5px;font-size:14px;line-height:1.5;max-width:65ch}
+.fidelity code{font-size:12.5px;background:var(--field);padding:1px 6px;border-radius:4px}
+.fidelity a,.credits a{color:var(--page-ink)}
+.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:max(18px,env(safe-area-inset-bottom,0px));background:var(--panel);color:var(--panel-ink);
+  font-size:14px;padding:9px 16px;border-radius:999px;opacity:0;transition:opacity .2s;pointer-events:none;z-index:30}
+.toast.show{opacity:1}
+@media (max-width:820px){
+  .modes{grid-template-columns:repeat(3,minmax(0,1fr));gap:2px 12px}
+  .plate{padding:22px 16px 20px;gap:22px}
+  .mkeys .key .lbl{font-size:13px}
+  .readout b{font-size:38px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="top">
+  <div class="brand"><a class="logo" href="./" aria-label="LAB_XY"><svg viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="6" fill="currentColor"/><g transform="rotate(-14 19 24)"><rect x="12" y="8" width="14" height="4.4" rx="2.2" fill="var(--page)"/><path d="M14.6 12.4 V32.5 a4.4 4.4 0 0 0 8.8 0 V12.4" fill="none" stroke="var(--page)" stroke-width="3"/><path d="M16.6 23 H21.4 V32.5 a2.4 2.4 0 0 1 -4.8 0 Z" fill="var(--page)"/></g><path d="M34.5 8.5 Q34.5 14.5 40.5 14.5 Q34.5 14.5 34.5 20.5 Q34.5 14.5 28.5 14.5 Q34.5 14.5 34.5 8.5Z" fill="var(--page)"/><path d="M39 23.4 Q39 27 42.6 27 Q39 27 39 30.6 Q39 27 35.4 27 Q39 27 39 23.4Z" fill="var(--page)"/><path d="M31 31.1 Q31 33.5 33.4 33.5 Q31 33.5 31 35.9 Q31 33.5 28.6 33.5 Q31 33.5 31 31.1Z" fill="var(--page)"/></svg><b>LAB_XY</b></a><span data-l>Les machines Open-XY dans le navigateur. Avec ton OP-XY, un clavier MIDI, ou rien d'autre que ton ordinateur.</span></div>
+  <div class="conn">
+    <span class="lang" role="group" aria-label="Language"><button class="btn small" data-lang="en">EN</button><button class="btn small" data-lang="fr">FR</button></span>
+    <button class="btn primary" id="startBtn" data-l>Allumer</button>
+    <select id="inSel" aria-label="Entrée MIDI"><option data-l>Entrée MIDI</option></select>
+    <span class="status"><span class="dot" id="dot"></span><span id="statusTxt" data-l>Éteint</span></span>
+    <button class="btn small" id="installBtn" hidden data-l>Installer l'app</button>
+    <button class="btn small" id="recFileBtn" title="Enregistre la sortie audio en fichier WAV" data-l>● Enregistrer</button>
+    <button class="btn small" id="shareBtn" title="Crée un lien qui ouvre ce projet chez quelqu'un d'autre" data-l>Partager</button>
+    <button class="btn small" id="resetApp" title="Remet l'instrument dans son état de départ. Garde les touches associées et les projets sauvés." data-l>Réinitialiser</button>
+  </div>
+</header>
+
+<div class="sharebox" id="shareBox" hidden>
+  <span class="engr" data-l>Lien du projet</span>
+  <input id="shareOut" readonly aria-label="Lien du projet à partager">
+  <button class="btn small" id="shareClose" data-l>Fermer</button>
+</div>
+
+<div class="banner" id="banner" hidden>
+  <span data-l>Première fois ? Avec un OP-XY (mode contrôleur : COM puis M2) ou un autre contrôleur MIDI, associe ses touches une fois, c'est mémorisé. Sans matériel, joue au clavier de l'ordinateur ou sur le clavier à l'écran.</span>
+  <button class="btn" id="bannerWizard" data-l>Associer les touches</button>
+</div>
+
+<main class="deck">
+  <section class="plate" aria-label="Instrument">
+    <div class="upper">
+      <div class="left">
+        <div class="modes" id="modeKeys"></div>
+      </div>
+
+      <div class="center">
+        <div class="screen-frame"><svg id="screen" viewBox="0 0 480 220" role="img" aria-label="Écran"></svg></div>
+        <div class="encs" id="encs"></div>
+        <div class="mkeys" id="mKeys"></div>
+      </div>
+
+      <div class="right">
+        <div class="transport">
+          <button class="key rec" id="kRec"><span class="face"><svg viewBox="0 0 34 34" aria-hidden="true"><circle class="ico" cx="17" cy="17" r="9"/></svg></span><span class="lbl">rec</span></button>
+          <button class="key" id="kPlay"><span class="face"><svg viewBox="0 0 34 34" aria-hidden="true"><path class="ico" d="M12 8.5 L26 17 L12 25.5 Z" stroke-linejoin="round"/></svg></span><span class="lbl">play</span></button>
+          <button class="key" id="kStop"><span class="face"><svg viewBox="0 0 34 34" aria-hidden="true"><rect class="ico" x="9.5" y="9.5" width="15" height="15"/></svg></span><span class="lbl">stop</span></button>
+        </div>
+        <button class="key" id="kFill" title="Tiens pour les pas en condition Fill (touche Q)"><span class="face"><svg viewBox="0 0 34 34" aria-hidden="true"><path class="ico" d="M17 7 L27 17 L17 27 L7 17 Z" stroke-linejoin="round"/></svg></span><span class="lbl">fill</span></button>
+        <div class="readouts">
+          <div class="readout"><b id="roBpm">120</b><span class="cap">bpm</span></div>
+          <div class="readout"><b id="roOct">0</b><span class="cap">oct</span></div>
+        </div>
+        <div class="oct">
+          <button class="key" id="kOctDown"><span class="face"><span class="glyph">−</span></span><span class="lbl">Octave</span></button>
+          <button class="key" id="kOctUp"><span class="face"><span class="glyph">+</span></span><span class="lbl">Octave</span></button>
+        </div>
+        <button class="btn" id="importBtn" hidden data-l>Importer un projet</button>
+      </div>
+    </div>
+
+    <div class="zone">
+      <div class="zone-h"><span class="engr" data-l>Pistes</span></div>
+      <div class="tracks" id="tracks"></div>
+    </div>
+
+    <div class="zone">
+      <div class="seq-head">
+        <span class="engr" id="seqLabel">Séquence · piste 1 · 16 pas</span>
+        <div class="pages" id="pages" aria-label="Pages de 16 pas"></div>
+      </div>
+      <div class="steps-wrap"><div class="steps" id="steps"></div></div>
+    </div>
+
+    <div class="zone">
+      <div class="zone-h"><span class="engr" data-l>Clavier</span></div>
+      <div class="kb-wrap"><div class="kb" id="kb"></div></div>
+    </div>
+  </section>
+
+  <aside class="panel browser" aria-label="Machines">
+    <div class="phead"><h2>Machines</h2><span class="engr" id="mCount"></span><button class="btn small" id="offlineBtn" hidden data-l>Préparer le hors ligne</button></div>
+    <input class="search" id="mSearch" type="search" placeholder="Chercher : fm, drone, acid…" aria-label="Chercher une machine">
+    <div class="mlist" id="mList"></div>
+  </aside>
+</main>
+
+<section class="panel" aria-label="Touches et encodeurs MIDI">
+  <div class="phead">
+    <h2 data-l>Touches et encodeurs MIDI</h2>
+    <div class="conn" style="margin-left:0">
+      <button class="btn" id="wizardBtn" data-l>Lancer l'assistant</button>
+      <button class="btn" id="resetKeys" data-l>Tout désassocier</button>
+    </div>
+  </div>
+  <div class="wizard" id="wizard">
+    <div class="ask" data-l>Appuie sur : <b id="wizAsk">—</b></div>
+    <span class="mono" id="wizProg" style="font-size:12px;opacity:.7"></span>
+    <button class="btn" id="wizSkip" data-l>Passer</button>
+    <button class="btn" id="wizStop" data-l>Terminer</button>
+  </div>
+  <p class="note" data-l>Pas : appui bref pour poser ou retirer un pas ; tiens-le pour l'éditer. Tenu, joue une note pour la placer, plusieurs pour un accord ; tourne un encodeur de son pour un p-lock ; rappuie sur la touche M de la page pour effacer ses p-locks. À la souris, Maj+clic (ou clic droit) garde un pas tenu jusqu'au prochain Maj+clic.</p>
+  <div class="encset">
+    <label class="engr" for="encModeSel" data-l>Encodeurs</label>
+    <select id="encModeSel">
+      <option value="auto" data-l>Détection automatique</option>
+      <option value="rel" data-l>Relatif (1 / 127)</option>
+      <option value="rel01" data-l>Relatif (1 / 0)</option>
+      <option value="abs" data-l>Absolu (0 à 127)</option>
+    </select>
+    <span class="mono enc-debug" id="encDebug" data-l>Tourne un encodeur pour voir les valeurs reçues.</span>
+  </div>
+  <div class="keygrid" id="keygrid"></div>
+  <p class="note" data-l>Les touches −, + et Shift de l'OP-XY n'envoient pas de MIDI : l'octave se règle ici avec − et +, et en mode Mix un second appui sur la piste sélectionnée la coupe ou la rétablit. Les encodeurs 1 à 4 répondent aux CC 1 à 4 sans association, comme sur l'OP-XY ; avec un autre contrôleur, associe-les en tournant le bouton voulu. Tiens un pas et joue une note pour la placer dans ce pas.</p>
+  <p class="note" data-l>Sans matériel : touches A W S E D F T G Y H U J K pour les notes, Z et X pour l'octave, Q (tenue) pour Fill, 1 à 8 (tenues) pour les punch-in effects, Espace pour lecture et arrêt, Échap pour couper le son. Le clavier à l'écran se joue à la souris ou au doigt, plusieurs notes à la fois ; plus tu appuies bas sur une touche, plus la note est forte.</p>
+</section>
+
+<section class="panel fidelity" aria-labelledby="fidH">
+  <div class="phead"><h2 id="fidH" data-l>Ce que LAB_XY reproduit, et ce qu'il ne reproduit pas</h2></div>
+  <div class="fid-grid">
+    <div>
+      <p class="engr" data-l>Reproduit</p>
+      <ul>
+        <li data-l>Le son de chaque machine : son vrai code C++, compilé en WebAssembly avec le SDK Open-XY.</li>
+        <li data-l>Son écran : l'animation est calculée par le même code que sur l'appareil.</li>
+        <li data-l>Ses paramètres, leurs valeurs affichées et ses presets.</li>
+        <li data-l>Les bugs propres à la logique de la machine (calculs, débordements, état, dessin) se montrent en général de la même façon.</li>
+      </ul>
+    </div>
+    <div>
+      <p class="engr" data-l>Pas reproduit</p>
+      <ul>
+        <li data-l>Ce que le firmware de l'OP-XY fait autour de la machine : enveloppe, filtre et LFO d'origine, p-locks, attribution et vol des voix.</li>
+        <li data-l>Les limites de temps réel du processeur de l'OP-XY, et le compilateur natif.</li>
+        <li data-l>Tout ce qui modifie le firmware lui-même : live looping, séquenceur d'origine, extensions. LAB_XY ne joue que les machines synthé.</li>
+      </ul>
+    </div>
+  </div>
+  <p class="note" data-l>Une machine qui marche ici peut donc se comporter autrement une fois flashée. Pour les développeurs, le SDK fournit les vérifications côté appareil : compilation native (<code>sdk.py test --firmware</code>), mesure du processeur sur le matériel (<code>sdk.py profile</code>) et la liste de vérification QA.md de chaque machine. Pour écouter une machine avant de l'installer, le <a href="https://open-xy.com" target="_blank" rel="noopener">builder Open-XY</a> propose aussi un aperçu de chacune ; LAB_XY sert à les jouer ensemble, comme une groovebox, avec ou sans OP-XY.</p>
+</section>
+
+<section class="panel credits" aria-label="Crédits">
+  <p class="note" data-l>Les machines sont celles du catalogue <a href="https://github.com/etcetc000/open-xy" target="_blank" rel="noopener">Open-XY</a>, compilées en WebAssembly avec son SDK, chacune sous la licence de son dépôt (MIT) ; l'auteur et le dépôt sont indiqués sur chaque fiche. L'aperçu navigateur du SDK n'émule pas les enveloppes, filtres et effets du système d'origine : une machine peut sonner un peu différemment sur l'appareil. LAB_XY n'est ni affilié à teenage engineering ni approuvé par elle ; OP-XY est une marque de son propriétaire.</p>
+</section>
+
+</div>
+<div class="toast" id="toast" role="status"></div>
+<input type="file" id="fileIn" accept="application/json,.json" hidden>
+<script src="app.bundle.js?v=14"></script>
+</body>
+</html>

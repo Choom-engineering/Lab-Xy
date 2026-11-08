@@ -1,0 +1,9 @@
+# Site statique : rien à construire, on publie le dossier tel quel.
+[build]
+  publish = "."
+
+# Le service worker doit toujours être relu, pour que chaque nouvelle version arrive chez les visiteurs.
+[[headers]]
+  for = "/sw.js"
+  [headers.values]
+    Cache-Control = "no-cache"

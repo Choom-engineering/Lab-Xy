@@ -1,0 +1,109 @@
+<g id="mando_panel">
+<!-- SDK two-page header: keep this block before machine artwork below y=38. -->
+<path d="M0,0 L480,0 L480,38 L0,38 Z" fill="#000000"/>
+<path id="mando_node_2" transform="matrix(1 0 0 1 0 0)" d="M0,0 L60,0 L60,20 L0,20 Z" fill="#000000" stroke="#000000" stroke-width="0.5"/>
+<path id="mando_node_3" transform="matrix(1 0 0 1 60 0)" d="M0,0 L60,0 L60,20 L0,20 Z" fill="#323232" stroke="#323232" stroke-width="0.5"/>
+<path id="mando_node_4" transform="matrix(1 0 0 1 120 0)" d="M0,0 L60,0 L60,20 L0,20 Z" fill="#4B4B4B" stroke="#4B4B4B" stroke-width="0.5"/>
+<path id="mando_node_5" transform="matrix(1 0 0 1 180 0)" d="M0,0 L60,0 L60,20 L0,20 Z" fill="#646464" stroke="#646464" stroke-width="0.5"/>
+<path id="mando_node_6" transform="matrix(1 0 0 1 240 0)" d="M0,0 L60,0 L60,20 L0,20 Z" fill="#7D7D7D" stroke="#7D7D7D" stroke-width="0.5"/>
+<path id="mando_node_7" transform="matrix(1 0 0 1 300 0)" d="M0,0 L60,0 L60,20 L0,20 Z" fill="#969696" stroke="#969696" stroke-width="0.5"/>
+<path id="mando_node_8" transform="matrix(1 0 0 1 360 0)" d="M0,0 L60,0 L60,20 L0,20 Z" fill="#AFAFAF" stroke="#AFAFAF" stroke-width="0.5"/>
+<path id="mando_node_9" transform="matrix(1 0 0 1 420 0)" d="M0,0 L60,0 L60,20 L0,20 Z" fill="#CDCDCD" stroke="#CDCDCD" stroke-width="0.5"/>
+<text id="mando_text_0" transform="matrix(1 0 0 1 5 10)" fill="#CBCBCB" font-family="UniversNextPro-Light" font-size="10px">-</text>
+<text id="mando_text_1" transform="matrix(1 0 0 1 125 10)" fill="#CBCBCB" font-family="UniversNextPro-Light" font-size="10px">-</text>
+<text id="mando_text_2" transform="matrix(1 0 0 1 245 10)" fill="#000000" font-family="UniversNextPro-Light" font-size="10px">-</text>
+<text id="mando_text_3" transform="matrix(1 0 0 1 365 10)" fill="#000000" font-family="UniversNextPro-Light" font-size="10px">-</text>
+<text id="mando_text_4" transform="matrix(1 0 0 1 65 17.4)" fill="#CBCBCB" font-family="UniversNextPro-Light" font-size="20px">-</text>
+<text id="mando_text_5" transform="matrix(1 0 0 1 185 17.4)" fill="#CBCBCB" font-family="UniversNextPro-Light" font-size="20px">-</text>
+<text id="mando_text_6" transform="matrix(1 0 0 1 305 17.4)" fill="#000000" font-family="UniversNextPro-Light" font-size="20px">-</text>
+<text id="mando_text_7" transform="matrix(1 0 0 1 425 17.4)" fill="#000000" font-family="UniversNextPro-Light" font-size="20px">-</text>
+<text id="mando_text_8" transform="matrix(1 0 0 1 5 33)" fill="#5A5A5A" font-family="UniversNextPro-Light" font-size="10px">-</text>
+<text id="mando_text_9" transform="matrix(1 0 0 1 125 33)" fill="#5A5A5A" font-family="UniversNextPro-Light" font-size="10px">-</text>
+<text id="mando_text_10" transform="matrix(1 0 0 1 245 33)" fill="#5A5A5A" font-family="UniversNextPro-Light" font-size="10px">-</text>
+<text id="mando_text_11" transform="matrix(1 0 0 1 365 33)" fill="#5A5A5A" font-family="UniversNextPro-Light" font-size="10px">-</text>
+<text id="mando_text_12" transform="matrix(1 0 0 1 65 33)" fill="#707070" font-family="UniversNextPro-Light" font-size="13px">-</text>
+<text id="mando_text_13" transform="matrix(1 0 0 1 185 33)" fill="#707070" font-family="UniversNextPro-Light" font-size="13px">-</text>
+<text id="mando_text_14" transform="matrix(1 0 0 1 305 33)" fill="#707070" font-family="UniversNextPro-Light" font-size="13px">-</text>
+<text id="mando_text_15" transform="matrix(1 0 0 1 425 33)" fill="#707070" font-family="UniversNextPro-Light" font-size="13px">-</text>
+
+
+<!-- Articulated beskar portrait: all moving pieces have native leaf bindings. -->
+<path id="mando_node_10" d="M0,0 L26,13 Q45,32 80,47 L68,47 L81,57 L55,51 L42,57 L22,48 L4,53 L-8,27 Z" fill="#252525" stroke="#6D6D6D" stroke-width=".8"/>
+<path id="mando_node_48" d="M8,8 L27,19 L47,37 L68,49 L48,43 L29,31 L13,20 Z" fill="#494949" stroke="none" stroke-width=".6"/>
+<path id="mando_node_49" d="M2,18 L13,32 L36,48 L42,54 L21,46 L6,49 L-3,27 Z" fill="#151515" stroke="none" stroke-width=".6"/>
+<path id="mando_node_0" d="M12,6 L13.75,7.375 L15.5,8.75 L17.25,10.125 L19,11.5 L20.75,12.875 L22.5,14.25 L24.25,15.625 L26,17 L28,18.25 L30,19.5 L32,20.75 L34,22 L36,23.25 L38,24.5 L40,25.75 L42,27 L43.875,28.5 L45.75,30 L47.625,31.5 L49.5,33 L51.375,34.5 L53.25,36 L55.125,37.5 L57,39 L57.5,39.375 L58,39.75 L58.5,40.125 L59,40.5 L59.5,40.875 L60,41.25 L60.5,41.625 L61,42 L59.625,41.5 L58.25,41 L56.875,40.5 L55.5,40 L54.125,39.5 L52.75,39 L51.375,38.5 L50,38 L48.125,36.625 L46.25,35.25 L44.375,33.875 L42.5,32.5 L40.625,31.125 L38.75,29.75 L36.875,28.375 L35,27 L33.125,25.375 L31.25,23.75 L29.375,22.125 L27.5,20.5 L25.625,18.875 L23.75,17.25 L21.875,15.625 L20,14 L19,13 L18,12 L17,11 L16,10 L15,9 L14,8 L13,7 Z" fill="none" stroke="#777777" stroke-width=".6"/>
+<path id="mando_node_1" d="M5,14 L6,15.5 L7,17 L8,18.5 L9,20 L10,21.5 L11,23 L12,24.5 L13,26 L14.375,27.375 L15.75,28.75 L17.125,30.125 L18.5,31.5 L19.875,32.875 L21.25,34.25 L22.625,35.625 L24,37 L26.375,38.375 L28.75,39.75 L31.125,41.125 L33.5,42.5 L35.875,43.875 L38.25,45.25 L40.625,46.625 L43,48 L43.5,48.125 L44,48.25 L44.5,48.375 L45,48.5 L45.5,48.625 L46,48.75 L46.5,48.875 L47,49 L44.25,47.875 L41.5,46.75 L38.75,45.625 L36,44.5 L33.25,43.375 L30.5,42.25 L27.75,41.125 L25,40 L23.375,38.75 L21.75,37.5 L20.125,36.25 L18.5,35 L16.875,33.75 L15.25,32.5 L13.625,31.25 L12,30 L11,28.75 L10,27.5 L9,26.25 L8,25 L7,23.75 L6,22.5 L5,21.25 L4,20 L4.125,19.25 L4.25,18.5 L4.375,17.75 L4.5,17 L4.625,16.25 L4.75,15.5 L4.875,14.75 Z" fill="none" stroke="#444444" stroke-width=".6"/>
+<path id="mando_node_39" d="M-2,0 L-2,-12 L2,-12 L2,0 Z" fill="#787878" stroke="#C0C0C0" stroke-width=".5"/>
+<path id="mando_node_24" d="M-6,5 L-9,-3 L-7,-23 L-5,-28 L-5,-66 L-4,-80 L4,-80 L5,-66 L5,-28 L8,-24 L9,-8 L4,5 Z" fill="#343434" stroke="#989898" stroke-width=".8"/>
+<path id="mando_node_25" d="M-4,-78 L-2,-78 L-2,-68 L-3,-29 L-5,-24 L-6,-5 L-4,1 L-6,1 L-7,-4 L-6,-26 L-4,-30 Z M0,-65 L2,-65 L2,-34 L0,-34 Z M-4,-23 L5,-23 L6,-18 L-5,-18 Z" fill="#B7B7B7" stroke="none" stroke-width=".6"/>
+<path id="mando_node_26" d="M-4,-15 L5,-15 L6,-9 L2,-4 L-5,-6 Z M-3,-58 L3,-58 L3,-56 L-3,-56 Z M-3,-52 L3,-52 L3,-50 L-3,-50 Z M-3,-46 L3,-46 L3,-44 L-3,-44 Z M-2,-39 L3,-39 L3,-37 L-2,-37 Z" fill="#101010" stroke="#545454" stroke-width=".4"/>
+<path id="mando_node_27" d="M7,-57 L16,-57 L18,-53 L18,-34 L15,-30 L8,-30 L7,-34 Z M5,-48 L8,-48 L8,-45 L5,-45 Z M5,-36 L8,-36 L8,-33 L5,-33 Z" fill="#454545" stroke="#B0B0B0" stroke-width=".6"/>
+<path id="mando_node_28" d="M-4,-2 L-2,-2 L-2,2 L-4,2 Z M-1,-2 L1,-2 L1,2 L-1,2 Z M2,-2 L4,-2 L4,2 L2,2 Z" fill="#C76C60" stroke="none" stroke-width=".6"/>
+<path id="mando_node_29" d="M10,-54 L14,-54 L15,-52 L15,-50 L10,-50 Z M10,-34 L14,-34 L14,-32 L10,-32 Z" fill="#6EAAC2" stroke="none" stroke-width=".6"/>
+<circle id="mando_node_30" cx="0" cy="0" r="3.2" fill="none" stroke="#7295A3" stroke-width=".55"/>
+<path id="mando_node_54" d="M-8,0 L8,0 L8,3 L-8,3 Z" fill="#777777" stroke="#A0A0A0" stroke-width=".5"/>
+<path id="mando_node_37" d="M-5,2 L-9,-3 L-9,-18 L-6,-25 L-4,-25 L-4,-9 L0,-3 L0,1 Z" fill="#484848" stroke="#A9A9A9" stroke-width=".8"/>
+<path id="mando_node_38" d="M5,2 L9,-3 L9,-18 L6,-25 L4,-25 L4,-9 L0,-3 L0,1 Z" fill="#383838" stroke="#8C8C8C" stroke-width=".8"/>
+<path id="mando_node_52" d="M-7,-18 L-6,-21 L-6,-8 L-2,-3 L-3,-1 L-7,-7 Z" fill="#C4C4C4" stroke="none" stroke-width=".6"/>
+<path id="mando_node_53" d="M7,-18 L6,-21 L6,-8 L2,-3 L3,-1 L7,-7 Z" fill="#9E9E9E" stroke="none" stroke-width=".6"/>
+<path id="mando_node_11" d="M-28,-26 L-51,-21 L-71,-7 L-78,21 L-45,27 L-27,10 L0,24 L28,11 L46,28 L78,20 L70,-8 L50,-21 L28,-26 L17,-13 L-17,-13 Z" fill="#383838" stroke="#777777" stroke-width=".8"/>
+<path id="mando_node_40" d="M162,205 L170,181 L188,170 L208,173 L197,187 L183,208 Z" fill="#858585" stroke="#C0C0C0" stroke-width=".6"/>
+<path id="mando_node_41" d="M170,185 L183,178 L195,177 L188,185 L173,191 Z" fill="#C7C7C7" stroke="none" stroke-width=".6"/>
+<path id="mando_node_42" d="M272,176 L290,171 L308,180 L318,204 L300,208 L288,185 Z" fill="#555555" stroke="#808080" stroke-width=".6"/>
+<path id="mando_node_43" d="M205,195 L226,187 L240,196 L254,187 L275,195 L279,215 L246,215 L240,208 L234,215 L201,215 Z" fill="#383838" stroke="#686868" stroke-width=".6"/>
+<path id="mando_node_44" d="M223,198 L237,202 L235,213 L219,208 Z" fill="#717171" stroke="none" stroke-width=".6"/>
+<path id="mando_node_45" d="M243,202 L257,198 L261,208 L245,213 Z" fill="#4D4D4D" stroke="none" stroke-width=".6"/>
+<path id="mando_node_46" d="M206,182 L218,188 L281,214 L291,214 L225,182 Z" fill="#151515" stroke="#555555" stroke-width=".6"/>
+<path id="mando_node_47" d="M248,198 L255,201 L253,208 L246,205 Z" fill="#BDBDBD" stroke="#D0D0D0" stroke-width=".6"/>
+<path id="mando_node_12" d="M-48,-8 L-46,-28 C-45,-50 -27,-62 -2,-63 C25,-64 44,-50 46,-29 L49,-8 L48,41 L32,58 L10,64 L-10,64 L-33,58 L-49,41 Z" fill="#858585" stroke="#BDBDBD" stroke-width="1" />
+
+<path id="mando_node_13" d="M-45,-10 L-43,-29 C-41,-47 -26,-58 -6,-60 L-7,-13 L-33,-8 Z" fill="#B5B5B5" stroke="none" stroke-width=".6" />
+
+<path id="mando_node_14" d="M7,-60 C28,-58 41,-45 43,-28 L45,-10 L29,-7 L7,-13 Z" fill="#666666" stroke="none" stroke-width=".6" />
+
+<path id="mando_node_15" d="M-5,-60 L4,-61 L5,-15 L-5,-15 Z" fill="#D5D5D5" stroke="none" stroke-width=".6" />
+
+<path id="mando_node_16" d="M-44,5 L-15,16 L-9,52 L-29,49 L-43,36 Z" fill="#C0C0C0" stroke="#DFDFDF" stroke-width=".5" />
+
+<path id="mando_node_17" d="M44,5 L15,16 L9,52 L29,49 L43,36 Z" fill="#707070" stroke="#959595" stroke-width=".5" />
+
+<path id="mando_node_18" d="M-44,-7 L44,-7 L42,2 L8,13 L6,52 L-6,52 L-8,13 L-42,2 Z" fill="#030303" stroke="#272727" stroke-width=".7" />
+
+<path id="mando_node_19" d="M-44,-10 L-28,-14 L-7,-16 L6,-16 L29,-13 L44,-10 L43,-9 L28,-11 L6,-13 L-7,-13 L-28,-11 L-43,-8 Z" fill="#CFCFCF" stroke="none" stroke-width=".6" />
+
+<path id="mando_node_20" d="M-40,-30 C-38,-45 -25,-54 -12,-56 L-12,-54 C-26,-51 -34,-43 -37,-29 Z" fill="#F0F0F0" stroke="none" stroke-width=".6" />
+
+<path id="mando_node_21" d="M-49,-11 L-52,-8 L-52,28 L-47,36 L-46,2 Z" fill="#4B4B4B" stroke="#B8B8B8" stroke-width=".5" />
+
+<path id="mando_node_22" d="M49,-11 L52,-8 L52,28 L47,36 L46,2 Z" fill="#353535" stroke="#787878" stroke-width=".5" />
+
+<path id="mando_node_23" d="M-28,52 L-10,57 L10,57 L28,52 L23,59 L9,63 L-9,63 L-23,59 Z" fill="#4D4D4D" stroke="#A0A0A0" stroke-width=".6" />
+
+<path id="mando_node_50" d="M-44,-24 C-42,-44 -25,-57 -10,-58 L-10,-56 C-27,-53 -39,-40 -41,-24 Z M9,-59 C26,-56 38,-45 41,-30 L40,-29 C36,-44 25,-53 9,-56 Z M-42,7 L-39,8 L-38,34 L-28,44 L-28,46 L-41,35 Z M40,9 L42,8 L41,35 L30,47 L28,47 L38,34 Z" fill="#BCBCBC" stroke="none" stroke-width=".6"/>
+<path id="mando_node_51" d="M-37,-28 L-31,-34 M-36,-23 L-33,-26 M-37,20 L-33,24 M-36,25 L-32,29 M28,19 L34,14 M29,23 L33,20 M-26,51 L-15,54 M15,54 L27,50" fill="none" stroke="#484848" stroke-width=".65"/>
+<path id="mando_node_31" d="M-.6,0 L-.6,-15 L.6,-15 L.6,0 Z" fill="#929292" stroke="#505050" stroke-width=".4"/>
+<path id="mando_node_32" d="M-4,-2 L4,-2 L5,0 L4,2 L-4,2 L-5,0 Z M-2,-.5 L2,-.5 L2,.5 L-2,.5 Z" fill="#4F8294" stroke="#A0A0A0" stroke-width=".5"/>
+<path id="mando_node_33" d="M-5,2 L-1,-2 L-1,2 L3,-2 L3,2 L5,0" fill="none" stroke="#C4C4C4" stroke-width=".7"/>
+<path id="mando_node_35" d="M-5,2 L-1,-2 L-1,2 L3,-2 L3,2 L5,0" fill="none" stroke="#C4C4C4" stroke-width=".7"/>
+<path id="mando_node_34" d="M-5,2 L-5,-2 L0,-2 L0,2 L5,2 L5,-2" fill="none" stroke="#C4C4C4" stroke-width=".7"/>
+<path id="mando_node_36" d="M-5,2 L-5,-2 L0,-2 L0,2 L5,2 L5,-2" fill="none" stroke="#C4C4C4" stroke-width=".7"/>
+<text transform="matrix(1 0 0 1 24 190)" fill="#D0D0D0" font-family="UniversNextPro-Light" font-size="12px">MANDO</text>
+<path d="M24,200 L87,200 M408,200 L456,200" fill="none" stroke="#555555" stroke-width="0.6"/>
+<text transform="matrix(1 0 0 1 408 190)" fill="#8A8A8A" font-family="UniversNextPro-Light" font-size="8px">BASS</text>
+  <circle id="mando_palette_0" cx="640" cy="0" r="1" fill="#000000" stroke="#000000" stroke-width="1"/>
+  <circle id="mando_palette_1" cx="640" cy="0" r="1" fill="#111111" stroke="#111111" stroke-width="1"/>
+  <circle id="mando_palette_2" cx="640" cy="0" r="1" fill="#222222" stroke="#222222" stroke-width="1"/>
+  <circle id="mando_palette_3" cx="640" cy="0" r="1" fill="#333333" stroke="#333333" stroke-width="1"/>
+  <circle id="mando_palette_4" cx="640" cy="0" r="1" fill="#444444" stroke="#444444" stroke-width="1"/>
+  <circle id="mando_palette_5" cx="640" cy="0" r="1" fill="#555555" stroke="#555555" stroke-width="1"/>
+  <circle id="mando_palette_6" cx="640" cy="0" r="1" fill="#666666" stroke="#666666" stroke-width="1"/>
+  <circle id="mando_palette_7" cx="640" cy="0" r="1" fill="#777777" stroke="#777777" stroke-width="1"/>
+  <circle id="mando_palette_8" cx="640" cy="0" r="1" fill="#888888" stroke="#888888" stroke-width="1"/>
+  <circle id="mando_palette_9" cx="640" cy="0" r="1" fill="#999999" stroke="#999999" stroke-width="1"/>
+  <circle id="mando_palette_10" cx="640" cy="0" r="1" fill="#aaaaaa" stroke="#aaaaaa" stroke-width="1"/>
+  <circle id="mando_palette_11" cx="640" cy="0" r="1" fill="#bbbbbb" stroke="#bbbbbb" stroke-width="1"/>
+  <circle id="mando_palette_12" cx="640" cy="0" r="1" fill="#cccccc" stroke="#cccccc" stroke-width="1"/>
+  <circle id="mando_palette_13" cx="640" cy="0" r="1" fill="#315765" stroke="#315765" stroke-width="1"/>
+  <circle id="mando_palette_14" cx="640" cy="0" r="1" fill="#7FBFD3" stroke="#7FBFD3" stroke-width="1"/>
+  <circle id="mando_palette_15" cx="640" cy="0" r="1" fill="#C76C60" stroke="#C76C60" stroke-width="1"/>
+</g>

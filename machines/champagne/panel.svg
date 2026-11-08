@@ -1,0 +1,62 @@
+<g id="champagne_panel">
+  <!-- The wine: the bowl below the surface, with a pale band of foam on top. -->
+  <path d="M215.6 66 L264.4 66 L252 166 L228 166 Z" fill="#6b4f12" stroke="none"/>
+  <path d="M220 74 L260 74 L251 150 L229 150 Z" fill="#8a6619" stroke="none"/>
+  <path d="M215.6 66 L264.4 66 L263.5 71 L216.5 71 Z" fill="#f1dc9c" stroke="none"/>
+  <!-- The flute: rim, bowl, stem and foot. -->
+  <path d="M202 40 L278 40 L253 168 L227 168 Z" fill="none" stroke="#d9d6cc" stroke-width="1.5"/>
+  <path d="M240 168 L240 202" fill="none" stroke="#d9d6cc" stroke-width="2"/>
+  <path d="M208 205 Q240 198 272 205 Q240 210 208 205 Z" fill="none" stroke="#d9d6cc" stroke-width="1.5"/>
+  <path d="M206 44 L210 44 L230 150" fill="none" stroke="#8f8c84" stroke-width="1"/>
+  <!-- Bubbles: rings authored at the origin, moved by display.cpp. -->
+  <circle id="champagne_node_0" cx="0" cy="0" r="3" fill="none" stroke="#fff4cf" stroke-width="1"/>
+  <circle id="champagne_node_1" cx="0" cy="0" r="3" fill="none" stroke="#fff4cf" stroke-width="1"/>
+  <circle id="champagne_node_2" cx="0" cy="0" r="3" fill="none" stroke="#fff4cf" stroke-width="1"/>
+  <circle id="champagne_node_3" cx="0" cy="0" r="3" fill="none" stroke="#fff4cf" stroke-width="1"/>
+  <circle id="champagne_node_4" cx="0" cy="0" r="3" fill="none" stroke="#fff4cf" stroke-width="1"/>
+  <circle id="champagne_node_5" cx="0" cy="0" r="3" fill="none" stroke="#fff4cf" stroke-width="1"/>
+  <circle id="champagne_node_6" cx="0" cy="0" r="3" fill="none" stroke="#fff4cf" stroke-width="1"/>
+  <circle id="champagne_node_7" cx="0" cy="0" r="3" fill="none" stroke="#fff4cf" stroke-width="1"/>
+  <circle id="champagne_node_8" cx="0" cy="0" r="3" fill="none" stroke="#fff4cf" stroke-width="1"/>
+  <circle id="champagne_node_9" cx="0" cy="0" r="3" fill="none" stroke="#fff4cf" stroke-width="1"/>
+  <circle id="champagne_node_10" cx="0" cy="0" r="3" fill="none" stroke="#fff4cf" stroke-width="1"/>
+  <circle id="champagne_node_11" cx="0" cy="0" r="3" fill="none" stroke="#fff4cf" stroke-width="1"/>
+  <circle id="champagne_node_12" cx="0" cy="0" r="3" fill="none" stroke="#fff4cf" stroke-width="1"/>
+  <circle id="champagne_node_13" cx="0" cy="0" r="3" fill="none" stroke="#fff4cf" stroke-width="1"/>
+  <circle id="champagne_node_14" cx="0" cy="0" r="3" fill="none" stroke="#fff4cf" stroke-width="1"/>
+  <circle id="champagne_node_15" cx="0" cy="0" r="3" fill="none" stroke="#fff4cf" stroke-width="1"/>
+  <circle id="champagne_node_16" cx="0" cy="0" r="3" fill="none" stroke="#fff4cf" stroke-width="1"/>
+  <circle id="champagne_node_17" cx="0" cy="0" r="3" fill="none" stroke="#fff4cf" stroke-width="1"/>
+  <circle id="champagne_node_18" cx="0" cy="0" r="3" fill="none" stroke="#fff4cf" stroke-width="1"/>
+  <circle id="champagne_node_19" cx="0" cy="0" r="3" fill="none" stroke="#fff4cf" stroke-width="1"/>
+  <circle id="champagne_node_20" cx="0" cy="0" r="3" fill="none" stroke="#fff4cf" stroke-width="1"/>
+  <circle id="champagne_node_21" cx="0" cy="0" r="3" fill="none" stroke="#fff4cf" stroke-width="1"/>
+  <circle id="champagne_node_22" cx="0" cy="0" r="3" fill="none" stroke="#fff4cf" stroke-width="1"/>
+  <circle id="champagne_node_23" cx="0" cy="0" r="3" fill="none" stroke="#fff4cf" stroke-width="1"/>
+  <circle id="champagne_node_24" cx="0" cy="0" r="3" fill="none" stroke="#fff4cf" stroke-width="1"/>
+  <circle id="champagne_node_25" cx="0" cy="0" r="3" fill="none" stroke="#fff4cf" stroke-width="1"/>
+  <circle id="champagne_node_26" cx="0" cy="0" r="3" fill="none" stroke="#fff4cf" stroke-width="1"/>
+  <circle id="champagne_node_27" cx="0" cy="0" r="3" fill="none" stroke="#fff4cf" stroke-width="1"/>
+  <!-- Sparks: four-pointed stars above the surface after a note. -->
+  <path id="champagne_node_28" d="M0 -5 L1.2 -1.2 L5 0 L1.2 1.2 L0 5 L-1.2 1.2 L-5 0 L-1.2 -1.2 Z" fill="#ffffff" stroke="#ffffff" stroke-width="0.5"/>
+  <path id="champagne_node_29" d="M0 -5 L1.2 -1.2 L5 0 L1.2 1.2 L0 5 L-1.2 1.2 L-5 0 L-1.2 -1.2 Z" fill="#ffffff" stroke="#ffffff" stroke-width="0.5"/>
+  <path id="champagne_node_30" d="M0 -5 L1.2 -1.2 L5 0 L1.2 1.2 L0 5 L-1.2 1.2 L-5 0 L-1.2 -1.2 Z" fill="#ffffff" stroke="#ffffff" stroke-width="0.5"/>
+  <path id="champagne_node_31" d="M0 -5 L1.2 -1.2 L5 0 L1.2 1.2 L0 5 L-1.2 1.2 L-5 0 L-1.2 -1.2 Z" fill="#ffffff" stroke="#ffffff" stroke-width="0.5"/>
+  <!-- Palette: 0 black, 1 bright bubble, 2 gold bubble, 3 deep bubble, 4 spark, 5 fading spark. -->
+  <circle id="champagne_palette_0" cx="640" cy="0" r="1" fill="#000000" stroke="#000000" stroke-width="1"/>
+  <circle id="champagne_palette_1" cx="640" cy="0" r="1" fill="#fff6d8" stroke="#fff6d8" stroke-width="1"/>
+  <circle id="champagne_palette_2" cx="640" cy="0" r="1" fill="#f3d27a" stroke="#f3d27a" stroke-width="1"/>
+  <circle id="champagne_palette_3" cx="640" cy="0" r="1" fill="#c79a3a" stroke="#c79a3a" stroke-width="1"/>
+  <circle id="champagne_palette_4" cx="640" cy="0" r="1" fill="#ffffff" stroke="#ffffff" stroke-width="1"/>
+  <circle id="champagne_palette_5" cx="640" cy="0" r="1" fill="#ffd76a" stroke="#ffd76a" stroke-width="1"/>
+  <circle id="champagne_palette_6" cx="640" cy="0" r="1" fill="#8a6619" stroke="#8a6619" stroke-width="1"/>
+  <circle id="champagne_palette_7" cx="640" cy="0" r="1" fill="#6b4f12" stroke="#6b4f12" stroke-width="1"/>
+  <circle id="champagne_palette_8" cx="640" cy="0" r="1" fill="#f1dc9c" stroke="#f1dc9c" stroke-width="1"/>
+  <circle id="champagne_palette_9" cx="640" cy="0" r="1" fill="#d9d6cc" stroke="#d9d6cc" stroke-width="1"/>
+  <circle id="champagne_palette_10" cx="640" cy="0" r="1" fill="#8f8c84" stroke="#8f8c84" stroke-width="1"/>
+  <circle id="champagne_palette_11" cx="640" cy="0" r="1" fill="#5a5a5a" stroke="#5a5a5a" stroke-width="1"/>
+  <circle id="champagne_palette_12" cx="640" cy="0" r="1" fill="#707070" stroke="#707070" stroke-width="1"/>
+  <circle id="champagne_palette_13" cx="640" cy="0" r="1" fill="#cbcbcb" stroke="#cbcbcb" stroke-width="1"/>
+  <circle id="champagne_palette_14" cx="640" cy="0" r="1" fill="#eeeeee" stroke="#eeeeee" stroke-width="1"/>
+  <circle id="champagne_palette_15" cx="640" cy="0" r="1" fill="#ffffff" stroke="#ffffff" stroke-width="1"/>
+</g>
