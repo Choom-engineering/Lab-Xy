@@ -1,0 +1,316 @@
+<g id="flux_panel">
+<!-- SDK two-page header: keep this block before machine artwork below y=38. -->
+<path d="M0,0 L480,0 L480,38 L0,38 Z" fill="#000000"/>
+<path id="flux_node_0" transform="matrix(1 0 0 1 0 0)" d="M0,0 L60,0 L60,20 L0,20 Z" fill="#000000" stroke="#000000" stroke-width="0.5"/>
+<path id="flux_node_1" transform="matrix(1 0 0 1 60 0)" d="M0,0 L60,0 L60,20 L0,20 Z" fill="#323232" stroke="#323232" stroke-width="0.5"/>
+<path id="flux_node_2" transform="matrix(1 0 0 1 120 0)" d="M0,0 L60,0 L60,20 L0,20 Z" fill="#4B4B4B" stroke="#4B4B4B" stroke-width="0.5"/>
+<path id="flux_node_3" transform="matrix(1 0 0 1 180 0)" d="M0,0 L60,0 L60,20 L0,20 Z" fill="#646464" stroke="#646464" stroke-width="0.5"/>
+<path id="flux_node_4" transform="matrix(1 0 0 1 240 0)" d="M0,0 L60,0 L60,20 L0,20 Z" fill="#7D7D7D" stroke="#7D7D7D" stroke-width="0.5"/>
+<path id="flux_node_5" transform="matrix(1 0 0 1 300 0)" d="M0,0 L60,0 L60,20 L0,20 Z" fill="#969696" stroke="#969696" stroke-width="0.5"/>
+<path id="flux_node_6" transform="matrix(1 0 0 1 360 0)" d="M0,0 L60,0 L60,20 L0,20 Z" fill="#AFAFAF" stroke="#AFAFAF" stroke-width="0.5"/>
+<path id="flux_node_7" transform="matrix(1 0 0 1 420 0)" d="M0,0 L60,0 L60,20 L0,20 Z" fill="#CDCDCD" stroke="#CDCDCD" stroke-width="0.5"/>
+<text id="flux_text_0" transform="matrix(1 0 0 1 5 10)" fill="#CBCBCB" font-family="UniversNextPro-Light" font-size="10px">-</text>
+<text id="flux_text_1" transform="matrix(1 0 0 1 125 10)" fill="#CBCBCB" font-family="UniversNextPro-Light" font-size="10px">-</text>
+<text id="flux_text_2" transform="matrix(1 0 0 1 245 10)" fill="#000000" font-family="UniversNextPro-Light" font-size="10px">-</text>
+<text id="flux_text_3" transform="matrix(1 0 0 1 365 10)" fill="#000000" font-family="UniversNextPro-Light" font-size="10px">-</text>
+<text id="flux_text_4" transform="matrix(1 0 0 1 65 17.4)" fill="#CBCBCB" font-family="UniversNextPro-Light" font-size="20px">-</text>
+<text id="flux_text_5" transform="matrix(1 0 0 1 185 17.4)" fill="#CBCBCB" font-family="UniversNextPro-Light" font-size="20px">-</text>
+<text id="flux_text_6" transform="matrix(1 0 0 1 305 17.4)" fill="#000000" font-family="UniversNextPro-Light" font-size="20px">-</text>
+<text id="flux_text_7" transform="matrix(1 0 0 1 425 17.4)" fill="#000000" font-family="UniversNextPro-Light" font-size="20px">-</text>
+<text id="flux_text_8" transform="matrix(1 0 0 1 5 33)" fill="#5A5A5A" font-family="UniversNextPro-Light" font-size="10px">-</text>
+<text id="flux_text_9" transform="matrix(1 0 0 1 125 33)" fill="#5A5A5A" font-family="UniversNextPro-Light" font-size="10px">-</text>
+<text id="flux_text_10" transform="matrix(1 0 0 1 245 33)" fill="#5A5A5A" font-family="UniversNextPro-Light" font-size="10px">-</text>
+<text id="flux_text_11" transform="matrix(1 0 0 1 365 33)" fill="#5A5A5A" font-family="UniversNextPro-Light" font-size="10px">-</text>
+<text id="flux_text_12" transform="matrix(1 0 0 1 65 33)" fill="#707070" font-family="UniversNextPro-Light" font-size="13px">-</text>
+<text id="flux_text_13" transform="matrix(1 0 0 1 185 33)" fill="#707070" font-family="UniversNextPro-Light" font-size="13px">-</text>
+<text id="flux_text_14" transform="matrix(1 0 0 1 305 33)" fill="#707070" font-family="UniversNextPro-Light" font-size="13px">-</text>
+<text id="flux_text_15" transform="matrix(1 0 0 1 425 33)" fill="#707070" font-family="UniversNextPro-Light" font-size="13px">-</text>
+
+<!-- Flux: the module in a dot matrix, and the vector field its partials ride, drawn in greys on black. -->
+<path d="M267.6,158.2 L267.3,152.4 L267.0,144.0 L266.9,135.6 L266.8,127.2 L266.9,118.8 L267.2,110.4 L267.6,102.0 L268.0,96.4 L268.9,88.0 L270.3,79.6 L271.8,74.0 L274.1,68.4 L278.2,62.8 L281.8,60.0 L287.7,57.2 L295.6,55.2 L301.2,54.4 L309.6,53.8 L318.0,53.7 L326.4,54.0 L332.0,54.4 L340.4,55.5 L348.1,57.2 L354.4,59.3 L360.0,62.2 L364.7,65.6 L368.4,69.4 L371.6,74.0 L374.5,79.6 L376.8,86.1 L378.7,93.6 L379.7,99.2 L380.9,107.6 L381.5,116.0 L381.9,124.4 L381.9,132.8 L381.7,141.2 L381.1,149.6 L380.2,158.0 L379.3,163.6 L377.4,172.0 L375.6,177.6 L373.2,183.2 L369.8,188.8 L365.6,193.6 L361.0,197.2 L355.9,200.0 L348.8,202.6 L343.2,204.0 L334.8,205.3 L329.2,205.8 L320.8,206.3 L312.4,206.3 L304.0,205.9 L298.4,205.2 L290.0,203.5 L284.4,201.5 L278.8,197.7 L275.8,194.4 L272.8,188.8 L270.4,180.9 L269.3,174.8 L268.2,166.4 L267.6,158.2" fill="none" stroke="#24262B" stroke-width="1"/>
+<path d="M273.2,156.8 L272.5,149.6 L272.0,141.2 L271.8,132.8 L271.8,124.4 L272.1,116.0 L272.7,107.6 L273.3,102.0 L274.7,93.6 L276.0,88.0 L278.8,80.3 L281.6,75.3 L285.0,71.2 L290.0,67.4 L295.6,64.7 L302.3,62.8 L309.6,61.8 L318.0,61.5 L326.4,62.1 L332.0,63.0 L340.4,65.4 L346.0,67.8 L351.5,71.2 L354.8,74.0 L359.7,79.6 L362.8,84.7 L365.6,90.8 L367.4,96.4 L368.9,102.0 L370.4,110.4 L371.2,118.5 L371.5,124.4 L371.6,132.8 L371.2,141.2 L370.7,146.8 L369.4,155.2 L368.2,160.8 L365.6,169.1 L363.1,174.8 L360.0,179.9 L357.2,183.5 L351.6,188.7 L347.1,191.6 L341.1,194.4 L334.8,196.3 L329.2,197.5 L320.8,198.4 L312.4,198.4 L304.0,197.5 L298.4,196.2 L292.8,194.2 L287.2,190.7 L282.6,186.0 L279.2,180.4 L276.9,174.8 L275.3,169.2 L273.7,160.8 L273.2,156.8" fill="none" stroke="#24262B" stroke-width="1"/>
+<path d="M278.8,154.3 L277.8,146.8 L277.2,138.4 L277.0,130.0 L277.2,121.6 L277.8,113.2 L278.8,105.7 L280.1,99.2 L281.7,93.6 L284.4,87.3 L287.4,82.4 L292.7,76.8 L297.1,74.0 L304.0,71.2 L309.6,70.1 L318.0,69.7 L326.4,70.7 L332.0,72.1 L337.6,74.4 L343.2,77.8 L348.4,82.4 L351.6,86.2 L354.5,90.8 L357.2,96.5 L360.0,104.8 L361.2,110.4 L362.4,118.8 L362.8,124.4 L362.9,132.8 L362.7,138.4 L361.7,146.8 L360.0,155.0 L358.2,160.8 L355.9,166.4 L352.8,172.0 L348.8,177.2 L345.5,180.4 L340.4,184.1 L334.8,186.8 L328.7,188.8 L320.8,190.1 L312.4,190.2 L304.2,188.8 L298.4,186.7 L292.8,183.2 L289.7,180.4 L285.5,174.8 L282.8,169.2 L280.9,163.6 L279.0,155.2 L278.8,154.3" fill="none" stroke="#24262B" stroke-width="1"/>
+<path d="M284.4,150.2 L283.4,144.0 L282.7,135.6 L282.6,127.2 L283.1,118.8 L284.3,110.4 L285.6,104.8 L287.4,99.2 L290.0,93.6 L294.0,88.0 L298.4,84.0 L304.0,80.8 L309.6,79.2 L318.0,78.6 L324.9,79.6 L332.0,82.2 L337.0,85.2 L340.4,88.1 L345.1,93.6 L348.4,99.2 L350.8,104.8 L352.5,110.4 L354.1,118.8 L354.6,124.4 L354.8,132.8 L354.4,138.4 L353.1,146.8 L351.6,152.7 L348.8,160.0 L346.0,165.1 L343.0,169.2 L337.6,174.3 L332.4,177.6 L326.4,180.0 L320.8,181.2 L312.4,181.3 L306.8,180.2 L300.8,177.6 L295.6,173.7 L291.8,169.2 L288.6,163.6 L286.4,158.0 L284.4,150.2" fill="none" stroke="#24262B" stroke-width="1"/>
+<path d="M290.0,142.7 L289.2,135.6 L289.0,127.2 L289.8,118.8 L290.8,113.2 L292.8,106.7 L295.6,100.9 L298.9,96.4 L304.0,92.0 L309.6,89.5 L318.0,88.6 L326.4,90.7 L331.4,93.6 L334.8,96.5 L339.1,102.0 L342.1,107.6 L344.1,113.2 L345.9,121.6 L346.4,127.2 L346.2,135.6 L345.4,141.2 L343.2,149.6 L340.8,155.2 L337.6,160.2 L334.7,163.6 L329.2,167.8 L323.6,170.3 L315.2,171.4 L306.8,169.5 L301.8,166.4 L298.4,163.1 L295.0,158.0 L292.5,152.4 L290.2,144.0 L290.0,142.7" fill="none" stroke="#24262B" stroke-width="1"/>
+<path d="M298.4,141.4 L297.4,135.6 L297.1,127.2 L298.4,118.8 L300.3,113.2 L303.6,107.6 L306.8,104.4 L312.4,101.5 L320.8,101.8 L326.4,104.7 L329.4,107.6 L333.0,113.2 L335.2,118.8 L336.6,127.2 L336.3,135.6 L334.8,142.5 L332.0,148.7 L329.2,152.6 L323.6,157.1 L318.0,158.8 L311.1,158.0 L306.3,155.2 L301.7,149.6 L299.2,144.0 L298.4,141.4" fill="none" stroke="#24262B" stroke-width="1"/>
+<path d="M402.0,182.4 L401.4,174.8 L401.0,166.4 L400.8,158.0 L400.6,149.6 L400.5,141.2 L400.5,132.8 L400.5,124.4 L400.6,116.0 L400.7,107.6 L400.9,99.2 L401.1,90.8 L401.6,82.4 L402.1,76.8 L403.7,68.4 L406.2,62.8 L410.4,59.7 L416.0,60.3 L421.0,65.6 L423.2,71.2 L424.5,76.8 L425.5,85.2 L426.2,93.6 L426.6,102.0 L426.8,110.4 L427.0,118.8 L427.0,127.2 L427.0,135.6 L426.9,144.0 L426.8,152.4 L426.5,160.8 L426.0,169.2 L425.2,177.6 L424.4,183.5 L422.3,191.6 L419.1,197.2 L414.9,200.0 L409.7,200.0 L404.8,195.0 L403.0,188.8 L402.0,182.4" fill="none" stroke="#24262B" stroke-width="1"/>
+<path d="M410.4,185.6 L406.9,180.4 L404.8,172.9 L404.0,166.4 L403.3,158.0 L402.9,149.6 L402.6,141.2 L402.5,132.8 L402.6,124.4 L402.7,116.0 L403.0,107.6 L403.5,99.2 L404.3,90.8 L405.2,85.2 L407.6,77.6 L410.4,74.4" fill="none" stroke="#24262B" stroke-width="1"/>
+<path d="M416.0,75.9 L418.8,80.7 L420.9,88.0 L421.9,93.6 L422.8,102.0 L423.4,110.4 L423.7,118.8 L423.9,127.2 L423.8,135.6 L423.6,144.0 L423.2,152.4 L422.5,160.8 L421.6,168.4 L420.2,174.8 L418.2,180.4 L416.0,184.1" fill="none" stroke="#24262B" stroke-width="1"/>
+<path d="M407.6,161.0 L406.7,155.2 L405.9,146.8 L405.4,138.4 L405.3,130.0 L405.4,121.6 L405.9,113.2 L406.7,104.8 L407.6,99.0 L410.4,92.1 L416.0,95.2 L417.9,102.0 L418.9,107.6 L419.7,116.0 L420.1,124.4 L420.1,132.8 L419.8,141.2 L419.2,149.6 L418.5,155.2 L416.4,163.6 L413.2,168.6 L408.5,163.6 L407.6,161.0" fill="none" stroke="#24262B" stroke-width="1"/>
+<text transform="matrix(1 0 0 1 265 210)" fill="#4F5258" font-family="UniversNextPro-Light" font-size="10px">L</text>
+<text transform="matrix(1 0 0 1 421 210)" fill="#4F5258" font-family="UniversNextPro-Light" font-size="10px">R</text>
+<text id="flux_text_16" transform="matrix(1 0 0 1 24 126)" fill="#7C7F85" font-family="UniversNextPro-Light" font-size="13px">module 1 of 10</text>
+<circle id="flux_node_8" transform="matrix(1 0 0 1 346 130)" cx="0" cy="0" r="4.2" fill="#EEF0F3" stroke="#EEF0F3" stroke-width="0.5"/>
+<circle id="flux_node_9" transform="matrix(1 0 0 1 346 130)" cx="0" cy="0" r="4.2" fill="#EEF0F3" stroke="#EEF0F3" stroke-width="0.5"/>
+<circle id="flux_node_10" transform="matrix(1 0 0 1 346 130)" cx="0" cy="0" r="4.2" fill="#EEF0F3" stroke="#EEF0F3" stroke-width="0.5"/>
+<circle id="flux_node_11" transform="matrix(1 0 0 1 346 130)" cx="0" cy="0" r="4.2" fill="#EEF0F3" stroke="#EEF0F3" stroke-width="0.5"/>
+<circle id="flux_node_12" transform="matrix(1 0 0 1 346 130)" cx="0" cy="0" r="4.2" fill="#EEF0F3" stroke="#EEF0F3" stroke-width="0.5"/>
+<circle id="flux_node_13" transform="matrix(1 0 0 1 346 130)" cx="0" cy="0" r="4.2" fill="#EEF0F3" stroke="#EEF0F3" stroke-width="0.5"/>
+<circle id="flux_node_14" transform="matrix(1 0 0 1 346 130)" cx="0" cy="0" r="4.2" fill="#EEF0F3" stroke="#EEF0F3" stroke-width="0.5"/>
+<circle id="flux_node_15" transform="matrix(1 0 0 1 346 130)" cx="0" cy="0" r="4.2" fill="#EEF0F3" stroke="#EEF0F3" stroke-width="0.5"/>
+<circle id="flux_node_16" transform="matrix(1 0 0 1 346 130)" cx="0" cy="0" r="4.2" fill="#EEF0F3" stroke="#EEF0F3" stroke-width="0.5"/>
+<circle id="flux_node_17" transform="matrix(1 0 0 1 346 130)" cx="0" cy="0" r="4.2" fill="#EEF0F3" stroke="#EEF0F3" stroke-width="0.5"/>
+<circle id="flux_node_18" transform="matrix(1 0 0 1 346 130)" cx="0" cy="0" r="4.2" fill="#EEF0F3" stroke="#EEF0F3" stroke-width="0.5"/>
+<circle id="flux_node_19" transform="matrix(1 0 0 1 346 130)" cx="0" cy="0" r="4.2" fill="#EEF0F3" stroke="#EEF0F3" stroke-width="0.5"/>
+<path id="flux_node_20" transform="matrix(1 0 0 1 22 66)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_21" transform="matrix(1 0 0 1 27 66)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_22" transform="matrix(1 0 0 1 32 66)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_23" transform="matrix(1 0 0 1 37 66)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_24" transform="matrix(1 0 0 1 42 66)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_25" transform="matrix(1 0 0 1 22 71)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_26" transform="matrix(1 0 0 1 27 71)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_27" transform="matrix(1 0 0 1 32 71)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_28" transform="matrix(1 0 0 1 37 71)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_29" transform="matrix(1 0 0 1 42 71)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_30" transform="matrix(1 0 0 1 22 76)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_31" transform="matrix(1 0 0 1 27 76)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_32" transform="matrix(1 0 0 1 32 76)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_33" transform="matrix(1 0 0 1 37 76)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_34" transform="matrix(1 0 0 1 42 76)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_35" transform="matrix(1 0 0 1 22 81)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_36" transform="matrix(1 0 0 1 27 81)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_37" transform="matrix(1 0 0 1 32 81)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_38" transform="matrix(1 0 0 1 37 81)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_39" transform="matrix(1 0 0 1 42 81)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_40" transform="matrix(1 0 0 1 22 86)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_41" transform="matrix(1 0 0 1 27 86)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_42" transform="matrix(1 0 0 1 32 86)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_43" transform="matrix(1 0 0 1 37 86)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_44" transform="matrix(1 0 0 1 42 86)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_45" transform="matrix(1 0 0 1 22 91)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_46" transform="matrix(1 0 0 1 27 91)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_47" transform="matrix(1 0 0 1 32 91)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_48" transform="matrix(1 0 0 1 37 91)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_49" transform="matrix(1 0 0 1 42 91)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_50" transform="matrix(1 0 0 1 22 96)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_51" transform="matrix(1 0 0 1 27 96)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_52" transform="matrix(1 0 0 1 32 96)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_53" transform="matrix(1 0 0 1 37 96)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_54" transform="matrix(1 0 0 1 42 96)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_55" transform="matrix(1 0 0 1 52 66)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_56" transform="matrix(1 0 0 1 57 66)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_57" transform="matrix(1 0 0 1 62 66)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_58" transform="matrix(1 0 0 1 67 66)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_59" transform="matrix(1 0 0 1 72 66)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_60" transform="matrix(1 0 0 1 52 71)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_61" transform="matrix(1 0 0 1 57 71)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_62" transform="matrix(1 0 0 1 62 71)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_63" transform="matrix(1 0 0 1 67 71)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_64" transform="matrix(1 0 0 1 72 71)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_65" transform="matrix(1 0 0 1 52 76)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_66" transform="matrix(1 0 0 1 57 76)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_67" transform="matrix(1 0 0 1 62 76)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_68" transform="matrix(1 0 0 1 67 76)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_69" transform="matrix(1 0 0 1 72 76)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_70" transform="matrix(1 0 0 1 52 81)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_71" transform="matrix(1 0 0 1 57 81)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_72" transform="matrix(1 0 0 1 62 81)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_73" transform="matrix(1 0 0 1 67 81)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_74" transform="matrix(1 0 0 1 72 81)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_75" transform="matrix(1 0 0 1 52 86)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_76" transform="matrix(1 0 0 1 57 86)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_77" transform="matrix(1 0 0 1 62 86)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_78" transform="matrix(1 0 0 1 67 86)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_79" transform="matrix(1 0 0 1 72 86)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_80" transform="matrix(1 0 0 1 52 91)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_81" transform="matrix(1 0 0 1 57 91)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_82" transform="matrix(1 0 0 1 62 91)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_83" transform="matrix(1 0 0 1 67 91)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_84" transform="matrix(1 0 0 1 72 91)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_85" transform="matrix(1 0 0 1 52 96)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_86" transform="matrix(1 0 0 1 57 96)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_87" transform="matrix(1 0 0 1 62 96)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_88" transform="matrix(1 0 0 1 67 96)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_89" transform="matrix(1 0 0 1 72 96)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_90" transform="matrix(1 0 0 1 82 66)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_91" transform="matrix(1 0 0 1 87 66)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_92" transform="matrix(1 0 0 1 92 66)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_93" transform="matrix(1 0 0 1 97 66)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_94" transform="matrix(1 0 0 1 102 66)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_95" transform="matrix(1 0 0 1 82 71)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_96" transform="matrix(1 0 0 1 87 71)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_97" transform="matrix(1 0 0 1 92 71)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_98" transform="matrix(1 0 0 1 97 71)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_99" transform="matrix(1 0 0 1 102 71)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_100" transform="matrix(1 0 0 1 82 76)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_101" transform="matrix(1 0 0 1 87 76)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_102" transform="matrix(1 0 0 1 92 76)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_103" transform="matrix(1 0 0 1 97 76)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_104" transform="matrix(1 0 0 1 102 76)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_105" transform="matrix(1 0 0 1 82 81)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_106" transform="matrix(1 0 0 1 87 81)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_107" transform="matrix(1 0 0 1 92 81)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_108" transform="matrix(1 0 0 1 97 81)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_109" transform="matrix(1 0 0 1 102 81)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_110" transform="matrix(1 0 0 1 82 86)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_111" transform="matrix(1 0 0 1 87 86)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_112" transform="matrix(1 0 0 1 92 86)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_113" transform="matrix(1 0 0 1 97 86)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_114" transform="matrix(1 0 0 1 102 86)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_115" transform="matrix(1 0 0 1 82 91)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_116" transform="matrix(1 0 0 1 87 91)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_117" transform="matrix(1 0 0 1 92 91)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_118" transform="matrix(1 0 0 1 97 91)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_119" transform="matrix(1 0 0 1 102 91)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_120" transform="matrix(1 0 0 1 82 96)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_121" transform="matrix(1 0 0 1 87 96)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_122" transform="matrix(1 0 0 1 92 96)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_123" transform="matrix(1 0 0 1 97 96)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_124" transform="matrix(1 0 0 1 102 96)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_125" transform="matrix(1 0 0 1 112 66)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_126" transform="matrix(1 0 0 1 117 66)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_127" transform="matrix(1 0 0 1 122 66)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_128" transform="matrix(1 0 0 1 127 66)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_129" transform="matrix(1 0 0 1 132 66)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_130" transform="matrix(1 0 0 1 112 71)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_131" transform="matrix(1 0 0 1 117 71)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_132" transform="matrix(1 0 0 1 122 71)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_133" transform="matrix(1 0 0 1 127 71)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_134" transform="matrix(1 0 0 1 132 71)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_135" transform="matrix(1 0 0 1 112 76)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_136" transform="matrix(1 0 0 1 117 76)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_137" transform="matrix(1 0 0 1 122 76)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_138" transform="matrix(1 0 0 1 127 76)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_139" transform="matrix(1 0 0 1 132 76)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_140" transform="matrix(1 0 0 1 112 81)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_141" transform="matrix(1 0 0 1 117 81)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_142" transform="matrix(1 0 0 1 122 81)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_143" transform="matrix(1 0 0 1 127 81)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_144" transform="matrix(1 0 0 1 132 81)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_145" transform="matrix(1 0 0 1 112 86)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_146" transform="matrix(1 0 0 1 117 86)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_147" transform="matrix(1 0 0 1 122 86)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_148" transform="matrix(1 0 0 1 127 86)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_149" transform="matrix(1 0 0 1 132 86)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_150" transform="matrix(1 0 0 1 112 91)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_151" transform="matrix(1 0 0 1 117 91)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_152" transform="matrix(1 0 0 1 122 91)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_153" transform="matrix(1 0 0 1 127 91)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_154" transform="matrix(1 0 0 1 132 91)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_155" transform="matrix(1 0 0 1 112 96)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_156" transform="matrix(1 0 0 1 117 96)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_157" transform="matrix(1 0 0 1 122 96)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_158" transform="matrix(1 0 0 1 127 96)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_159" transform="matrix(1 0 0 1 132 96)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_160" transform="matrix(1 0 0 1 142 66)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_161" transform="matrix(1 0 0 1 147 66)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_162" transform="matrix(1 0 0 1 152 66)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_163" transform="matrix(1 0 0 1 157 66)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_164" transform="matrix(1 0 0 1 162 66)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_165" transform="matrix(1 0 0 1 142 71)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_166" transform="matrix(1 0 0 1 147 71)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_167" transform="matrix(1 0 0 1 152 71)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_168" transform="matrix(1 0 0 1 157 71)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_169" transform="matrix(1 0 0 1 162 71)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_170" transform="matrix(1 0 0 1 142 76)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_171" transform="matrix(1 0 0 1 147 76)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_172" transform="matrix(1 0 0 1 152 76)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_173" transform="matrix(1 0 0 1 157 76)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_174" transform="matrix(1 0 0 1 162 76)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_175" transform="matrix(1 0 0 1 142 81)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_176" transform="matrix(1 0 0 1 147 81)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_177" transform="matrix(1 0 0 1 152 81)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_178" transform="matrix(1 0 0 1 157 81)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_179" transform="matrix(1 0 0 1 162 81)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_180" transform="matrix(1 0 0 1 142 86)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_181" transform="matrix(1 0 0 1 147 86)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_182" transform="matrix(1 0 0 1 152 86)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_183" transform="matrix(1 0 0 1 157 86)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_184" transform="matrix(1 0 0 1 162 86)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_185" transform="matrix(1 0 0 1 142 91)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_186" transform="matrix(1 0 0 1 147 91)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_187" transform="matrix(1 0 0 1 152 91)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_188" transform="matrix(1 0 0 1 157 91)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_189" transform="matrix(1 0 0 1 162 91)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_190" transform="matrix(1 0 0 1 142 96)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_191" transform="matrix(1 0 0 1 147 96)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_192" transform="matrix(1 0 0 1 152 96)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_193" transform="matrix(1 0 0 1 157 96)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_194" transform="matrix(1 0 0 1 162 96)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_195" transform="matrix(1 0 0 1 172 66)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_196" transform="matrix(1 0 0 1 177 66)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_197" transform="matrix(1 0 0 1 182 66)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_198" transform="matrix(1 0 0 1 187 66)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_199" transform="matrix(1 0 0 1 192 66)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_200" transform="matrix(1 0 0 1 172 71)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_201" transform="matrix(1 0 0 1 177 71)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_202" transform="matrix(1 0 0 1 182 71)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_203" transform="matrix(1 0 0 1 187 71)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_204" transform="matrix(1 0 0 1 192 71)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_205" transform="matrix(1 0 0 1 172 76)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_206" transform="matrix(1 0 0 1 177 76)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_207" transform="matrix(1 0 0 1 182 76)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_208" transform="matrix(1 0 0 1 187 76)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_209" transform="matrix(1 0 0 1 192 76)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_210" transform="matrix(1 0 0 1 172 81)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_211" transform="matrix(1 0 0 1 177 81)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_212" transform="matrix(1 0 0 1 182 81)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_213" transform="matrix(1 0 0 1 187 81)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_214" transform="matrix(1 0 0 1 192 81)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_215" transform="matrix(1 0 0 1 172 86)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_216" transform="matrix(1 0 0 1 177 86)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_217" transform="matrix(1 0 0 1 182 86)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_218" transform="matrix(1 0 0 1 187 86)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_219" transform="matrix(1 0 0 1 192 86)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_220" transform="matrix(1 0 0 1 172 91)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_221" transform="matrix(1 0 0 1 177 91)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_222" transform="matrix(1 0 0 1 182 91)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_223" transform="matrix(1 0 0 1 187 91)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_224" transform="matrix(1 0 0 1 192 91)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_225" transform="matrix(1 0 0 1 172 96)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_226" transform="matrix(1 0 0 1 177 96)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_227" transform="matrix(1 0 0 1 182 96)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_228" transform="matrix(1 0 0 1 187 96)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_229" transform="matrix(1 0 0 1 192 96)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_230" transform="matrix(1 0 0 1 202 66)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_231" transform="matrix(1 0 0 1 207 66)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_232" transform="matrix(1 0 0 1 212 66)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_233" transform="matrix(1 0 0 1 217 66)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_234" transform="matrix(1 0 0 1 222 66)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_235" transform="matrix(1 0 0 1 202 71)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_236" transform="matrix(1 0 0 1 207 71)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_237" transform="matrix(1 0 0 1 212 71)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_238" transform="matrix(1 0 0 1 217 71)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_239" transform="matrix(1 0 0 1 222 71)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_240" transform="matrix(1 0 0 1 202 76)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_241" transform="matrix(1 0 0 1 207 76)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_242" transform="matrix(1 0 0 1 212 76)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_243" transform="matrix(1 0 0 1 217 76)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_244" transform="matrix(1 0 0 1 222 76)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_245" transform="matrix(1 0 0 1 202 81)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_246" transform="matrix(1 0 0 1 207 81)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_247" transform="matrix(1 0 0 1 212 81)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_248" transform="matrix(1 0 0 1 217 81)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_249" transform="matrix(1 0 0 1 222 81)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_250" transform="matrix(1 0 0 1 202 86)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_251" transform="matrix(1 0 0 1 207 86)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_252" transform="matrix(1 0 0 1 212 86)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_253" transform="matrix(1 0 0 1 217 86)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_254" transform="matrix(1 0 0 1 222 86)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_255" transform="matrix(1 0 0 1 202 91)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_256" transform="matrix(1 0 0 1 207 91)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_257" transform="matrix(1 0 0 1 212 91)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_258" transform="matrix(1 0 0 1 217 91)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_259" transform="matrix(1 0 0 1 222 91)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_260" transform="matrix(1 0 0 1 202 96)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_261" transform="matrix(1 0 0 1 207 96)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_262" transform="matrix(1 0 0 1 212 96)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_263" transform="matrix(1 0 0 1 217 96)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<path id="flux_node_264" transform="matrix(1 0 0 1 222 96)" d="M-1.8,-1.8 L1.8,-1.8 L1.8,1.8 L-1.8,1.8 Z" fill="#EEF0F3"/>
+<circle id="flux_palette_0" cx="640" cy="0" r="1" fill="#08090B" stroke="#08090B" stroke-width="1"/>
+<circle id="flux_palette_1" cx="640" cy="0" r="1" fill="#111215" stroke="#111215" stroke-width="1"/>
+<circle id="flux_palette_2" cx="640" cy="0" r="1" fill="#191B1F" stroke="#191B1F" stroke-width="1"/>
+<circle id="flux_palette_3" cx="640" cy="0" r="1" fill="#222428" stroke="#222428" stroke-width="1"/>
+<circle id="flux_palette_4" cx="640" cy="0" r="1" fill="#2C2E33" stroke="#2C2E33" stroke-width="1"/>
+<circle id="flux_palette_5" cx="640" cy="0" r="1" fill="#36393E" stroke="#36393E" stroke-width="1"/>
+<circle id="flux_palette_6" cx="640" cy="0" r="1" fill="#42454B" stroke="#42454B" stroke-width="1"/>
+<circle id="flux_palette_7" cx="640" cy="0" r="1" fill="#4F5258" stroke="#4F5258" stroke-width="1"/>
+<circle id="flux_palette_8" cx="640" cy="0" r="1" fill="#5D6066" stroke="#5D6066" stroke-width="1"/>
+<circle id="flux_palette_9" cx="640" cy="0" r="1" fill="#6C6F75" stroke="#6C6F75" stroke-width="1"/>
+<circle id="flux_palette_10" cx="640" cy="0" r="1" fill="#7C7F85" stroke="#7C7F85" stroke-width="1"/>
+<circle id="flux_palette_11" cx="640" cy="0" r="1" fill="#8E9196" stroke="#8E9196" stroke-width="1"/>
+<circle id="flux_palette_12" cx="640" cy="0" r="1" fill="#A1A4A9" stroke="#A1A4A9" stroke-width="1"/>
+<circle id="flux_palette_13" cx="640" cy="0" r="1" fill="#B6B8BC" stroke="#B6B8BC" stroke-width="1"/>
+<circle id="flux_palette_14" cx="640" cy="0" r="1" fill="#CDCFD2" stroke="#CDCFD2" stroke-width="1"/>
+<circle id="flux_palette_15" cx="640" cy="0" r="1" fill="#EEF0F3" stroke="#EEF0F3" stroke-width="1"/>
+</g>

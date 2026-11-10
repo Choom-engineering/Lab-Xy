@@ -34,7 +34,7 @@ La détection relatif/absolu est automatique et suit les derniers messages reçu
 
 Servi en HTTPS (Netlify, GitHub Pages…), le site s'installe comme une app : Chrome ou Edge affichent **Install the app** en haut de la page, ou l'icône d'installation dans la barre d'adresse. L'app s'ouvre ensuite dans sa propre fenêtre, depuis une icône sur le bureau, sans Python ni serveur local.
 
-Le service worker (`sw.js`) garde l'app et chaque machine utilisée ; **Make available offline**, dans le panneau Machines, télécharge les 56 machines d'un coup (environ 7 Mo) pour jouer sans connexion.
+Le service worker (`sw.js`) garde l'app et chaque machine utilisée ; **Make available offline**, dans le panneau Machines, télécharge toutes les machines d'un coup (environ 10 Mo) pour jouer sans connexion.
 
 **Publier une mise à jour** :
 1. Modifier les sources (`app.js`, `i18n.js`, `worklet.js`), puis lancer `python tools/build.py`, qui régénère `app.bundle.js` et les scripts des machines.
@@ -48,7 +48,7 @@ L'interface démarre en anglais ; le sélecteur EN | FR en haut retient le choix
 
 - `index.html`, `app.js` (source) et `app.bundle.js` (généré par `tools/build.py`, c'est lui que la page charge) : l'interface, le séquenceur (8 pistes, jusqu'à 64 pas), Players (arpège, accords), Projects.
 - `worklet.js` : l'audio. Les machines tournent dans l'hôte WebAssembly du SDK Open-XY (`sdk/browser/engine.mjs`), avec des notes datées à l'échantillon près ; les moteurs intégrés (Batterie, Analog, FM, Corde) sont écrits ici.
-- `machines/` : 55 machines compilées, chacune avec son manifeste, son artwork d'écran et sa licence. Voir `CREDITS.md`.
+- `machines/` : 63 machines compilées (dont 5 kits de batterie, et Champagne, Babel et Flux, les machines de LAB_XY), chacune avec son manifeste, son artwork d'écran et sa licence. Voir `CREDITS.md`.
 - `sdk/` : modules hôtes du SDK Open-XY (MIT), copiés sans modification.
 
 ## Mettre à jour les machines

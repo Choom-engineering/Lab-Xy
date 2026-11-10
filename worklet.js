@@ -52,12 +52,18 @@ class MachineProcessor extends AudioWorkletProcessor {
     if (e.type === 'on') this.engine.noteOn(e.note, Math.min(1, Math.max(0.01, e.velocity)));
     else if (e.type === 'off') this.engine.noteOff(e.note);
     else if (e.type === 'parameters') this.engine.setParameters(e.value);
+    // The track's envelope: the preview's linear attack and release, in seconds.
+    else if (e.type === 'env') {
+      this.engine.attackStep = 1 / (sampleRate * Math.max(0.002, e.attack));
+      this.engine.releaseStep = 1 / (sampleRate * Math.max(0.01, e.release));
+    }
   }
   process(_inputs, outputs) {
-    const out = outputs[0][0];
+    // Two channels: a stereo machine fills both, a mono one is copied to the right.
+    const out = outputs[0][0], right = outputs[0][1];
     if (!out) return true;
-    if (!this.engine) { out.fill(0); return true; }
-    this.q.run(out.length, (a, b) => this.engine.render(out.subarray(a, b)), e => this.fire(e));
+    if (!this.engine) { out.fill(0); right?.fill(0); return true; }
+    this.q.run(out.length, (a, b) => this.engine.render(out.subarray(a, b), right ? right.subarray(a, b) : undefined), e => this.fire(e));
     return true;
   }
 }

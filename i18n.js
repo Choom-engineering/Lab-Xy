@@ -42,7 +42,15 @@ const EN = {
   'Chargement de la machine…': 'Loading the machine…', 'Machine indisponible : ': 'Machine unavailable: ',
   'bpm · swing ': 'bpm · swing ',
   // navigateur de machines
-  'Moteurs LAB_XY': 'LAB_XY engines', 'Machines Open-XY': 'Open-XY machines', 'intégré': 'built in',
+  'Moteurs LAB_XY': 'LAB_XY engines', 'Kits de batterie Open-XY': 'Open-XY drum kits',
+  'Démo : House': 'Demo: House', 'Démo : Techno': 'Demo: Techno', 'Démo : Easy jazz': 'Demo: Easy jazz',
+  'Mapping MIDI': 'MIDI mapping', 'Jouer': 'Playing', 'Associer les touches et encodeurs d\'un contrôleur MIDI': 'Map the keys and encoders of a MIDI controller',
+  'Rappuie sur M3 : attaque et relâche de la machine.': 'Press M3 again: the machine\'s attack and release.',
+  'La relâche fait durer le son après le relâchement de la note : les queues de nappes, de cloches, de pianos.': 'Release keeps the sound going after the note is let go: the tails of pads, bells and pianos.',
+  'Hasard': 'Random', 'Scramble': 'Scramble', 'Hasard sur la piste {n}': 'Random steps on track {n}', 'Scramble sur la piste {n}': 'Sound scrambled on track {n}',
+  'Maj+clic : annuler': 'Shift+click to undo', 'Rien à annuler': 'Nothing to undo', 'Annulé': 'Undone',
+  'Pas au hasard sur la piste sélectionnée. Maj+clic : annuler.': 'Random steps on the selected track. Shift+click to undo.',
+  'Mélange les réglages du son de la piste sélectionnée. Maj+clic : annuler.': 'Scrambles the sound settings of the selected track. Shift+click to undo.', 'Machines Open-XY': 'Open-XY machines', 'intégré': 'built in',
   ' machines': ' machines', 'source · ': 'source · ', 'licence du dépôt': "repository's license",
   'Aucune machine ne correspond.': 'No machine matches.',
   // messages

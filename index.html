@@ -49,6 +49,7 @@ button:focus-visible,select:focus-visible,input:focus-visible,[tabindex]:focus-v
 .btn.primary{background:var(--page-ink);color:var(--page);border-color:var(--page-ink)}
 .btn.small{padding:4px 11px;font-size:13px}
 .btn.on{background:var(--rec);border-color:var(--rec);color:#fff}
+#mapBtn.on{background:var(--tc);border-color:var(--tc);color:#fff}
 select{background:transparent;border:1px solid var(--rule);border-radius:999px;padding:5px 12px;font-size:13.5px;max-width:230px;color:var(--page-ink)}
 .status{display:flex;align-items:center;gap:7px;font-size:13px;color:var(--page-muted)}
 .dot{width:8px;height:8px;border-radius:50%;background:var(--rule)} .dot.on{background:var(--ok)} .dot.err{background:var(--rec)}
@@ -67,6 +68,12 @@ select{background:transparent;border:1px solid var(--rule);border-radius:999px;p
 .plate{background:var(--panel);color:var(--panel-ink);border-radius:4px;padding:30px 30px 26px;display:grid;gap:26px;min-width:0}
 .zone{display:grid;gap:12px;min-width:0}
 .zone-h{display:flex;align-items:center;gap:10px}
+.dice{margin-left:auto;display:flex;gap:8px}
+.chip{display:inline-flex;align-items:center;gap:7px;background:none;border:1px solid var(--panel-faint);border-radius:999px;padding:4px 13px 4px 10px;font-size:13.5px;color:var(--panel-muted);cursor:pointer;text-transform:lowercase}
+.chip::before{content:"";width:8px;height:8px;border-radius:2px;background:var(--tc);transform:rotate(45deg)}
+.chip:hover{color:var(--panel-ink);border-color:var(--panel-ink)}
+.chip.hit{color:var(--panel);background:var(--tc);border-color:var(--tc)}
+.chip.hit::before{background:var(--panel)}
 .upper{display:grid;grid-template-columns:150px minmax(0,1fr) 150px;gap:28px;align-items:start}
 @media (max-width:820px){.upper{grid-template-columns:1fr}.upper .left,.upper .right{order:2}.modes{grid-template-columns:repeat(3,1fr)}}
 
@@ -111,7 +118,19 @@ select{background:transparent;border:1px solid var(--rule);border-radius:999px;p
 
 /* écran : simplement un peu plus noir que le panneau */
 .center{display:grid;gap:18px;min-width:0}
-.screen-frame{background:#050506;border-radius:3px;padding:0;box-shadow:0 0 0 1px var(--panel-line)}
+/* Les écrans des machines nomment la police de l'OP-XY (Univers Next) : ici, la Figtree légère la remplace. */
+#screen text[font-family^="Univers"]{font-family:Figtree,system-ui,sans-serif;font-weight:300}
+.screen-frame{position:relative;background:#050506;border-radius:3px;padding:0;box-shadow:0 0 0 1px var(--panel-line)}
+/* éteint : un grand bouton au milieu de l'écran, et « allumer » qui pulse dans l'en-tête */
+.power{white-space:nowrap;position:absolute;inset:0;margin:auto;width:max-content;height:max-content;display:none;align-items:center;gap:12px;
+  background:var(--tc);color:var(--panel);border:0;border-radius:999px;padding:14px 28px 14px 22px;font-size:20px;font-weight:600;cursor:pointer;text-transform:lowercase;
+  box-shadow:0 0 0 0 color-mix(in srgb,var(--tc) 60%,transparent);animation:pulse 2.2s ease-out infinite}
+.screen-frame .power svg{width:24px;height:24px;aspect-ratio:auto;background:none;border-radius:0;flex:none;fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round}
+.power:hover{filter:brightness(1.08)}
+body.off .power{display:inline-flex}
+body.off #screen{opacity:.35}
+.btn.primary.pulse{background:var(--tc);border-color:var(--tc);color:var(--panel);animation:pulse 2.2s ease-out infinite;padding:7px 18px;font-size:14.5px}
+@keyframes pulse{0%{box-shadow:0 0 0 0 color-mix(in srgb,var(--tc) 55%,transparent)}70%{box-shadow:0 0 0 14px transparent}100%{box-shadow:0 0 0 0 transparent}}
 .screen-frame svg{display:block;width:100%;height:auto;aspect-ratio:480/220;max-width:100%;background:#050506;border-radius:3px}
 
 /* encodeurs : disque plein, anneau fin, arc de valeur */
@@ -229,20 +248,21 @@ select{background:transparent;border:1px solid var(--rule);border-radius:999px;p
   .mkeys .key .lbl{font-size:13px}
   .readout b{font-size:38px}
 }
-@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 </style>
 </head>
-<body>
+<body class="off">
 <div class="wrap">
 
 <header class="top">
   <div class="brand"><a class="logo" href="./" aria-label="LAB_XY"><svg viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="6" fill="currentColor"/><g transform="rotate(-14 19 24)"><rect x="12" y="8" width="14" height="4.4" rx="2.2" fill="var(--page)"/><path d="M14.6 12.4 V32.5 a4.4 4.4 0 0 0 8.8 0 V12.4" fill="none" stroke="var(--page)" stroke-width="3"/><path d="M16.6 23 H21.4 V32.5 a2.4 2.4 0 0 1 -4.8 0 Z" fill="var(--page)"/></g><path d="M34.5 8.5 Q34.5 14.5 40.5 14.5 Q34.5 14.5 34.5 20.5 Q34.5 14.5 28.5 14.5 Q34.5 14.5 34.5 8.5Z" fill="var(--page)"/><path d="M39 23.4 Q39 27 42.6 27 Q39 27 39 30.6 Q39 27 35.4 27 Q39 27 39 23.4Z" fill="var(--page)"/><path d="M31 31.1 Q31 33.5 33.4 33.5 Q31 33.5 31 35.9 Q31 33.5 28.6 33.5 Q31 33.5 31 31.1Z" fill="var(--page)"/></svg><b>LAB_XY</b></a><span data-l>Les machines Open-XY dans le navigateur. Avec ton OP-XY, un clavier MIDI, ou rien d'autre que ton ordinateur.</span></div>
   <div class="conn">
     <span class="lang" role="group" aria-label="Language"><button class="btn small" data-lang="en">EN</button><button class="btn small" data-lang="fr">FR</button></span>
-    <button class="btn primary" id="startBtn" data-l>Allumer</button>
+    <button class="btn primary pulse" id="startBtn" data-l>Allumer</button>
     <select id="inSel" aria-label="Entrée MIDI"><option data-l>Entrée MIDI</option></select>
     <span class="status"><span class="dot" id="dot"></span><span id="statusTxt" data-l>Éteint</span></span>
     <button class="btn small" id="installBtn" hidden data-l>Installer l'app</button>
+    <button class="btn small" id="mapBtn" aria-controls="mapSec" aria-expanded="false" title="Associer les touches et encodeurs d'un contrôleur MIDI" data-l>Mapping MIDI</button>
     <button class="btn small" id="recFileBtn" title="Enregistre la sortie audio en fichier WAV" data-l>● Enregistrer</button>
     <button class="btn small" id="shareBtn" title="Crée un lien qui ouvre ce projet chez quelqu'un d'autre" data-l>Partager</button>
     <button class="btn small" id="resetApp" title="Remet l'instrument dans son état de départ. Garde les touches associées et les projets sauvés." data-l>Réinitialiser</button>
@@ -268,7 +288,7 @@ select{background:transparent;border:1px solid var(--rule);border-radius:999px;p
       </div>
 
       <div class="center">
-        <div class="screen-frame"><svg id="screen" viewBox="0 0 480 220" role="img" aria-label="Écran"></svg></div>
+        <div class="screen-frame"><svg id="screen" viewBox="0 0 480 220" role="img" aria-label="Écran"></svg><button class="power" id="powerBtn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v8"/><path d="M6.3 6.8a8 8 0 1 0 11.4 0"/></svg><span data-l>Allumer</span></button></div>
         <div class="encs" id="encs"></div>
         <div class="mkeys" id="mKeys"></div>
       </div>
@@ -293,7 +313,11 @@ select{background:transparent;border:1px solid var(--rule);border-radius:999px;p
     </div>
 
     <div class="zone">
-      <div class="zone-h"><span class="engr" data-l>Pistes</span></div>
+      <div class="zone-h"><span class="engr" data-l>Pistes</span>
+        <span class="dice">
+          <button class="chip" id="randBtn" title="Pas au hasard sur la piste sélectionnée. Maj+clic : annuler." data-l>Hasard</button>
+          <button class="chip" id="scrambleBtn" title="Mélange les réglages du son de la piste sélectionnée. Maj+clic : annuler." data-l>Scramble</button>
+        </span></div>
       <div class="tracks" id="tracks"></div>
     </div>
 
@@ -318,12 +342,13 @@ select{background:transparent;border:1px solid var(--rule);border-radius:999px;p
   </aside>
 </main>
 
-<section class="panel" aria-label="Touches et encodeurs MIDI">
+<section class="panel" id="mapSec" aria-label="Touches et encodeurs MIDI" hidden>
   <div class="phead">
     <h2 data-l>Touches et encodeurs MIDI</h2>
     <div class="conn" style="margin-left:0">
       <button class="btn" id="wizardBtn" data-l>Lancer l'assistant</button>
       <button class="btn" id="resetKeys" data-l>Tout désassocier</button>
+      <button class="btn" id="mapClose" data-l>Fermer</button>
     </div>
   </div>
   <div class="wizard" id="wizard">
@@ -332,7 +357,6 @@ select{background:transparent;border:1px solid var(--rule);border-radius:999px;p
     <button class="btn" id="wizSkip" data-l>Passer</button>
     <button class="btn" id="wizStop" data-l>Terminer</button>
   </div>
-  <p class="note" data-l>Pas : appui bref pour poser ou retirer un pas ; tiens-le pour l'éditer. Tenu, joue une note pour la placer, plusieurs pour un accord ; tourne un encodeur de son pour un p-lock ; rappuie sur la touche M de la page pour effacer ses p-locks. À la souris, Maj+clic (ou clic droit) garde un pas tenu jusqu'au prochain Maj+clic.</p>
   <div class="encset">
     <label class="engr" for="encModeSel" data-l>Encodeurs</label>
     <select id="encModeSel">
@@ -345,7 +369,12 @@ select{background:transparent;border:1px solid var(--rule);border-radius:999px;p
   </div>
   <div class="keygrid" id="keygrid"></div>
   <p class="note" data-l>Les touches −, + et Shift de l'OP-XY n'envoient pas de MIDI : l'octave se règle ici avec − et +, et en mode Mix un second appui sur la piste sélectionnée la coupe ou la rétablit. Les encodeurs 1 à 4 répondent aux CC 1 à 4 sans association, comme sur l'OP-XY ; avec un autre contrôleur, associe-les en tournant le bouton voulu. Tiens un pas et joue une note pour la placer dans ce pas.</p>
+</section>
+
+<section class="panel" aria-labelledby="playH">
+  <div class="phead"><h2 id="playH" data-l>Jouer</h2></div>
   <p class="note" data-l>Sans matériel : touches A W S E D F T G Y H U J K pour les notes, Z et X pour l'octave, Q (tenue) pour Fill, 1 à 8 (tenues) pour les punch-in effects, Espace pour lecture et arrêt, Échap pour couper le son. Le clavier à l'écran se joue à la souris ou au doigt, plusieurs notes à la fois ; plus tu appuies bas sur une touche, plus la note est forte.</p>
+  <p class="note" data-l>Pas : appui bref pour poser ou retirer un pas ; tiens-le pour l'éditer. Tenu, joue une note pour la placer, plusieurs pour un accord ; tourne un encodeur de son pour un p-lock ; rappuie sur la touche M de la page pour effacer ses p-locks. À la souris, Maj+clic (ou clic droit) garde un pas tenu jusqu'au prochain Maj+clic.</p>
 </section>
 
 <section class="panel fidelity" aria-labelledby="fidH">
@@ -379,6 +408,6 @@ select{background:transparent;border:1px solid var(--rule);border-radius:999px;p
 </div>
 <div class="toast" id="toast" role="status"></div>
 <input type="file" id="fileIn" accept="application/json,.json" hidden>
-<script src="app.bundle.js?v=15"></script>
+<script src="app.bundle.js?v=24"></script>
 </body>
 </html>

@@ -2,7 +2,7 @@
 import { createControls, shownControls } from './sdk/browser/controls.mjs';
 import { PreviewDisplay, SvgDisplay, NoteActivity } from './sdk/browser/display.mjs';
 import { selectArtwork } from './sdk/browser/graphics.mjs';
-import { LANG, L, setLang, translatePage } from './i18n.js?v=15';
+import { LANG, L, setLang, translatePage } from './i18n.js?v=24';
 
 const $ = id => document.getElementById(id);
 const cl = (x, a = 0, b = 1) => Math.max(a, Math.min(b, x));
@@ -106,7 +106,98 @@ function defaultState() {
   return { v: 2, bpm: 112, swing: .08, metro: 0, track: 0, oct: 0, mode: 'instrument', sub: 0, selStep: 0, page: 0, follow: 1,
     tracks: t, fx: { div: 2, fb: .38, mix: .3, tone: .55 }, master: .8, projectIdx: 0, pat: 0, song: [], songMode: 0 };
 }
-const VERSION = '15';
+/* ============================ démos ============================ */
+// Trois morceaux complets, arrangés en motifs enchaînés (Arrange, lecture Morceau).
+// Notation : [pas, note, vélocité, durée en pas, notes ajoutées (accord), condition].
+function demoPattern(def) {
+  return { tracks: Array.from({ length: 8 }, (_, i) => {
+    const d = def[i], steps = Array(MAX_STEPS).fill(null);
+    if (d) d.n.forEach(([s, n, v, len, x, cond]) => {
+      const st = step(n, v ?? .8, len ?? 1);
+      if (x) st.x = x;
+      if (cond) st.cond = cond;
+      steps[s] = st;
+    });
+    return { len: d?.len || 16, steps };
+  }) };
+}
+const beats = (steps, n, v, cond) => steps.map(s => [s, n, v, 1, null, cond]);
+const bars = (notes, every = 16, count = 4) => Array.from({ length: count }, (_, b) => notes.map(([s, ...r]) => [s + b * every, ...r])).flat();
+const M10 = k => (k + .5) / 10;  // le module k de Flux
+function demoState(name, bpm, swing, tracks, patterns, song, fx) {
+  const t = tracks.map(([engine, o]) => Object.assign(newTrack(engine), o));
+  while (t.length < 8) t.push(Object.assign(newTrack('b:analog'), { vol: .7 }));
+  const pats = Array.from({ length: PATTERNS }, (_, k) => patterns[k] ? demoPattern(patterns[k]) : null);
+  return { name, data: { v: 2, bpm, swing, metro: 0, track: 0, oct: 0, mode: 'instrument', sub: 0, selStep: 0, page: 0, follow: 1,
+    tracks: t, fx: { div: 2, fb: .35, mix: .28, tone: .5, ...fx }, master: .8, projectIdx: 0, pat: 0, patterns: pats,
+    song: song.map(([p, r]) => ({ p, r })), songMode: 1 } };
+}
+function demoProjects() {
+  // House, 122 BPM, la mineur : Am9 / Dm9, piano Flux, nappe Halcyon, étincelles de verre.
+  const kick = beats([0, 4, 8, 12], 36, .95), clap = beats([4, 12], 39, .8), ch = beats([2, 6, 10], 42, .55),
+    ghost = beats([1, 3, 5, 7, 9, 11, 13, 15], 42, .22, 3), oh = [[14, 46, .5]], chh = [[14, 42, .55]];
+  const hBass = [[2, 45, .9], [6, 45, .85], [10, 45, .9], [13, 48, .7], [14, 45, .85], [18, 38, .9], [22, 38, .85], [26, 41, .9], [29, 43, .7], [30, 38, .85]];
+  const hKeys = [[3, 60, .7, 2, [64, 67, 71]], [10, 60, .6, 2, [64, 67, 71]], [19, 60, .7, 2, [64, 65, 69]], [26, 60, .6, 2, [64, 65, 69]]];
+  const hPad = [[0, 57, .6, 16, [60, 64, 67]], [16, 53, .6, 16, [57, 60, 64]]];
+  const hGlass = [[12, 88, .5, 2, null, 6], [28, 84, .45, 2]], hPerc = beats([3, 7, 11], 37, .35).concat([[15, 45, .3, 1, null, 2]]);
+  const house = demoState(L('Démo : House'), 122, .12, [
+    ['b:drums', { p: [.45, .5, .35, .25], vol: .85, send: .04 }],
+    ['b:drums', { p: [.6, .4, .6, .3], vol: .55, send: .15 }],
+    ['b:analog', { p: [.1, .15, .3, .35], env: [0, .3, .4, .15], vol: .78, send: .02 }],
+    ['m:flux', { mv: { module: M10(0), tone: .5, fm: .3, decay: .45, stretch: .5, field: .75, flow: .25, hammer: .55 }, env: [0, .45, .6, .38], vol: .7, send: .25 }],
+    ['m:halcyon', { mv: { warmth: .35, swell: .6, drift: .15, air: .25, hiss: 0, chord: 0, ensemble: .35, age: .1 }, env: [.55, .45, .6, .75], vol: .5, send: .3 }],
+    ['m:flux', { mv: { module: M10(3), tone: .55, fm: .2, decay: .6, stretch: .5, field: .9, flow: .4, hammer: .5 }, env: [0, .45, .6, .6], vol: .42, send: .5 }],
+  ], [
+    { 0: { n: [...kick, ...ch, ...chh, ...ghost] }, 4: { len: 32, n: hPad } },
+    { 0: { n: [...kick, ...clap, ...ch, ...chh, ...ghost] }, 1: { n: hPerc }, 2: { len: 32, n: hBass }, 4: { len: 32, n: hPad } },
+    { 0: { n: [...kick, ...clap, ...ch, ...oh, ...ghost] }, 1: { n: hPerc }, 2: { len: 32, n: hBass }, 3: { len: 32, n: hKeys }, 4: { len: 32, n: hPad }, 5: { len: 32, n: hGlass } },
+    { 1: { n: beats([3, 11], 37, .3) }, 3: { len: 32, n: hKeys }, 4: { len: 32, n: hPad }, 5: { len: 32, n: hGlass } },
+  ], [[0, 2], [1, 4], [2, 4], [3, 2], [2, 4]]);
+
+  // Techno, 130 BPM : ligne acide, cloche Flux en tourbillon, drone, et Babel qui chante « sys-tem rea-dy ».
+  const tKick = beats([0, 4, 8, 12], 36, 1), tClap = beats([4, 12], 39, .6), tRim = [[10, 37, .45], [15, 37, .3, 1, null, 3]];
+  const tHat = Array.from({ length: 16 }, (_, k) => [k, 42, k % 2 ? .28 : .45, 1, null, k % 4 === 3 ? 4 : 0]), tOh = beats([2, 6, 10, 14], 46, .55);
+  const acid = [[0, 36, .95], [2, 36, .6], [3, 48, .85], [5, 36, .6], [6, 39, .9], [8, 36, .6], [10, 43, .85], [11, 36, .6], [13, 48, .9], [14, 46, .7]];
+  const tBell = [[6, 60, .6, 1, [63, 67], 6], [14, 58, .55, 1, [62, 65]]];
+  const tVoice = [[0, 48, .8, 3], [4, 48, .8, 3], [8, 51, .8, 3], [12, 46, .8, 3]];
+  const techno = demoState(L('Démo : Techno'), 130, 0, [
+    ['b:drums', { p: [.35, .6, .3, .2], vol: .9, send: .02 }],
+    ['b:drums', { p: [.7, .3, .6, .4], vol: .5, send: .1 }],
+    ['m:acidrain', { mv: { cutoff: .3, reso: .65, envmod: .6, decay: .35, accent: .83, slide: .83, ph: 1, dew: .1 }, env: [0, .45, .6, .2], vol: .62, send: .12 }],
+    ['m:flux', { mv: { module: M10(5), tone: .5, fm: .5, decay: .35, stretch: .65, field: 1, flow: .9, hammer: .7 }, env: [0, .45, .6, .45], vol: .45, send: .4 }],
+    ['m:drone', { mv: { spread: .5, tone: .35, motion: .5, sub: .6, reso: .35, rate: .3, fifth: .4 }, env: [.7, .45, .6, .8], vol: .45, send: .2 }],
+    ['m:babel', { mv: { words: .95, word: (1 + .5) / 25, voice: .5 / 3, speed: .5, melody: 0, size: .45, grit: .3, breath: 0 }, env: [0, .45, .6, .25], vol: .6, send: .35 }],
+  ], [
+    { 0: { n: tKick }, 1: { n: tHat }, 4: { n: [[0, 36, .6, 16]] } },
+    { 0: { n: [...tKick, ...tClap, ...tRim] }, 1: { n: [...tHat, ...tOh] }, 2: { n: acid }, 4: { n: [[0, 36, .6, 16]] } },
+    { 0: { n: [...tKick, ...tClap, ...tRim] }, 1: { n: [...tHat, ...tOh] }, 2: { n: acid }, 3: { n: tBell }, 4: { n: [[0, 36, .6, 16]] }, 5: { n: tVoice } },
+    { 1: { n: tOh }, 3: { n: tBell }, 4: { n: [[0, 36, .6, 16]] }, 5: { n: tVoice } },
+  ], [[0, 8], [1, 8], [2, 8], [3, 4], [2, 8], [1, 4]]);
+
+  // Easy listening jazz, 92 BPM, swing : Dm9 / G13 / Cmaj9 / A7, Rhodes et vibraphone Flux, contrebasse.
+  const jDrums = bars([[0, 47, .45], [4, 47, .4], [7, 47, .3], [8, 47, .45], [12, 47, .4], [15, 47, .3], [4, 42, .35], [12, 42, .35], [0, 36, .45], [10, 36, .3, 1, null, 3], [12, 37, .4]]);
+  const jBass = [[0, 38], [4, 41], [8, 45], [12, 48], [16, 43], [20, 47], [24, 50], [28, 49], [32, 36], [36, 40], [40, 43], [44, 45], [48, 45], [52, 44], [56, 43], [60, 40]].map(([s, n]) => [s, n, .85, 3]);
+  const chords = [[53, [57, 60, 64]], [53, [59, 64, 69]], [52, [55, 59, 62]], [55, [61, 64, 70]]];
+  const jKeys = chords.flatMap(([n, x], b) => [[b * 16 + 2, n, .6, 3, x], [b * 16 + 10, n, .5, 2, x]]);
+  const jPad = chords.map(([n, x], b) => [b * 16, n - 12, .5, 16, [n, ...x.slice(1)]]);
+  const melody = [[0, 69, .7, 3], [3, 72, .65, 3], [6, 76, .75, 4], [12, 74, .6, 3], [16, 71, .7, 4], [22, 67, .6, 2], [24, 69, .6, 2], [26, 71, .65, 2], [28, 74, .7, 3],
+    [32, 76, .75, 6], [40, 72, .6, 2], [43, 71, .6, 2], [46, 67, .6, 2], [48, 69, .7, 6], [56, 73, .6, 2], [59, 70, .55, 2], [62, 69, .6, 2]];
+  const jazz = demoState(L('Démo : Easy jazz'), 92, .24, [
+    ['b:drums', { p: [.3, .6, .25, .5], vol: .6, send: .08 }],
+    ['m:karplus', { mv: { bright: .15, pick: .7, damp: .35, spread: 0 }, env: [0, .45, .6, .3], vol: .85, send: .05, transpose: 0 }],
+    ['m:flux', { mv: { module: M10(0), tone: .45, fm: .22, decay: .5, stretch: .5, field: .6, flow: .2, hammer: .4 }, env: [0, .45, .6, .4], vol: .6, send: .2 }],
+    ['m:flux', { mv: { module: M10(4), tone: .5, fm: .12, decay: .75, stretch: .5, field: .65, flow: .3, hammer: .45 }, env: [0, .45, .6, .5], vol: .55, send: .3 }],
+    ['m:halcyon', { mv: { warmth: .5, swell: .7, drift: .1, air: .15, hiss: 0, chord: 0, ensemble: .3, age: 0 }, env: [.6, .45, .6, .7], vol: .32, send: .25 }],
+  ], [
+    { 1: { len: 64, n: jBass }, 2: { len: 64, n: jKeys }, 4: { len: 64, n: jPad } },
+    { 0: { len: 64, n: jDrums }, 1: { len: 64, n: jBass }, 2: { len: 64, n: jKeys }, 4: { len: 64, n: jPad } },
+    { 0: { len: 64, n: jDrums }, 1: { len: 64, n: jBass }, 2: { len: 64, n: jKeys }, 3: { len: 64, n: melody }, 4: { len: 64, n: jPad } },
+    { 0: { len: 64, n: jDrums }, 1: { len: 64, n: jBass }, 2: { len: 64, n: jKeys }, 3: { len: 64, n: melody.map(([s, n, v, l]) => [s, n, v, l, null, 3]) } },
+  ], [[0, 1], [1, 1], [2, 2], [3, 1], [2, 2], [0, 1]], { div: 1, fb: .3, mix: .25 });
+  return [house, techno, jazz];
+}
+
+const VERSION = '24';
 // Remise à zéro : ?reset dans l'adresse, ou le bouton « Réinitialiser ».
 if (new URLSearchParams(location.search).has('reset')) {
   try { localStorage.removeItem('xy-studio-v2'); } catch (e) {}
@@ -116,7 +207,8 @@ function loadState() {
   try { const s = JSON.parse(localStorage.getItem('xy-studio-v2') || 'null'); if (s && s.v === 2 && s.tracks?.length === 8) return s; } catch (e) {}
   return null;
 }
-let S = migrate(loadState() || defaultState());
+// Premier lancement : la démo house s'ouvre.
+let S = migrate(loadState() || JSON.parse(JSON.stringify(demoProjects()[0].data)));
 linkPattern();
 let keymap = (() => { try { return JSON.parse(localStorage.getItem('xy-keymap') || '{}'); } catch (e) { return {}; } })();
 let saveTimer = 0;
@@ -254,7 +346,7 @@ async function buildNode(i) {
     catch (e) { r.display = r.scene = null; }
     r.activity = new NoteActivity();
     if (ctx) {
-      const node = new AudioWorkletNode(ctx, 'xy-machine', { numberOfInputs: 0, numberOfOutputs: 1, outputChannelCount: [1],
+      const node = new AudioWorkletNode(ctx, 'xy-machine', { numberOfInputs: 0, numberOfOutputs: 1, outputChannelCount: [2],
         processorOptions: { module: m.module, parameters: m.controls.q31(values) } });
       node.port.onmessage = ({ data }) => { if (data.error) { r.error = data.error; toast(engineName(t.engine) + ' : ' + data.error); } };
       node.connect(chain[i].g);
@@ -280,6 +372,9 @@ function sendParams(i, locks, when) {
     const v = { ...machineValues(t, r.machine) };
     if (locks) for (const k in locks) if (k.startsWith('m:') && k.slice(2) in v) v[k.slice(2)] = locks[k];
     r.node.port.postMessage({ type: 'parameters', value: r.machine.controls.q31(v), when: when || 0 });
+    // Attaque et relâche des notes de la machine (p-lockables comme celles des moteurs intégrés).
+    const e = t.env.map((x, k) => locks?.['e' + k] ?? x);
+    r.node.port.postMessage({ type: 'env', attack: envA(e[0]), release: envR(e[3]), when: when || 0 });
   } else r.node.port.postMessage({ type: 'params', value: builtinParams(t, locks), when: when || 0 });
 }
 // Dernière série de p-locks envoyée à chaque piste ('' : réglages de base).
@@ -443,7 +538,7 @@ function startClock() {
   }, 25);
 }
 function play() {
-  if (!ctx) { toast(L('Allume d\'abord l\'instrument')); return; }
+  if (wake(play)) return;
   stopArmed = false; queue = []; patStep = 0;
   if (S.songMode && S.song.length) { songRow = 0; songRep = 0; if (S.song[0].p !== S.pat) switchPattern(S.song[0].p); }
   clockTime = ctx.currentTime + .06; clockStep = 0;
@@ -476,7 +571,7 @@ const PUNCH_DIVS = ['1/4', '1/8', '1/16', '1/32'];
 const punchOn = new Map(); // effet -> instant d'appui (ms)
 let punchLast = -1;
 function punchPress(i) {
-  if (!ctx) { toast(L('Allume d\'abord l\'instrument')); return; }
+  if (wake()) return;
   if (punchOn.has(i)) return;
   punchOn.set(i, performance.now()); punchLast = i;
   punchNode?.port.postMessage({ on: i }); renderSteps();
@@ -596,6 +691,7 @@ function mKey(k) {
   }
   if (S.mode === 'arrange' && k === S.sub && k === 2) { copyPattern(); return; }
   if (S.mode === 'arrange' && k === S.sub && k === 3) { clearPattern(); return; }
+  if (S.mode === 'instrument' && k === 2 && S.sub === 2 && isMachine(T().engine)) { S.tpage = S.tpage ? 0 : 1; render(); return; }
   S.sub = k; render();
 }
 function stepDown(i) {
@@ -635,8 +731,18 @@ function applyProject(data) {
   S.tracks.forEach((t, i) => buildNode(i));
   applyFx(); save(); render();
 }
+// Les démos suivent les projets sauvés dans la liste : projets, « nouveau », puis les démos.
+const DEMOS = demoProjects();
+const demoAt = (list, idx) => idx > list.length ? DEMOS[idx - list.length - 1] : null;
 function projectAction(k) {
-  const list = projects(), idx = S.projectIdx;
+  const list = projects(), idx = S.projectIdx, demo = demoAt(list, idx);
+  if (k === 0 && demo) { // charger une démo
+    applyProject(JSON.parse(JSON.stringify(demo.data))); S.projectIdx = idx; toast(demo.name + L(' chargé')); render(); return;
+  }
+  if (k === 1 && demo) { // une démo se sauve comme un nouveau projet
+    const entry = { name: demo.name.replace(/^[^:]*: /, ''), date: new Date().toISOString(), data: snapshot() };
+    list.push(entry); S.projectIdx = list.length - 1; storeProjects(list); toast(entry.name + L(' sauvé')); render(); return;
+  }
   if (k === 0) { // charger
     if (!list[idx]) { toast(L('Choisis un projet avec l\'encodeur 1')); return; }
     try { applyProject(list[idx].data); toast(list[idx].name + L(' chargé')); } catch (e) { toast(L('Projet illisible : ') + e.message); }
@@ -723,7 +829,8 @@ function page() {
   switch (S.mode) {
     case 'instrument': {
       const mach = isMachine(t.engine), drums = t.engine === 'b:drums';
-      const subs = [mach ? 'Machine' : L('Son'), mach ? (hasPage2() ? 'Page 2' : '—') : drums ? '—' : L('Enveloppe'), L('Piste'), L('Pas')];
+      // Machines : M1 et M2 montrent leurs deux pages de réglages. M3 rappuyé : Piste 2/2, l'attaque et la relâche des machines.
+      const subs = [mach ? 'Machine' : L('Son'), mach ? (hasPage2() ? 'Page 2' : '—') : drums ? '—' : L('Enveloppe'), mach ? L('Piste') + ' ' + (S.tpage ? 2 : 1) + '/2' : L('Piste'), L('Pas')];
       let encs = nil, msg = '';
       if (S.sub === 0 || (S.sub === 1 && mach)) {
         if (mach) {
@@ -737,12 +844,19 @@ function page() {
       } else if (S.sub === 1 && !drums) {
         const names = [L('Attaque'), L('Déclin'), L('Maintien'), L('Relâche')], F = [v => sec(envA(v)), v => sec(envD(v)), pct, v => sec(envR(v))];
         encs = [0, 1, 2, 3].map(k => lockCont('e' + k, names[k], () => T().env[k], v => { T().env[k] = v; tp(); }, F[k]));
+      } else if (S.sub === 2 && mach && S.tpage) {
+        // Une machine Open-XY n'a ici qu'une attaque et une relâche (son propre son fait le reste).
+        const A = lockCont('e0', L('Attaque'), () => T().env[0], v => { T().env[0] = v; tp(); }, v => sec(envA(v)));
+        const Rl = lockCont('e3', L('Relâche'), () => T().env[3], v => { T().env[3] = v; tp(); }, v => sec(envR(v)));
+        encs = [A, null, null, Rl];
+        msg = L('La relâche fait durer le son après le relâchement de la note : les queues de nappes, de cloches, de pianos.');
       } else if (S.sub === 2) {
         encs = [
           ints(L('Moteur'), () => Math.max(0, ENGINE_LIST.indexOf(T().engine)), v => queueEngine(i, ENGINE_LIST[v]), 0, ENGINE_LIST.length - 1, v => engineName(ENGINE_LIST[v] || '')),
           ints(L('Transposition'), () => T().transpose, v => { T().transpose = v; save(); }, -24, 24, v => signed(v) + ' dt'),
           cont(L('Niveau'), () => T().vol, v => { T().vol = v; tp(); }, pct),
           cont(L('Envoi délai'), () => T().send, v => { T().send = v; tp(); }, pct)];
+        if (mach) msg = L('Rappuie sur M3 : attaque et relâche de la machine.');
       } else if (S.sub === 3) {
         const st = () => T().steps[S.selStep];
         if (!st()) msg = L('Pas ') + (S.selStep + 1) + L(' vide. Touche un pas pour le créer, puis règle-le ici.');
@@ -798,7 +912,7 @@ function page() {
     case 'projects': {
       const list = projects();
       return { subs: [L('Charger'), L('Sauver'), L('Nouveau'), L('Exporter')], actions: true, encs: [
-        ints(L('Projet'), () => S.projectIdx, v => { S.projectIdx = v; save(); }, 0, list.length, k => list[k]?.name || L('nouveau')), null, null, null],
+        ints(L('Projet'), () => S.projectIdx, v => { S.projectIdx = v; save(); }, 0, list.length + DEMOS.length, k => list[k]?.name || demoAt(list, k)?.name || L('nouveau')), null, null, null],
         msg: L('M1 charge, M2 sauve, M3 repart de zéro, M4 exporte en fichier.') };
     }
     case 'bar':
@@ -1052,6 +1166,7 @@ function drawScreen(time) {
   let body = '', override = null, machineArt = '';
   if (S.mode === 'instrument') {
     if (S.sub === 3) body = bigTitle(L('Pas ') + (S.selStep + 1) + ' / ' + t.len, t.steps[S.selStep] ? (t.engine === 'b:drums' ? DRUM_NAMES[t.steps[S.selStep].n % 12] : noteName(t.steps[S.selStep].n)) : L('vide')) + patternGlyph(t);
+    else if (S.sub === 2 && S.tpage && isMachine(t.engine)) body = bigTitle(engineName(t.engine), L('enveloppe')) + envGlyph(t);
     else if (S.sub === 2) body = bigTitle(L('Piste ') + (S.track + 1), engineName(t.engine)) + scope(S.track);
     else if (isMachine(t.engine) && r.machine && r.display && r.scene) {
       try {
@@ -1277,8 +1392,10 @@ function renderBrowser() {
   };
   const bi = BUILTINS.filter(match), ma = MACHINES.filter(match);
   if (bi.length) { const h = document.createElement('div'); h.className = 'grp-t'; h.textContent = L('Moteurs LAB_XY'); list.append(h); bi.forEach(m => card(m.id, m, L('intégré'))); }
-  if (ma.length) { const h = document.createElement('div'); h.className = 'grp-t'; h.textContent = L('Machines Open-XY'); list.append(h); ma.forEach(m => card('m:' + m.id, m, m.maintainer)); }
-  if (!bi.length && !ma.length) list.innerHTML = '<p class="note">Aucune machine ne correspond.</p>';
+  const synths = ma.filter(m => m.kind !== 'drum'), kits = ma.filter(m => m.kind === 'drum');
+  if (synths.length) { const h = document.createElement('div'); h.className = 'grp-t'; h.textContent = L('Machines Open-XY'); list.append(h); synths.forEach(m => card('m:' + m.id, m, m.maintainer)); }
+  if (kits.length) { const h = document.createElement('div'); h.className = 'grp-t'; h.textContent = L('Kits de batterie Open-XY'); list.append(h); kits.forEach(m => card('m:' + m.id, m, m.maintainer)); }
+  if (!bi.length && !ma.length) list.innerHTML = '<p class="note">' + L('Aucune machine ne correspond.') + '</p>';
   $('mCount').textContent = L('Piste ') + (S.track + 1) + ' · ' + MACHINES.length + L(' machines');
 }
 async function loadPreset(name) {
@@ -1332,7 +1449,7 @@ function kbNoteAt(x, y) {
   return { n, vel: cl(.35 + .65 * (y - r.top) / Math.max(1, r.height), .2, 1) };
 }
 function kbPress(id, hit) {
-  if (!ctx) { toast('Allume d\'abord l\'instrument'); return; }
+  if (wake()) return;
   const raw = hit.n - S.oct;
   kbPointers.set(id, raw); keyNoteOn(raw, hit.vel);
 }
@@ -1365,7 +1482,7 @@ function buildKeys() {
     ks.forEach(([id, l]) => {
       const c = document.createElement('div'); c.className = 'kc';
       c.innerHTML = `<span>${esc(l)}</span><span class="cc"></span><button class="btn small">${L('Apprendre')}</button>`;
-      c.querySelector('button').onclick = () => { if (!input) { toast('Allume d\'abord l\'instrument'); return; } wizard = false; learnId = learnId === id ? null : id; renderKeys(); };
+      c.querySelector('button').onclick = () => { if (!input) { toast(L('Allume d\'abord l\'instrument')); return; } wizard = false; learnId = learnId === id ? null : id; renderKeys(); };
       g.append(c); kcEls[id] = c;
     });
   });
@@ -1383,7 +1500,18 @@ function renderKeys() {
   if (wizard && learnId) { $('wizAsk').textContent = KEY_LABEL[learnId]; $('wizProg').textContent = (KEY_ORDER.indexOf(learnId) + 1) + ' / ' + KEY_ORDER.length; }
 }
 function flashKey(id) { const c = kcEls[id]; if (!c) return; c.classList.add('hit'); setTimeout(() => c.classList.remove('hit'), 150); }
+// Le mapping MIDI ne s'affiche que quand on veut associer des touches.
+function showMapping(on) {
+  $('mapSec').hidden = !on;
+  $('mapBtn').setAttribute('aria-expanded', on ? 'true' : 'false');
+  $('mapBtn').classList.toggle('on', on);
+  if (on) $('mapSec').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  else { wizard = false; learnId = null; renderKeys(); }
+}
+$('mapBtn').onclick = () => showMapping($('mapSec').hidden);
+$('mapClose').onclick = () => showMapping(false);
 function startWizard() {
+  showMapping(true);
   if (!input) { toast(L('Allume d\'abord l\'instrument et branche l\'OP-XY')); return; }
   wizard = true; learnId = KEY_ORDER[0]; renderKeys(); $('wizard').scrollIntoView({ behavior: 'smooth', block: 'center' });
 }
@@ -1409,6 +1537,72 @@ $('resetKeys').onclick = () => {
   if (b.dataset.armed) { keymap = {}; save(); renderKeys(); delete b.dataset.armed; b.textContent = L('Tout désassocier'); }
   else { b.dataset.armed = '1'; b.textContent = L('Confirmer ?'); setTimeout(() => { delete b.dataset.armed; b.textContent = L('Tout désassocier'); }, 2500); }
 };
+
+/* ============================ hasard ============================ */
+// « Hasard » écrit des pas au hasard sur la piste sélectionnée ; « Scramble » mélange les réglages de son.
+// Chaque appui garde l'état précédent : Maj+clic (ou clic droit) l'annule.
+const undoDice = { rand: null, scramble: null };
+const rnd = n => Math.floor(Math.random() * n);
+const isDrumTrack = t => t.engine === 'b:drums' || (isMachine(t.engine) && MACHINES.find(m => 'm:' + m.id === t.engine)?.kind === 'drum');
+function randomSteps() {
+  const t = T(), i = S.track, len = t.len, drums = isDrumTrack(t);
+  undoDice.rand = { i, pat: S.pat, steps: JSON.parse(JSON.stringify(t.steps)) };
+  // Gamme : pentatonique mineure ou majeure, sur une tonique au hasard autour du do central.
+  const scale = Math.random() < .5 ? [0, 3, 5, 7, 10] : [0, 2, 4, 7, 9], root = 48 + rnd(12);
+  const density = .25 + Math.random() * .35;
+  let last = 2;
+  for (let j = 0; j < len; j++) {
+    let st = null;
+    if (drums) {
+      // Grosse caisse sur les temps, caisse claire au contretemps, charleys entre les deux, quelques coups ailleurs.
+      const beat = j % 4 === 0, back = j % 8 === 4;
+      if (beat && Math.random() < .75) st = step(60, .85 + Math.random() * .15);
+      else if (back && Math.random() < .7) st = step(62, .8 + Math.random() * .2);
+      else if (j % 2 === 0 && Math.random() < .55) st = step(66, .45 + Math.random() * .35);
+      else if (Math.random() < density * .4) st = step(60 + [1, 3, 4, 5, 7, 8, 9, 10, 11][rnd(9)], .4 + Math.random() * .5);
+    } else if (Math.random() < (j % 4 === 0 ? density + .25 : density)) {
+      // Petits pas dans la gamme plutôt que des sauts, parfois une octave.
+      last = cl(last + [-2, -1, -1, 0, 1, 1, 2, 3][rnd(8)], 0, 9);
+      const n = root + Math.floor(last / 5) * 12 + scale[last % 5] + (Math.random() < .08 ? 12 : 0);
+      st = step(n, .55 + Math.random() * .45, Math.random() < .2 ? LENS[3 + rnd(3)] : 1);
+      if (Math.random() < .12) st.cond = 3 + rnd(3);   // de temps en temps une probabilité (50 à 90 %)
+    }
+    t.steps[j] = st;
+  }
+  lockSig[i] = ''; save(); render();
+  toast(L('Hasard sur la piste {n}', { n: i + 1 }) + ' · ' + L('Maj+clic : annuler'));
+}
+function scrambleSound() {
+  const t = T(), i = S.track;
+  undoDice.scramble = { i, engine: t.engine, mv: { ...(t.mv || {}) }, p: [...(t.p || [])], env: [...(t.env || [])] };
+  const mix = (v, amt = .65) => cl((Number.isFinite(v) ? v : .5) * (1 - amt) + Math.random() * amt);
+  if (isMachine(t.engine)) {
+    const m = R[i].machine; if (!m) { toast(L('Chargement de la machine…')); return; }
+    machineValues(t, m);
+    for (const p of m.controls.parameters) {
+      if (p.absent || /level|volume|^vol|gain|output/i.test(p.label + ' ' + p.id)) continue;
+      if (p.mapping?.kind === 'enum') { const c = p.mapping.labels.length; t.mv[p.id] = (rnd(c) + .5) / c; }
+      else t.mv[p.id] = mix(t.mv[p.id]);
+    }
+  } else {
+    t.p = [0, 1, 2, 3].map(k => mix(t.p[k]));
+    if (t.engine !== 'b:drums') t.env = [Math.random() ** 2 * .45, .2 + Math.random() * .6, mix(t.env[2]), Math.random() * .6];
+  }
+  pushTrack(i); render();
+  toast(L('Scramble sur la piste {n}', { n: i + 1 }) + ' · ' + L('Maj+clic : annuler'));
+}
+function undoDiceAction(kind) {
+  const u = undoDice[kind]; if (!u) { toast(L('Rien à annuler')); return; }
+  undoDice[kind] = null;
+  if (kind === 'rand') { S.patterns[u.pat].tracks[u.i].steps = u.steps; if (u.pat === S.pat) linkPattern(); lockSig[u.i] = ''; }
+  else { const t = S.tracks[u.i]; if (t.engine !== u.engine) { toast(L('Rien à annuler')); return; } t.mv = u.mv; t.p = u.p; t.env = u.env; pushTrack(u.i); }
+  save(); render(); toast(L('Annulé'));
+}
+for (const [id, kind, fn] of [['randBtn', 'rand', randomSteps], ['scrambleBtn', 'scramble', scrambleSound]]) {
+  const b = $(id);
+  b.onclick = e => { if (e.shiftKey) undoDiceAction(kind); else fn(); b.classList.add('hit'); setTimeout(() => b.classList.remove('hit'), 160); };
+  b.oncontextmenu = e => { e.preventDefault(); undoDiceAction(kind); };
+}
 
 /* ============================ MIDI ============================ */
 let access = null, input = null, listening = [];
@@ -1446,17 +1640,25 @@ function bindInput() {
 }
 function setStatus(c, t) { $('dot').className = 'dot ' + (c || ''); $('statusTxt').textContent = t; }
 $('inSel').onchange = bindInput;
-$('startBtn').onclick = async () => {
+let powering = null;
+// Allume l'instrument (son, puis MIDI). Appelé par « Allumer », par le bouton de l'écran,
+// et par la première note, lecture ou effet joués alors que tout est éteint.
+function powerOn() { if (!powering) powering = doPowerOn().finally(() => { powering = null; }); return powering; }
+function wake(then) { if (ctx) return false; powerOn().then(() => { if (ctx && then) then(); }); return true; }
+$('startBtn').onclick = () => powerOn();
+$('powerBtn').onclick = () => powerOn();
+async function doPowerOn() {
   const b = $('startBtn');
   if (ctx) { if (ctx.state !== 'running') await ctx.resume(); if (access) refreshPorts(); return; }
   setStatus('', L('Démarrage…'));
   try { await startAudio(); }
   catch (e) { setStatus('err', L('Son impossible : ') + e.message); ctx?.close(); ctx = null; return; }
-  b.textContent = L('Actualiser le MIDI'); b.classList.remove('primary');
+  b.textContent = L('Actualiser le MIDI'); b.classList.remove('primary', 'pulse');
+  document.body.classList.remove('off'); render();
   if (!navigator.requestMIDIAccess) { setStatus('err', L('Son prêt. Web MIDI absent : utilise Chrome ou Edge.')); return; }
   try { access = await navigator.requestMIDIAccess({ sysex: false }); access.onstatechange = refreshPorts; refreshPorts(); }
   catch (e) { setStatus('err', L('Son prêt. Accès MIDI refusé par le navigateur.')); }
-};
+}
 
 /* clavier d'ordinateur : A W S E D F T G Y H U J K, espace = lecture */
 const PC = 'awsedftgyhujk', pcDown = new Set();
@@ -1464,8 +1666,8 @@ addEventListener('keydown', e => {
   if (e.target.closest('input,select,textarea,.enc') || e.repeat || e.metaKey || e.ctrlKey || e.altKey) return;
   const i = PC.indexOf(e.key.toLowerCase());
   if (i >= 0 && ctx) { pcDown.add(i); keyNoteOn(60 + i, .8); }
-  if (i >= 0 && !ctx) toast('Allume d\'abord l\'instrument');
-  if (e.code === 'Space' && ctx) { e.preventDefault(); playing ? stop() : play(); }
+  if (i >= 0 && !ctx) wake();
+  if (e.code === 'Space') { e.preventDefault(); playing ? stop() : play(); }
   if (e.key.toLowerCase() === 'q') setFill(true);
   if (/^Digit[1-8]$/.test(e.code)) punchPress(+e.code.slice(5) - 1);
   if (e.key.toLowerCase() === 'z') { S.oct = Math.max(-36, S.oct - 12); save(); renderBar(); }
@@ -1488,7 +1690,7 @@ addEventListener('drop', e => { if (S.mode !== 'projects') return; e.preventDefa
 
 /* ============================ enregistrement WAV ============================ */
 function toggleRecording() {
-  if (!ctx) { toast('Allume d\'abord l\'instrument'); return; }
+  if (wake(toggleRecording)) return;
   if (!recording) {
     recChunks = []; recFrames = 0; recording = true; recStart = performance.now();
     recorder.port.postMessage({ on: true }); renderRec(); return;

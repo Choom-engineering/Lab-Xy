@@ -1,6 +1,7 @@
 [
  {
   "id": "acidline",
+  "kind": "synth",
   "name": "Acidline",
   "description": "Mono acid voice with saw/triangle/square, resonant four-pole filter, octave-down sine sub, soft clipping and damping.",
   "maintainer": "kristapskristaps",
@@ -31,6 +32,7 @@
  },
  {
   "id": "acidrain",
+  "kind": "synth",
   "name": "Acid Rain",
   "description": "Highly optimized Open303 port: auto accent, gate, slide and octave jump, off or p-locked. pH and dew drive the sound and the rain lane. Melt your face off :)",
   "maintainer": "frankoooooooo",
@@ -60,6 +62,7 @@
  },
  {
   "id": "atlas",
+  "kind": "synth",
   "name": "Atlas",
   "description": "A wavetable atlas with three-dimensional scanning and a crushed auxiliary. Extracted from Weave.",
   "maintainer": "kristapskristaps",
@@ -85,7 +88,56 @@
   "license": "MIT License"
  },
  {
+  "id": "babel",
+  "kind": "synth",
+  "name": "Babel",
+  "description": "A speaking machine: each note says a word at its pitch, or babbles invented tongues, in a sixties computer, toy or deep voice.",
+  "maintainer": "LAB_XY",
+  "repository": "",
+  "tag": "local",
+  "keywords": [
+   "speech",
+   "voice",
+   "words",
+   "robot",
+   "talk",
+   "babble",
+   "vocal",
+   "parole",
+   "voix",
+   "mots"
+  ],
+  "params": [
+   "Words",
+   "Word",
+   "Voice",
+   "Speed",
+   "Melody",
+   "Size",
+   "Grit",
+   "Breath"
+  ],
+  "presets": [
+   "init",
+   "Mainframe",
+   "Spell",
+   "Deep Space",
+   "Countdown",
+   "Low Tongue",
+   "Babel",
+   "Whisper",
+   "Robots",
+   "Arpanet",
+   "Star Chant",
+   "Syllabes",
+   "Mission Log",
+   "Robot Choir"
+  ],
+  "license": "MIT License"
+ },
+ {
   "id": "bend",
+  "kind": "synth",
   "name": "Bend",
   "description": "Phase distortion after the Casio CZ: two lines read a cosine through bent phase maps, from sine to saw, pulse and resonant sweeps.",
   "maintainer": "mmockett",
@@ -119,6 +171,7 @@
  },
  {
   "id": "bitflip",
+  "kind": "synth",
   "name": "Bitflip",
   "description": "Eight chip voices for pulse leads, triangle bass, game arpeggios, FM bells, metallic hits and digital noise.",
   "maintainer": "kristapskristaps",
@@ -161,6 +214,7 @@
  },
  {
   "id": "bloom",
+  "kind": "synth",
   "name": "Bloom",
   "description": "Breathing additive pads: 24 sine partials shaped by tilt, shape, stretch and a sung vowel, drifting, beating in detuned pairs and blurring into breath.",
   "maintainer": "mmockett",
@@ -196,6 +250,7 @@
  },
  {
   "id": "breadboard",
+  "kind": "synth",
   "name": "breadboard",
   "description": "A raw dual-oscillator breadboard synth with wave shaping, octave-shifted sub, ring modulation and noisy digital character.",
   "maintainer": "lowlevelgamedev",
@@ -223,6 +278,7 @@
  },
  {
   "id": "butterfly",
+  "kind": "synth",
   "name": "Butterfly",
   "description": "A struck chain of sites in a magnetic field: its energies (Hofstadter's butterfly) ring as partials, in q clusters at flux p/q.",
   "maintainer": "mmockett",
@@ -257,9 +313,10 @@
  },
  {
   "id": "champagne",
+  "kind": "synth",
   "name": "Champagne",
   "description": "A granular fizz: small sine bubbles rising above the note, with a glass that pours more while you play.",
-  "maintainer": "XY Studio",
+  "maintainer": "LAB_XY",
   "repository": "",
   "tag": "local",
   "keywords": [
@@ -286,6 +343,7 @@
  },
  {
   "id": "chimes",
+  "kind": "synth",
   "name": "Chimes",
   "description": "After Rings: a modal resonator and sympathetic, inharmonic and chorded strings, struck by each note.",
   "maintainer": "carlosedp",
@@ -317,6 +375,7 @@
  },
  {
   "id": "choir",
+  "kind": "synth",
   "name": "Choir",
   "description": "Five-note chord voicings, eleven banks and a dedicated root output. Extracted from Weave.",
   "maintainer": "kristapskristaps",
@@ -342,6 +401,7 @@
  },
  {
   "id": "cocoa",
+  "kind": "synth",
   "name": "Cocoa",
   "description": "The hot chocolate effect: each note stirs bubbles into the drink and a spoon taps the mug, each tap ringing higher as the bubbles rise out.",
   "maintainer": "mmockett",
@@ -376,6 +436,7 @@
  },
  {
   "id": "coin",
+  "kind": "synth",
   "name": "Coin",
   "description": "Euler's disks spun on a mirror: each note's whirr rises along a finite-time power law through its ring, then stops dead.",
   "maintainer": "mmockett",
@@ -410,6 +471,7 @@
  },
  {
   "id": "crease",
+  "kind": "synth",
   "name": "Crease",
   "description": "A slope oscillator pressed through a prepared shaper and wavefolder. Extracted from Weave.",
   "maintainer": "kristapskristaps",
@@ -436,6 +498,7 @@
  },
  {
   "id": "daath",
+  "kind": "synth",
   "name": "Daath",
   "description": "Daath: a witch house bass. Drifting saw swarm over a grave sub, hexed drive, murk, rot and tape wow, drawn as a living grimoire.",
   "maintainer": "SammiBabe666",
@@ -466,6 +529,7 @@
  },
  {
   "id": "drone",
+  "kind": "synth",
   "name": "Drone",
   "description": "Detuned saw stack with sub, fifth and a drifting resonant filter, for slow evolving drones.",
   "maintainer": "Gokux",
@@ -497,6 +561,7 @@
  },
  {
   "id": "drop",
+  "kind": "synth",
   "name": "Drop",
   "description": "A drop on a hot skillet: past the Leidenfrost point it floats as a star and beats at the key, stepping down its lobes as it evaporates.",
   "maintainer": "mmockett",
@@ -529,7 +594,60 @@
   "license": "MIT License"
  },
  {
+  "id": "dust",
+  "kind": "drum",
+  "name": "DUST",
+  "description": "A soul 45 on a portable record player as a drum kit: every key a hit from the break, played by the player's speed, needle, arm and dust brush.",
+  "maintainer": "mmockett",
+  "repository": "https://github.com/mmockett/OP-XY-Trigon",
+  "tag": "v1.1.0",
+  "keywords": [
+   "percussion",
+   "lofi",
+   "emulation"
+  ],
+  "params": [
+   "CTRL 1",
+   "CTRL 2",
+   "CTRL 3",
+   "CTRL 4",
+   "CTRL 5",
+   "CTRL 6",
+   "CTRL 7",
+   "CTRL 8"
+  ],
+  "presets": [],
+  "license": "MIT License"
+ },
+ {
+  "id": "felt",
+  "kind": "drum",
+  "name": "FELT",
+  "description": "An old upright piano prepared as Cage prepared his, with bolts, screws, rubber and paper between the strings, played as a drum kit.",
+  "maintainer": "mmockett",
+  "repository": "https://github.com/mmockett/OP-XY-Trigon",
+  "tag": "v1.1.0",
+  "keywords": [
+   "physical",
+   "percussion",
+   "experimental"
+  ],
+  "params": [
+   "CTRL 1",
+   "CTRL 2",
+   "CTRL 3",
+   "CTRL 4",
+   "CTRL 5",
+   "CTRL 6",
+   "CTRL 7",
+   "CTRL 8"
+  ],
+  "presets": [],
+  "license": "MIT License"
+ },
+ {
   "id": "fermi",
+  "kind": "synth",
   "name": "Fermi",
   "description": "A Fermi-Pasta-Ulam-Tsingou chain per note: its modes' energies are the partials. Low energy is a pure tone, middle breathes and returns, high thermalizes.",
   "maintainer": "mmockett",
@@ -563,7 +681,85 @@
   "license": "MIT License"
  },
  {
+  "id": "flicker",
+  "kind": "drum",
+  "name": "FLICKER",
+  "description": "A drum kit drawn on film: each key a shape inked on a 16 mm soundtrack and played through a projector's sound head.",
+  "maintainer": "mmockett",
+  "repository": "https://github.com/mmockett/OP-XY-Trigon",
+  "tag": "v1.1.0",
+  "keywords": [
+   "percussion",
+   "experimental",
+   "noise"
+  ],
+  "params": [
+   "CTRL 1",
+   "CTRL 2",
+   "CTRL 3",
+   "CTRL 4",
+   "CTRL 5",
+   "CTRL 6",
+   "CTRL 7",
+   "CTRL 8"
+  ],
+  "presets": [],
+  "license": "MIT License"
+ },
+ {
+  "id": "flux",
+  "kind": "synth",
+  "name": "Flux",
+  "description": "Additive resynthesis with FM, spatialized by a vector field: ten modules from tines and reeds to bells, glass and pads.",
+  "maintainer": "LAB_XY",
+  "repository": "",
+  "tag": "local",
+  "keywords": [
+   "additive",
+   "fm",
+   "piano",
+   "electric piano",
+   "rhodes",
+   "bell",
+   "glass",
+   "marimba",
+   "stereo",
+   "spatial",
+   "resynthesis",
+   "piano électrique",
+   "cloche"
+  ],
+  "params": [
+   "Module",
+   "Tone",
+   "FM",
+   "Decay",
+   "Stretch",
+   "Field",
+   "Flow",
+   "Hammer"
+  ],
+  "presets": [
+   "init",
+   "Suitcase",
+   "Barking Tine",
+   "Wurly",
+   "FM Piano 80",
+   "Crystal",
+   "Marimba",
+   "Cathedral",
+   "Harp",
+   "Thumb",
+   "Pan",
+   "Aura",
+   "Vortex",
+   "Broken Glass"
+  ],
+  "license": "MIT License"
+ },
+ {
   "id": "fm2op",
+  "kind": "synth",
   "name": "2op FM",
   "description": "Two oscillators, from soft bells to tangled metallic tones.",
   "maintainer": "etcetc000",
@@ -589,6 +785,7 @@
  },
  {
   "id": "halcyon",
+  "kind": "synth",
   "name": "Halcyon",
   "description": "Halcyon: soft, near-pure ambient tones that swell, drift and shimmer",
   "maintainer": "colorsinspace1",
@@ -616,6 +813,7 @@
  },
  {
   "id": "hkeys",
+  "kind": "synth",
   "name": "Halcyon Keys",
   "description": "Halcyon Keys: Halcyon's soft tones played in a scale. The white keys are the scale, so no key is ever out of it.",
   "maintainer": "colorsinspace1",
@@ -637,6 +835,7 @@
  },
  {
   "id": "hollow",
+  "kind": "synth",
   "name": "Hollow",
   "description": "A resonator choir: breath and a soft bow through tuned bodies (vox, string, pipe, glass) whose held notes ring sympathetically into each other.",
   "maintainer": "mmockett",
@@ -670,6 +869,7 @@
  },
  {
   "id": "hwander",
+  "kind": "synth",
   "name": "Halcyon Wander",
   "description": "Halcyon Wander: hold a key and Halcyon's soft tones wander in a scale of their own, after Mutable Instruments' Marbles.",
   "maintainer": "colorsinspace1",
@@ -691,6 +891,7 @@
  },
  {
   "id": "karplus",
+  "kind": "synth",
   "name": "Karplus",
   "description": "A plucked string: a pick excites a tuned delay line that rings and fades.",
   "maintainer": "etcetc000",
@@ -716,6 +917,7 @@
  },
  {
   "id": "mach",
+  "kind": "synth",
   "name": "Mach",
   "description": "Each note flies past you at a Mach number you choose. Below Mach 1 a Doppler glide; above it, silence, a boom, then the sound forwards and backwards at once.",
   "maintainer": "mmockett",
@@ -749,6 +951,7 @@
  },
  {
   "id": "macroosc",
+  "kind": "synth",
   "name": "Macro Osc",
   "description": "Mutable Instruments Braids: a wide palette of synthesis models.",
   "maintainer": "etcetc000",
@@ -778,6 +981,7 @@
  },
  {
   "id": "mando",
+  "kind": "synth",
   "name": "Mando",
   "description": "Dual-oscillator bass synth with a voiced resonant four-pole lowpass and a note-reactive helmet.",
   "maintainer": "kristapskristaps",
@@ -819,6 +1023,7 @@
  },
  {
   "id": "matrixy",
+  "kind": "synth",
   "name": "matriXY",
   "description": "matriXY: an 8x8 pin matrix on a 3D wire terrain. X/Y place three pins; press to grab the next. Tilt sets a ratio of the note.",
   "maintainer": "frankoooooooo",
@@ -855,7 +1060,33 @@
   "license": "MIT License"
  },
  {
+  "id": "mdkit",
+  "kind": "drum",
+  "name": "MD KIT",
+  "description": "The Machinedrum's KIT machines as a drum kit: each key picks its own machine and keeps its own controls.",
+  "maintainer": "mmockett",
+  "repository": "https://github.com/mmockett/OP-XY-MNMD",
+  "tag": "v1.3.1",
+  "keywords": [
+   "emulation",
+   "percussion"
+  ],
+  "params": [
+   "CTRL 1",
+   "CTRL 2",
+   "CTRL 3",
+   "CTRL 4",
+   "CTRL 5",
+   "CTRL 6",
+   "CTRL 7",
+   "CTRL 8"
+  ],
+  "presets": [],
+  "license": "MIT License"
+ },
+ {
   "id": "metal",
+  "kind": "synth",
   "name": "Metal",
   "description": "A two-operator FM strike that drops onto each note, ringing six modes at a material's inharmonic ratios.",
   "maintainer": "johnnywagner",
@@ -887,6 +1118,7 @@
  },
  {
   "id": "mmdyn",
+  "kind": "synth",
   "name": "FM DYN",
   "description": "The Monomachine's FM+DYN, fitted to the original: M1 with pitch and depth envelopes, M2 with its decay and feedback.",
   "maintainer": "mmockett",
@@ -916,6 +1148,7 @@
  },
  {
   "id": "mmens",
+  "kind": "synth",
   "name": "SWAVE-ENS",
   "description": "The Monomachine's SWAVE-ENS: a four-voice chord of saws or pulses with chorus, fitted to the original.",
   "maintainer": "mmockett",
@@ -947,6 +1180,7 @@
  },
  {
   "id": "mmnois",
+  "kind": "synth",
   "name": "GND-NOIS",
   "description": "The Monomachine's GND-NOIS: white noise turning red, fitted to the original, with RES pitching it to the key.",
   "maintainer": "mmockett",
@@ -976,6 +1210,7 @@
  },
  {
   "id": "mmpar",
+  "kind": "synth",
   "name": "FM PAR",
   "description": "The Monomachine's FM+PAR, fitted to the original: three modulators into one carrier, each with its own depth or decay.",
   "maintainer": "mmockett",
@@ -1005,6 +1240,7 @@
  },
  {
   "id": "mmpulse",
+  "kind": "synth",
   "name": "SWAVE-PULSE",
   "description": "The Monomachine's SWAVE-PULSE: detuned pulses with a sweeping width and sub-octaves, fitted to the original.",
   "maintainer": "mmockett",
@@ -1036,6 +1272,7 @@
  },
  {
   "id": "mmsaw",
+  "kind": "synth",
   "name": "SWAVE-SAW",
   "description": "The Monomachine's SWAVE-SAW: a stack of detuned saws with sub-octaves, fitted to the original.",
   "maintainer": "mmockett",
@@ -1066,6 +1303,7 @@
  },
  {
   "id": "mmsid",
+  "kind": "synth",
   "name": "SID-6581",
   "description": "The Monomachine's SID-6581: triangle, saw, pulse, mixed and noise, with a pulse-width sweep, ring and sync, fitted to the original.",
   "maintainer": "mmockett",
@@ -1098,6 +1336,7 @@
  },
  {
   "id": "mmsin",
+  "kind": "synth",
   "name": "GND-SIN",
   "description": "The Monomachine's GND-SIN: a pure sine at the played key, fitted to the original.",
   "maintainer": "mmockett",
@@ -1116,6 +1355,7 @@
  },
  {
   "id": "mmstat",
+  "kind": "synth",
   "name": "FM STAT",
   "description": "The Monomachine's FM+STAT, fitted to the original: two modulators into one carrier, M1 with its decay and feedback.",
   "maintainer": "mmockett",
@@ -1145,6 +1385,7 @@
  },
  {
   "id": "mmvo6",
+  "kind": "synth",
   "name": "VO-6",
   "description": "The Monomachine's VO-6 formant voice: vowels from two formants, twenty consonants before them, fitted to the original.",
   "maintainer": "mmockett",
@@ -1179,6 +1420,7 @@
  },
  {
   "id": "moth",
+  "kind": "synth",
   "name": "Moth",
   "description": "A west-coast complex oscillator: an FM'd sine through a wavefolder into a vactrol lowpass gate that pings, holds and glows.",
   "maintainer": "mmockett",
@@ -1214,6 +1456,7 @@
  },
  {
   "id": "nightdrive",
+  "kind": "synth",
   "name": "Nightdrive",
   "description": "Feedback FM bass: outrun plucks, cyberpunk midtempo, and an isometric night drive.",
   "maintainer": "V714",
@@ -1235,6 +1478,7 @@
  },
  {
   "id": "ohmonk",
+  "kind": "synth",
   "name": "Ohmonk",
   "description": "A polyphonic chanting monk choir: shifting vowel formants, resonant vocal-tract shaping, expressive vibrato and harmonious stereo delay.",
   "maintainer": "hatchman",
@@ -1263,6 +1507,7 @@
  },
  {
   "id": "oldsun",
+  "kind": "synth",
   "name": "Oldsun",
   "description": "A Juno-inspired synth through a worn cassette: chorus, wow, flutter, drift and tape wear. Boards of Canada at sunset.",
   "maintainer": "etcetc000",
@@ -1302,6 +1547,7 @@
  },
  {
   "id": "orbit",
+  "kind": "synth",
   "name": "Orbit",
   "description": "A vector synth: four vintage digital waves at a diamond's corners, mixed by a point that orbits a centre, through an old DAC's grit.",
   "maintainer": "mmockett",
@@ -1336,6 +1582,7 @@
  },
  {
   "id": "papasrapa",
+  "kind": "synth",
   "name": "Papa Srapa",
   "description": "Two Schmitt-trigger oscillators after the Papa Srapa voices of the Elta Solar: sirens, birds, monsters, volleys and surf.",
   "maintainer": "Gokux",
@@ -1368,6 +1615,7 @@
  },
  {
   "id": "reaction",
+  "kind": "synth",
   "name": "Reaction",
   "description": "One key, one living voice: a detuned saw pair over a sub-octave root, under a filter canopy that a tiny Gray-Scott ring keeps opening and closing.",
   "maintainer": "frankoooooooo",
@@ -1396,6 +1644,7 @@
  },
  {
   "id": "sand",
+  "kind": "synth",
   "name": "Sand",
   "description": "A bowed plate covered in sand: grains rattle on its moving areas, then settle into the figure's nodal lines, leaving a glassy tone.",
   "maintainer": "mmockett",
@@ -1430,6 +1679,7 @@
  },
  {
   "id": "sift",
+  "kind": "synth",
   "name": "Sift",
   "description": "Paired grainlet formants with a rounded sine and octave-body blend.",
   "maintainer": "kristapskristaps",
@@ -1456,6 +1706,7 @@
  },
  {
   "id": "solar",
+  "kind": "synth",
   "name": "Solar",
   "description": "Five free-running negistor saws per voice after the Elta Solar drone voices, with light modulation and cross-FM.",
   "maintainer": "Gokux",
@@ -1485,6 +1736,7 @@
  },
  {
   "id": "tandem",
+  "kind": "synth",
   "name": "Tandem",
   "description": "Two coupled virtual-analog oscillators with sync and detune. Extracted from Weave.",
   "maintainer": "kristapskristaps",
@@ -1510,6 +1762,7 @@
  },
  {
   "id": "tattva",
+  "kind": "synth",
   "name": "Tattva",
   "description": "Tattva: wind, rain, surf and fire that set off wind chimes, bells and glass",
   "maintainer": "colorsinspace1",
@@ -1541,6 +1794,7 @@
  },
  {
   "id": "troupe",
+  "kind": "synth",
   "name": "Troupe",
   "description": "Ten-character table-based vocal ensemble with bounded rendering and 24 active note states.",
   "maintainer": "Hecedu",
@@ -1573,6 +1827,7 @@
  },
  {
   "id": "vader",
+  "kind": "synth",
   "name": "Vader",
   "description": "Trap 808 bass and kick: mono glide presets, punch transients, hard band-limited drive, wide tone and boost, with a reactive Vader mask.",
   "maintainer": "kristapskristaps",
@@ -1606,6 +1861,7 @@
  },
  {
   "id": "wander",
+  "kind": "synth",
   "name": "Wander",
   "description": "Wander: hold a key and ten of Colors In Space's key sounds wander in a scale of their own.",
   "maintainer": "colorsinspace1",
@@ -1627,6 +1883,7 @@
  },
  {
   "id": "wane",
+  "kind": "synth",
   "name": "Wane",
   "description": "Analogue-style pads heard through one worn, shared tape: detuned morphing oscillators that drift, with wow, flutter, sag and age.",
   "maintainer": "mmockett",
@@ -1657,6 +1914,7 @@
  },
  {
   "id": "weave",
+  "kind": "synth",
   "name": "Weave",
   "description": "After Mutable Instruments Plaits: its macro-oscillator models in fixed point.",
   "maintainer": "Onat-H",
@@ -1740,6 +1998,33 @@
    "Sample Hold",
    "Rain",
    "Geiger"
+  ],
+  "license": "MIT License"
+ },
+ {
+  "id": "x0x",
+  "kind": "drum",
+  "name": "X0X",
+  "description": "606/808/909-inspired drum synthesis and sampled 707/909 percussion, with independent per-pad styles and two control pages.",
+  "maintainer": "kristapskristaps",
+  "repository": "https://github.com/kristapskristaps/xy-machines",
+  "tag": "collection-v1.0.0",
+  "keywords": [
+   "percussion",
+   "emulation"
+  ],
+  "params": [
+   "style",
+   "tune",
+   "decay",
+   "tone",
+   "attack",
+   "char",
+   "body",
+   "drive"
+  ],
+  "presets": [
+   "Init"
   ],
   "license": "MIT License"
  }
