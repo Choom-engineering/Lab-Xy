@@ -45,6 +45,7 @@ Chaque machine ci-dessous est compilée depuis son dépôt, au tag référencé 
 | MD KIT (kit de batterie) | mmockett | https://github.com/mmockett/OP-XY-MNMD | v1.3.1 | MIT License |
 | Metal | johnnywagner | https://github.com/johnnywagner/open-xy-metal | v1.1.0 | MIT License |
 | Moth | mmockett | https://github.com/mmockett/OP-XY-Hexagon | v1.7.0 | MIT License |
+| Neon Rain | LAB_XY | — | local | MIT License |
 | Nightdrive | V714 | https://github.com/V714/open-xy-nightdrive | v1.0.3 | MIT License |
 | Ohmonk | hatchman | https://github.com/hatchman/open-xy-ohmonk | v1.0.0 | MIT License |
 | Oldsun | etcetc000 | https://github.com/etcetc000/open-xy-oldsun | v0.20.2 | MIT License |

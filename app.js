@@ -2,7 +2,7 @@
 import { createControls, shownControls } from './sdk/browser/controls.mjs';
 import { PreviewDisplay, SvgDisplay, NoteActivity } from './sdk/browser/display.mjs';
 import { selectArtwork } from './sdk/browser/graphics.mjs';
-import { LANG, L, setLang, translatePage } from './i18n.js?v=24';
+import { LANG, L, setLang, translatePage } from './i18n.js?v=26';
 
 const $ = id => document.getElementById(id);
 const cl = (x, a = 0, b = 1) => Math.max(a, Math.min(b, x));
@@ -197,7 +197,7 @@ function demoProjects() {
   return [house, techno, jazz];
 }
 
-const VERSION = '24';
+const VERSION = '26';
 // Remise à zéro : ?reset dans l'adresse, ou le bouton « Réinitialiser ».
 if (new URLSearchParams(location.search).has('reset')) {
   try { localStorage.removeItem('xy-studio-v2'); } catch (e) {}
@@ -271,6 +271,8 @@ function loadMachine(id) {
 // Valeurs complètes et valides pour la machine de la piste.
 function machineValues(t, m) {
   const def = m.controls.defaults();
+  // Un kit de batterie : ses réglages de piste sont des décalages des réglages de chaque touche, neutres au milieu (comme sur l'OP-XY).
+  if (m.manifest.drumKeys) for (const p of m.controls.parameters) def[p.id] = .5;
   for (const p of m.controls.parameters) if (Number.isFinite(t.mv?.[p.id])) def[p.id] = cl(t.mv[p.id]);
   t.mv = def;
   return def;
@@ -347,7 +349,7 @@ async function buildNode(i) {
     r.activity = new NoteActivity();
     if (ctx) {
       const node = new AudioWorkletNode(ctx, 'xy-machine', { numberOfInputs: 0, numberOfOutputs: 1, outputChannelCount: [2],
-        processorOptions: { module: m.module, parameters: m.controls.q31(values) } });
+        processorOptions: { module: m.module, parameters: m.controls.q31(values), drumKeys: m.manifest.drumKeys || null } });
       node.port.onmessage = ({ data }) => { if (data.error) { r.error = data.error; toast(engineName(t.engine) + ' : ' + data.error); } };
       node.connect(chain[i].g);
       r.node = node;
@@ -421,6 +423,8 @@ function voiceOn(i, n, vel, when) {
   const delayMs = when && ctx ? Math.max(0, (when - ctx.currentTime) * 1000) : 0;
   setTimeout(() => {
     if (r.activity.noteOn(n)) r.serial = (r.serial + 1) >>> 0;
+    const keys = r.machine?.manifest.drumKeys;
+    if (keys) r.model = keys[(((n - 53) % 24) + 24) % 24].model;  // l'écran du kit montre la touche jouée
     if (S.tracks[i].engine === 'b:drums') hits[((n % 12) + 12) % 12] = performance.now();
   }, delayMs);
 }
@@ -1174,7 +1178,7 @@ function drawScreen(time) {
         const slots = machineSlots(r.machine, S.sub === 1).map((s, k) => s === null ? k : s);
         const input = shownControls(words, slots);
         const elapsed = Math.min(8192, Math.max(0, Math.round(elapsedMs * 1.024)));
-        r.scene.apply(r.display.tick(input, elapsed, r.serial, S.track, matchMedia('(prefers-reduced-motion: reduce)').matches, r.activity));
+        r.scene.apply(r.display.tick(input, elapsed, r.serial, S.track, matchMedia('(prefers-reduced-motion: reduce)').matches, r.activity, r.model || 0));
         machineArt = r.scene.svg();
         override = r.scene.header;
       } catch (e) { r.display = r.scene = null; body = bigTitle(engineName(t.engine), L('écran indisponible')); }

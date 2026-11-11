@@ -1455,6 +1455,51 @@
   "license": "MIT License"
  },
  {
+  "id": "neonrain",
+  "kind": "synth",
+  "name": "Neon Rain",
+  "description": "A lush poly pad and lead: swelling brass and a vocoder-style choir through a stereo ensemble, with late vibrato.",
+  "maintainer": "LAB_XY",
+  "repository": "",
+  "tag": "local",
+  "keywords": [
+   "pad",
+   "brass",
+   "choir",
+   "vocoder",
+   "strings",
+   "ensemble",
+   "chorus",
+   "poly",
+   "lead",
+   "vintage",
+   "nappe",
+   "cuivres",
+   "choeur"
+  ],
+  "params": [
+   "Voice",
+   "Vowel",
+   "Bright",
+   "Swell",
+   "Ensemble",
+   "Vibrato",
+   "Drift",
+   "Air"
+  ],
+  "presets": [
+   "init",
+   "Haze Brass",
+   "Human Voice",
+   "Midnight Choir",
+   "Sodium Glow",
+   "Rain on Glass",
+   "Long Swell",
+   "Night Lead"
+  ],
+  "license": "MIT License"
+ },
+ {
   "id": "nightdrive",
   "kind": "synth",
   "name": "Nightdrive",

@@ -1,0 +1,404 @@
+<g id="neonrain_panel">
+<!-- SDK two-page header: keep this block before machine artwork below y=38. -->
+<path d="M0,0 L480,0 L480,38 L0,38 Z" fill="#000000"/>
+<path id="neonrain_node_0" transform="matrix(1 0 0 1 0 0)" d="M0,0 L60,0 L60,20 L0,20 Z" fill="#000000" stroke="#000000" stroke-width="0.5"/>
+<path id="neonrain_node_1" transform="matrix(1 0 0 1 60 0)" d="M0,0 L60,0 L60,20 L0,20 Z" fill="#323232" stroke="#323232" stroke-width="0.5"/>
+<path id="neonrain_node_2" transform="matrix(1 0 0 1 120 0)" d="M0,0 L60,0 L60,20 L0,20 Z" fill="#4B4B4B" stroke="#4B4B4B" stroke-width="0.5"/>
+<path id="neonrain_node_3" transform="matrix(1 0 0 1 180 0)" d="M0,0 L60,0 L60,20 L0,20 Z" fill="#646464" stroke="#646464" stroke-width="0.5"/>
+<path id="neonrain_node_4" transform="matrix(1 0 0 1 240 0)" d="M0,0 L60,0 L60,20 L0,20 Z" fill="#7D7D7D" stroke="#7D7D7D" stroke-width="0.5"/>
+<path id="neonrain_node_5" transform="matrix(1 0 0 1 300 0)" d="M0,0 L60,0 L60,20 L0,20 Z" fill="#969696" stroke="#969696" stroke-width="0.5"/>
+<path id="neonrain_node_6" transform="matrix(1 0 0 1 360 0)" d="M0,0 L60,0 L60,20 L0,20 Z" fill="#AFAFAF" stroke="#AFAFAF" stroke-width="0.5"/>
+<path id="neonrain_node_7" transform="matrix(1 0 0 1 420 0)" d="M0,0 L60,0 L60,20 L0,20 Z" fill="#CDCDCD" stroke="#CDCDCD" stroke-width="0.5"/>
+<text id="neonrain_text_0" transform="matrix(1 0 0 1 5 10)" fill="#CBCBCB" font-family="UniversNextPro-Light" font-size="10px">-</text>
+<text id="neonrain_text_1" transform="matrix(1 0 0 1 125 10)" fill="#CBCBCB" font-family="UniversNextPro-Light" font-size="10px">-</text>
+<text id="neonrain_text_2" transform="matrix(1 0 0 1 245 10)" fill="#000000" font-family="UniversNextPro-Light" font-size="10px">-</text>
+<text id="neonrain_text_3" transform="matrix(1 0 0 1 365 10)" fill="#000000" font-family="UniversNextPro-Light" font-size="10px">-</text>
+<text id="neonrain_text_4" transform="matrix(1 0 0 1 65 17.4)" fill="#CBCBCB" font-family="UniversNextPro-Light" font-size="20px">-</text>
+<text id="neonrain_text_5" transform="matrix(1 0 0 1 185 17.4)" fill="#CBCBCB" font-family="UniversNextPro-Light" font-size="20px">-</text>
+<text id="neonrain_text_6" transform="matrix(1 0 0 1 305 17.4)" fill="#000000" font-family="UniversNextPro-Light" font-size="20px">-</text>
+<text id="neonrain_text_7" transform="matrix(1 0 0 1 425 17.4)" fill="#000000" font-family="UniversNextPro-Light" font-size="20px">-</text>
+<text id="neonrain_text_8" transform="matrix(1 0 0 1 5 33)" fill="#5A5A5A" font-family="UniversNextPro-Light" font-size="10px">-</text>
+<text id="neonrain_text_9" transform="matrix(1 0 0 1 125 33)" fill="#5A5A5A" font-family="UniversNextPro-Light" font-size="10px">-</text>
+<text id="neonrain_text_10" transform="matrix(1 0 0 1 245 33)" fill="#5A5A5A" font-family="UniversNextPro-Light" font-size="10px">-</text>
+<text id="neonrain_text_11" transform="matrix(1 0 0 1 365 33)" fill="#5A5A5A" font-family="UniversNextPro-Light" font-size="10px">-</text>
+<text id="neonrain_text_12" transform="matrix(1 0 0 1 65 33)" fill="#707070" font-family="UniversNextPro-Light" font-size="13px">-</text>
+<text id="neonrain_text_13" transform="matrix(1 0 0 1 185 33)" fill="#707070" font-family="UniversNextPro-Light" font-size="13px">-</text>
+<text id="neonrain_text_14" transform="matrix(1 0 0 1 305 33)" fill="#707070" font-family="UniversNextPro-Light" font-size="13px">-</text>
+<text id="neonrain_text_15" transform="matrix(1 0 0 1 425 33)" fill="#707070" font-family="UniversNextPro-Light" font-size="13px">-</text>
+
+<!-- Neon Rain: an amber dot-matrix name over a city skyline in the rain. -->
+<path d="M20,212 L20,174 L46,174 L46,116 L64,116 L64,182 L98,182 L98,182 L120,182 L120,174 L138,174 L138,116 L156,116 L156,182 L190,182 L190,174 L208,174 L208,154 L234,154 L234,166 L268,166 L268,182 L290,182 L290,166 L312,166 L312,142 L330,142 L330,128 L360,128 L360,142 L390,142 L390,166 L416,166 L416,182 L438,182 L438,166 L460,166 L460,212 Z" fill="#1A0D02" stroke="#331B06" stroke-width="1"/>
+<path d="M20,212 L460,212 L460,213 L20,213 Z" fill="#4F2B0A" stroke="#4F2B0A" stroke-width="0.5"/>
+<text id="neonrain_text_16" transform="matrix(1 0 0 1 24 104)" fill="#AE621A" font-family="UniversNextPro-Light" font-size="13px">brass 50 choir 50, ah</text>
+<path id="neonrain_node_8" transform="matrix(1 0 0 1 30 60)" d="M-0.5,-6 L0.5,-6 L0.5,6 L-0.5,6 Z" fill="#FFC37A"/>
+<path id="neonrain_node_9" transform="matrix(1 0 0 1 48 60)" d="M-0.5,-6 L0.5,-6 L0.5,6 L-0.5,6 Z" fill="#FFC37A"/>
+<path id="neonrain_node_10" transform="matrix(1 0 0 1 66 60)" d="M-0.5,-6 L0.5,-6 L0.5,6 L-0.5,6 Z" fill="#FFC37A"/>
+<path id="neonrain_node_11" transform="matrix(1 0 0 1 84 60)" d="M-0.5,-6 L0.5,-6 L0.5,6 L-0.5,6 Z" fill="#FFC37A"/>
+<path id="neonrain_node_12" transform="matrix(1 0 0 1 102 60)" d="M-0.5,-6 L0.5,-6 L0.5,6 L-0.5,6 Z" fill="#FFC37A"/>
+<path id="neonrain_node_13" transform="matrix(1 0 0 1 120 60)" d="M-0.5,-6 L0.5,-6 L0.5,6 L-0.5,6 Z" fill="#FFC37A"/>
+<path id="neonrain_node_14" transform="matrix(1 0 0 1 138 60)" d="M-0.5,-6 L0.5,-6 L0.5,6 L-0.5,6 Z" fill="#FFC37A"/>
+<path id="neonrain_node_15" transform="matrix(1 0 0 1 156 60)" d="M-0.5,-6 L0.5,-6 L0.5,6 L-0.5,6 Z" fill="#FFC37A"/>
+<path id="neonrain_node_16" transform="matrix(1 0 0 1 174 60)" d="M-0.5,-6 L0.5,-6 L0.5,6 L-0.5,6 Z" fill="#FFC37A"/>
+<path id="neonrain_node_17" transform="matrix(1 0 0 1 192 60)" d="M-0.5,-6 L0.5,-6 L0.5,6 L-0.5,6 Z" fill="#FFC37A"/>
+<path id="neonrain_node_18" transform="matrix(1 0 0 1 210 60)" d="M-0.5,-6 L0.5,-6 L0.5,6 L-0.5,6 Z" fill="#FFC37A"/>
+<path id="neonrain_node_19" transform="matrix(1 0 0 1 228 60)" d="M-0.5,-6 L0.5,-6 L0.5,6 L-0.5,6 Z" fill="#FFC37A"/>
+<path id="neonrain_node_20" transform="matrix(1 0 0 1 246 60)" d="M-0.5,-6 L0.5,-6 L0.5,6 L-0.5,6 Z" fill="#FFC37A"/>
+<path id="neonrain_node_21" transform="matrix(1 0 0 1 264 60)" d="M-0.5,-6 L0.5,-6 L0.5,6 L-0.5,6 Z" fill="#FFC37A"/>
+<path id="neonrain_node_22" transform="matrix(1 0 0 1 282 60)" d="M-0.5,-6 L0.5,-6 L0.5,6 L-0.5,6 Z" fill="#FFC37A"/>
+<path id="neonrain_node_23" transform="matrix(1 0 0 1 300 60)" d="M-0.5,-6 L0.5,-6 L0.5,6 L-0.5,6 Z" fill="#FFC37A"/>
+<path id="neonrain_node_24" transform="matrix(1 0 0 1 318 60)" d="M-0.5,-6 L0.5,-6 L0.5,6 L-0.5,6 Z" fill="#FFC37A"/>
+<path id="neonrain_node_25" transform="matrix(1 0 0 1 336 60)" d="M-0.5,-6 L0.5,-6 L0.5,6 L-0.5,6 Z" fill="#FFC37A"/>
+<path id="neonrain_node_26" transform="matrix(1 0 0 1 354 60)" d="M-0.5,-6 L0.5,-6 L0.5,6 L-0.5,6 Z" fill="#FFC37A"/>
+<path id="neonrain_node_27" transform="matrix(1 0 0 1 372 60)" d="M-0.5,-6 L0.5,-6 L0.5,6 L-0.5,6 Z" fill="#FFC37A"/>
+<path id="neonrain_node_28" transform="matrix(1 0 0 1 390 60)" d="M-0.5,-6 L0.5,-6 L0.5,6 L-0.5,6 Z" fill="#FFC37A"/>
+<path id="neonrain_node_29" transform="matrix(1 0 0 1 408 60)" d="M-0.5,-6 L0.5,-6 L0.5,6 L-0.5,6 Z" fill="#FFC37A"/>
+<path id="neonrain_node_30" transform="matrix(1 0 0 1 426 60)" d="M-0.5,-6 L0.5,-6 L0.5,6 L-0.5,6 Z" fill="#FFC37A"/>
+<path id="neonrain_node_31" transform="matrix(1 0 0 1 444 60)" d="M-0.5,-6 L0.5,-6 L0.5,6 L-0.5,6 Z" fill="#FFC37A"/>
+<path id="neonrain_node_32" transform="matrix(1 0 0 1 33 184)" d="M-1.5,-2 L1.5,-2 L1.5,2 L-1.5,2 Z" fill="#FFC37A"/>
+<path id="neonrain_node_33" transform="matrix(1 0 0 1 55 134)" d="M-1.5,-2 L1.5,-2 L1.5,2 L-1.5,2 Z" fill="#FFC37A"/>
+<path id="neonrain_node_34" transform="matrix(1 0 0 1 109 200)" d="M-1.5,-2 L1.5,-2 L1.5,2 L-1.5,2 Z" fill="#FFC37A"/>
+<path id="neonrain_node_35" transform="matrix(1 0 0 1 129 192)" d="M-1.5,-2 L1.5,-2 L1.5,2 L-1.5,2 Z" fill="#FFC37A"/>
+<path id="neonrain_node_36" transform="matrix(1 0 0 1 147 126)" d="M-1.5,-2 L1.5,-2 L1.5,2 L-1.5,2 Z" fill="#FFC37A"/>
+<path id="neonrain_node_37" transform="matrix(1 0 0 1 173 200)" d="M-1.5,-2 L1.5,-2 L1.5,2 L-1.5,2 Z" fill="#FFC37A"/>
+<path id="neonrain_node_38" transform="matrix(1 0 0 1 199 184)" d="M-1.5,-2 L1.5,-2 L1.5,2 L-1.5,2 Z" fill="#FFC37A"/>
+<path id="neonrain_node_39" transform="matrix(1 0 0 1 221 164)" d="M-1.5,-2 L1.5,-2 L1.5,2 L-1.5,2 Z" fill="#FFC37A"/>
+<path id="neonrain_node_40" transform="matrix(1 0 0 1 251 192)" d="M-1.5,-2 L1.5,-2 L1.5,2 L-1.5,2 Z" fill="#FFC37A"/>
+<path id="neonrain_node_41" transform="matrix(1 0 0 1 279 208)" d="M-1.5,-2 L1.5,-2 L1.5,2 L-1.5,2 Z" fill="#FFC37A"/>
+<path id="neonrain_node_42" transform="matrix(1 0 0 1 301 192)" d="M-1.5,-2 L1.5,-2 L1.5,2 L-1.5,2 Z" fill="#FFC37A"/>
+<path id="neonrain_node_43" transform="matrix(1 0 0 1 321 152)" d="M-1.5,-2 L1.5,-2 L1.5,2 L-1.5,2 Z" fill="#FFC37A"/>
+<path id="neonrain_node_44" transform="matrix(1 0 0 1 345 146)" d="M-1.5,-2 L1.5,-2 L1.5,2 L-1.5,2 Z" fill="#FFC37A"/>
+<path id="neonrain_node_45" transform="matrix(1 0 0 1 403 176)" d="M-1.5,-2 L1.5,-2 L1.5,2 L-1.5,2 Z" fill="#FFC37A"/>
+<path id="neonrain_node_46" transform="matrix(1 0 0 1 427 208)" d="M-1.5,-2 L1.5,-2 L1.5,2 L-1.5,2 Z" fill="#FFC37A"/>
+<path id="neonrain_node_47" transform="matrix(1 0 0 1 449 184)" d="M-1.5,-2 L1.5,-2 L1.5,2 L-1.5,2 Z" fill="#FFC37A"/>
+<path id="neonrain_node_48" transform="matrix(1 0 0 1 24 58)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_49" transform="matrix(1 0 0 1 28 58)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_50" transform="matrix(1 0 0 1 32 58)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_51" transform="matrix(1 0 0 1 36 58)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_52" transform="matrix(1 0 0 1 40 58)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_53" transform="matrix(1 0 0 1 24 62)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_54" transform="matrix(1 0 0 1 28 62)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_55" transform="matrix(1 0 0 1 32 62)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_56" transform="matrix(1 0 0 1 36 62)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_57" transform="matrix(1 0 0 1 40 62)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_58" transform="matrix(1 0 0 1 24 66)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_59" transform="matrix(1 0 0 1 28 66)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_60" transform="matrix(1 0 0 1 32 66)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_61" transform="matrix(1 0 0 1 36 66)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_62" transform="matrix(1 0 0 1 40 66)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_63" transform="matrix(1 0 0 1 24 70)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_64" transform="matrix(1 0 0 1 28 70)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_65" transform="matrix(1 0 0 1 32 70)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_66" transform="matrix(1 0 0 1 36 70)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_67" transform="matrix(1 0 0 1 40 70)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_68" transform="matrix(1 0 0 1 24 74)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_69" transform="matrix(1 0 0 1 28 74)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_70" transform="matrix(1 0 0 1 32 74)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_71" transform="matrix(1 0 0 1 36 74)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_72" transform="matrix(1 0 0 1 40 74)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_73" transform="matrix(1 0 0 1 24 78)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_74" transform="matrix(1 0 0 1 28 78)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_75" transform="matrix(1 0 0 1 32 78)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_76" transform="matrix(1 0 0 1 36 78)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_77" transform="matrix(1 0 0 1 40 78)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_78" transform="matrix(1 0 0 1 24 82)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_79" transform="matrix(1 0 0 1 28 82)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_80" transform="matrix(1 0 0 1 32 82)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_81" transform="matrix(1 0 0 1 36 82)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_82" transform="matrix(1 0 0 1 40 82)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_83" transform="matrix(1 0 0 1 48 58)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_84" transform="matrix(1 0 0 1 52 58)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_85" transform="matrix(1 0 0 1 56 58)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_86" transform="matrix(1 0 0 1 60 58)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_87" transform="matrix(1 0 0 1 64 58)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_88" transform="matrix(1 0 0 1 48 62)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_89" transform="matrix(1 0 0 1 52 62)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_90" transform="matrix(1 0 0 1 56 62)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_91" transform="matrix(1 0 0 1 60 62)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_92" transform="matrix(1 0 0 1 64 62)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_93" transform="matrix(1 0 0 1 48 66)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_94" transform="matrix(1 0 0 1 52 66)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_95" transform="matrix(1 0 0 1 56 66)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_96" transform="matrix(1 0 0 1 60 66)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_97" transform="matrix(1 0 0 1 64 66)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_98" transform="matrix(1 0 0 1 48 70)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_99" transform="matrix(1 0 0 1 52 70)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_100" transform="matrix(1 0 0 1 56 70)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_101" transform="matrix(1 0 0 1 60 70)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_102" transform="matrix(1 0 0 1 64 70)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_103" transform="matrix(1 0 0 1 48 74)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_104" transform="matrix(1 0 0 1 52 74)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_105" transform="matrix(1 0 0 1 56 74)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_106" transform="matrix(1 0 0 1 60 74)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_107" transform="matrix(1 0 0 1 64 74)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_108" transform="matrix(1 0 0 1 48 78)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_109" transform="matrix(1 0 0 1 52 78)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_110" transform="matrix(1 0 0 1 56 78)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_111" transform="matrix(1 0 0 1 60 78)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_112" transform="matrix(1 0 0 1 64 78)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_113" transform="matrix(1 0 0 1 48 82)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_114" transform="matrix(1 0 0 1 52 82)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_115" transform="matrix(1 0 0 1 56 82)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_116" transform="matrix(1 0 0 1 60 82)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_117" transform="matrix(1 0 0 1 64 82)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_118" transform="matrix(1 0 0 1 72 58)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_119" transform="matrix(1 0 0 1 76 58)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_120" transform="matrix(1 0 0 1 80 58)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_121" transform="matrix(1 0 0 1 84 58)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_122" transform="matrix(1 0 0 1 88 58)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_123" transform="matrix(1 0 0 1 72 62)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_124" transform="matrix(1 0 0 1 76 62)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_125" transform="matrix(1 0 0 1 80 62)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_126" transform="matrix(1 0 0 1 84 62)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_127" transform="matrix(1 0 0 1 88 62)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_128" transform="matrix(1 0 0 1 72 66)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_129" transform="matrix(1 0 0 1 76 66)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_130" transform="matrix(1 0 0 1 80 66)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_131" transform="matrix(1 0 0 1 84 66)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_132" transform="matrix(1 0 0 1 88 66)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_133" transform="matrix(1 0 0 1 72 70)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_134" transform="matrix(1 0 0 1 76 70)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_135" transform="matrix(1 0 0 1 80 70)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_136" transform="matrix(1 0 0 1 84 70)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_137" transform="matrix(1 0 0 1 88 70)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_138" transform="matrix(1 0 0 1 72 74)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_139" transform="matrix(1 0 0 1 76 74)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_140" transform="matrix(1 0 0 1 80 74)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_141" transform="matrix(1 0 0 1 84 74)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_142" transform="matrix(1 0 0 1 88 74)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_143" transform="matrix(1 0 0 1 72 78)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_144" transform="matrix(1 0 0 1 76 78)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_145" transform="matrix(1 0 0 1 80 78)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_146" transform="matrix(1 0 0 1 84 78)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_147" transform="matrix(1 0 0 1 88 78)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_148" transform="matrix(1 0 0 1 72 82)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_149" transform="matrix(1 0 0 1 76 82)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_150" transform="matrix(1 0 0 1 80 82)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_151" transform="matrix(1 0 0 1 84 82)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_152" transform="matrix(1 0 0 1 88 82)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_153" transform="matrix(1 0 0 1 96 58)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_154" transform="matrix(1 0 0 1 100 58)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_155" transform="matrix(1 0 0 1 104 58)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_156" transform="matrix(1 0 0 1 108 58)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_157" transform="matrix(1 0 0 1 112 58)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_158" transform="matrix(1 0 0 1 96 62)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_159" transform="matrix(1 0 0 1 100 62)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_160" transform="matrix(1 0 0 1 104 62)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_161" transform="matrix(1 0 0 1 108 62)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_162" transform="matrix(1 0 0 1 112 62)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_163" transform="matrix(1 0 0 1 96 66)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_164" transform="matrix(1 0 0 1 100 66)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_165" transform="matrix(1 0 0 1 104 66)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_166" transform="matrix(1 0 0 1 108 66)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_167" transform="matrix(1 0 0 1 112 66)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_168" transform="matrix(1 0 0 1 96 70)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_169" transform="matrix(1 0 0 1 100 70)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_170" transform="matrix(1 0 0 1 104 70)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_171" transform="matrix(1 0 0 1 108 70)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_172" transform="matrix(1 0 0 1 112 70)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_173" transform="matrix(1 0 0 1 96 74)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_174" transform="matrix(1 0 0 1 100 74)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_175" transform="matrix(1 0 0 1 104 74)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_176" transform="matrix(1 0 0 1 108 74)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_177" transform="matrix(1 0 0 1 112 74)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_178" transform="matrix(1 0 0 1 96 78)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_179" transform="matrix(1 0 0 1 100 78)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_180" transform="matrix(1 0 0 1 104 78)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_181" transform="matrix(1 0 0 1 108 78)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_182" transform="matrix(1 0 0 1 112 78)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_183" transform="matrix(1 0 0 1 96 82)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_184" transform="matrix(1 0 0 1 100 82)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_185" transform="matrix(1 0 0 1 104 82)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_186" transform="matrix(1 0 0 1 108 82)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_187" transform="matrix(1 0 0 1 112 82)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_188" transform="matrix(1 0 0 1 120 58)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_189" transform="matrix(1 0 0 1 124 58)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_190" transform="matrix(1 0 0 1 128 58)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_191" transform="matrix(1 0 0 1 132 58)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_192" transform="matrix(1 0 0 1 136 58)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_193" transform="matrix(1 0 0 1 120 62)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_194" transform="matrix(1 0 0 1 124 62)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_195" transform="matrix(1 0 0 1 128 62)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_196" transform="matrix(1 0 0 1 132 62)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_197" transform="matrix(1 0 0 1 136 62)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_198" transform="matrix(1 0 0 1 120 66)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_199" transform="matrix(1 0 0 1 124 66)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_200" transform="matrix(1 0 0 1 128 66)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_201" transform="matrix(1 0 0 1 132 66)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_202" transform="matrix(1 0 0 1 136 66)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_203" transform="matrix(1 0 0 1 120 70)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_204" transform="matrix(1 0 0 1 124 70)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_205" transform="matrix(1 0 0 1 128 70)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_206" transform="matrix(1 0 0 1 132 70)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_207" transform="matrix(1 0 0 1 136 70)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_208" transform="matrix(1 0 0 1 120 74)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_209" transform="matrix(1 0 0 1 124 74)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_210" transform="matrix(1 0 0 1 128 74)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_211" transform="matrix(1 0 0 1 132 74)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_212" transform="matrix(1 0 0 1 136 74)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_213" transform="matrix(1 0 0 1 120 78)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_214" transform="matrix(1 0 0 1 124 78)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_215" transform="matrix(1 0 0 1 128 78)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_216" transform="matrix(1 0 0 1 132 78)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_217" transform="matrix(1 0 0 1 136 78)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_218" transform="matrix(1 0 0 1 120 82)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_219" transform="matrix(1 0 0 1 124 82)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_220" transform="matrix(1 0 0 1 128 82)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_221" transform="matrix(1 0 0 1 132 82)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_222" transform="matrix(1 0 0 1 136 82)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_223" transform="matrix(1 0 0 1 144 58)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_224" transform="matrix(1 0 0 1 148 58)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_225" transform="matrix(1 0 0 1 152 58)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_226" transform="matrix(1 0 0 1 156 58)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_227" transform="matrix(1 0 0 1 160 58)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_228" transform="matrix(1 0 0 1 144 62)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_229" transform="matrix(1 0 0 1 148 62)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_230" transform="matrix(1 0 0 1 152 62)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_231" transform="matrix(1 0 0 1 156 62)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_232" transform="matrix(1 0 0 1 160 62)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_233" transform="matrix(1 0 0 1 144 66)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_234" transform="matrix(1 0 0 1 148 66)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_235" transform="matrix(1 0 0 1 152 66)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_236" transform="matrix(1 0 0 1 156 66)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_237" transform="matrix(1 0 0 1 160 66)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_238" transform="matrix(1 0 0 1 144 70)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_239" transform="matrix(1 0 0 1 148 70)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_240" transform="matrix(1 0 0 1 152 70)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_241" transform="matrix(1 0 0 1 156 70)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_242" transform="matrix(1 0 0 1 160 70)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_243" transform="matrix(1 0 0 1 144 74)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_244" transform="matrix(1 0 0 1 148 74)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_245" transform="matrix(1 0 0 1 152 74)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_246" transform="matrix(1 0 0 1 156 74)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_247" transform="matrix(1 0 0 1 160 74)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_248" transform="matrix(1 0 0 1 144 78)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_249" transform="matrix(1 0 0 1 148 78)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_250" transform="matrix(1 0 0 1 152 78)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_251" transform="matrix(1 0 0 1 156 78)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_252" transform="matrix(1 0 0 1 160 78)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_253" transform="matrix(1 0 0 1 144 82)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_254" transform="matrix(1 0 0 1 148 82)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_255" transform="matrix(1 0 0 1 152 82)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_256" transform="matrix(1 0 0 1 156 82)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_257" transform="matrix(1 0 0 1 160 82)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_258" transform="matrix(1 0 0 1 168 58)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_259" transform="matrix(1 0 0 1 172 58)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_260" transform="matrix(1 0 0 1 176 58)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_261" transform="matrix(1 0 0 1 180 58)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_262" transform="matrix(1 0 0 1 184 58)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_263" transform="matrix(1 0 0 1 168 62)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_264" transform="matrix(1 0 0 1 172 62)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_265" transform="matrix(1 0 0 1 176 62)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_266" transform="matrix(1 0 0 1 180 62)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_267" transform="matrix(1 0 0 1 184 62)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_268" transform="matrix(1 0 0 1 168 66)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_269" transform="matrix(1 0 0 1 172 66)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_270" transform="matrix(1 0 0 1 176 66)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_271" transform="matrix(1 0 0 1 180 66)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_272" transform="matrix(1 0 0 1 184 66)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_273" transform="matrix(1 0 0 1 168 70)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_274" transform="matrix(1 0 0 1 172 70)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_275" transform="matrix(1 0 0 1 176 70)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_276" transform="matrix(1 0 0 1 180 70)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_277" transform="matrix(1 0 0 1 184 70)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_278" transform="matrix(1 0 0 1 168 74)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_279" transform="matrix(1 0 0 1 172 74)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_280" transform="matrix(1 0 0 1 176 74)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_281" transform="matrix(1 0 0 1 180 74)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_282" transform="matrix(1 0 0 1 184 74)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_283" transform="matrix(1 0 0 1 168 78)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_284" transform="matrix(1 0 0 1 172 78)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_285" transform="matrix(1 0 0 1 176 78)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_286" transform="matrix(1 0 0 1 180 78)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_287" transform="matrix(1 0 0 1 184 78)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_288" transform="matrix(1 0 0 1 168 82)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_289" transform="matrix(1 0 0 1 172 82)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_290" transform="matrix(1 0 0 1 176 82)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_291" transform="matrix(1 0 0 1 180 82)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_292" transform="matrix(1 0 0 1 184 82)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_293" transform="matrix(1 0 0 1 192 58)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_294" transform="matrix(1 0 0 1 196 58)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_295" transform="matrix(1 0 0 1 200 58)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_296" transform="matrix(1 0 0 1 204 58)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_297" transform="matrix(1 0 0 1 208 58)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_298" transform="matrix(1 0 0 1 192 62)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_299" transform="matrix(1 0 0 1 196 62)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_300" transform="matrix(1 0 0 1 200 62)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_301" transform="matrix(1 0 0 1 204 62)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_302" transform="matrix(1 0 0 1 208 62)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_303" transform="matrix(1 0 0 1 192 66)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_304" transform="matrix(1 0 0 1 196 66)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_305" transform="matrix(1 0 0 1 200 66)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_306" transform="matrix(1 0 0 1 204 66)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_307" transform="matrix(1 0 0 1 208 66)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_308" transform="matrix(1 0 0 1 192 70)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_309" transform="matrix(1 0 0 1 196 70)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_310" transform="matrix(1 0 0 1 200 70)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_311" transform="matrix(1 0 0 1 204 70)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_312" transform="matrix(1 0 0 1 208 70)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_313" transform="matrix(1 0 0 1 192 74)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_314" transform="matrix(1 0 0 1 196 74)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_315" transform="matrix(1 0 0 1 200 74)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_316" transform="matrix(1 0 0 1 204 74)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_317" transform="matrix(1 0 0 1 208 74)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_318" transform="matrix(1 0 0 1 192 78)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_319" transform="matrix(1 0 0 1 196 78)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_320" transform="matrix(1 0 0 1 200 78)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_321" transform="matrix(1 0 0 1 204 78)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_322" transform="matrix(1 0 0 1 208 78)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_323" transform="matrix(1 0 0 1 192 82)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_324" transform="matrix(1 0 0 1 196 82)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_325" transform="matrix(1 0 0 1 200 82)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_326" transform="matrix(1 0 0 1 204 82)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_327" transform="matrix(1 0 0 1 208 82)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_328" transform="matrix(1 0 0 1 216 58)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_329" transform="matrix(1 0 0 1 220 58)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_330" transform="matrix(1 0 0 1 224 58)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_331" transform="matrix(1 0 0 1 228 58)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_332" transform="matrix(1 0 0 1 232 58)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_333" transform="matrix(1 0 0 1 216 62)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_334" transform="matrix(1 0 0 1 220 62)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_335" transform="matrix(1 0 0 1 224 62)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_336" transform="matrix(1 0 0 1 228 62)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_337" transform="matrix(1 0 0 1 232 62)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_338" transform="matrix(1 0 0 1 216 66)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_339" transform="matrix(1 0 0 1 220 66)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_340" transform="matrix(1 0 0 1 224 66)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_341" transform="matrix(1 0 0 1 228 66)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_342" transform="matrix(1 0 0 1 232 66)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_343" transform="matrix(1 0 0 1 216 70)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_344" transform="matrix(1 0 0 1 220 70)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_345" transform="matrix(1 0 0 1 224 70)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_346" transform="matrix(1 0 0 1 228 70)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_347" transform="matrix(1 0 0 1 232 70)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_348" transform="matrix(1 0 0 1 216 74)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_349" transform="matrix(1 0 0 1 220 74)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_350" transform="matrix(1 0 0 1 224 74)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_351" transform="matrix(1 0 0 1 228 74)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_352" transform="matrix(1 0 0 1 232 74)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_353" transform="matrix(1 0 0 1 216 78)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_354" transform="matrix(1 0 0 1 220 78)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_355" transform="matrix(1 0 0 1 224 78)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_356" transform="matrix(1 0 0 1 228 78)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_357" transform="matrix(1 0 0 1 232 78)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_358" transform="matrix(1 0 0 1 216 82)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_359" transform="matrix(1 0 0 1 220 82)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_360" transform="matrix(1 0 0 1 224 82)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_361" transform="matrix(1 0 0 1 228 82)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<path id="neonrain_node_362" transform="matrix(1 0 0 1 232 82)" d="M-1.5,-1.5 L1.5,-1.5 L1.5,1.5 L-1.5,1.5 Z" fill="#FFC37A"/>
+<circle id="neonrain_palette_0" cx="640" cy="0" r="1" fill="#0E0700" stroke="#0E0700" stroke-width="1"/>
+<circle id="neonrain_palette_1" cx="640" cy="0" r="1" fill="#1A0D02" stroke="#1A0D02" stroke-width="1"/>
+<circle id="neonrain_palette_2" cx="640" cy="0" r="1" fill="#261404" stroke="#261404" stroke-width="1"/>
+<circle id="neonrain_palette_3" cx="640" cy="0" r="1" fill="#331B06" stroke="#331B06" stroke-width="1"/>
+<circle id="neonrain_palette_4" cx="640" cy="0" r="1" fill="#412308" stroke="#412308" stroke-width="1"/>
+<circle id="neonrain_palette_5" cx="640" cy="0" r="1" fill="#4F2B0A" stroke="#4F2B0A" stroke-width="1"/>
+<circle id="neonrain_palette_6" cx="640" cy="0" r="1" fill="#5F340C" stroke="#5F340C" stroke-width="1"/>
+<circle id="neonrain_palette_7" cx="640" cy="0" r="1" fill="#703E0F" stroke="#703E0F" stroke-width="1"/>
+<circle id="neonrain_palette_8" cx="640" cy="0" r="1" fill="#834912" stroke="#834912" stroke-width="1"/>
+<circle id="neonrain_palette_9" cx="640" cy="0" r="1" fill="#985516" stroke="#985516" stroke-width="1"/>
+<circle id="neonrain_palette_10" cx="640" cy="0" r="1" fill="#AE621A" stroke="#AE621A" stroke-width="1"/>
+<circle id="neonrain_palette_11" cx="640" cy="0" r="1" fill="#C4701F" stroke="#C4701F" stroke-width="1"/>
+<circle id="neonrain_palette_12" cx="640" cy="0" r="1" fill="#D98026" stroke="#D98026" stroke-width="1"/>
+<circle id="neonrain_palette_13" cx="640" cy="0" r="1" fill="#EA9233" stroke="#EA9233" stroke-width="1"/>
+<circle id="neonrain_palette_14" cx="640" cy="0" r="1" fill="#F6A84D" stroke="#F6A84D" stroke-width="1"/>
+<circle id="neonrain_palette_15" cx="640" cy="0" r="1" fill="#FFC37A" stroke="#FFC37A" stroke-width="1"/>
+</g>

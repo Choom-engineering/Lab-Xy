@@ -12,7 +12,7 @@ LAB_XY is a web groovebox built around the community machines of [Open-XY](https
 
 ## Features
 
-- **67 sounds**: 55 Open-XY community synths, 5 Open-XY drum kits, three LAB_XY machines (Champagne; Babel, a speaking machine; Flux, stereo additive resynthesis with FM) and four built-in engines (drums, analog, FM, string)
+- **68 sounds**: 55 Open-XY community synths, 5 Open-XY drum kits, four LAB_XY machines (Champagne; Babel, a speaking machine; Flux, stereo additive resynthesis with FM; Neon Rain, swelling brass and choir through a stereo ensemble) and four built-in engines (drums, analog, FM, string)
 - **Random** steps and sound **scramble** on any track, with undo
 - **8 tracks** and a **64-step sequencer** with p-locks, chords per step, trig conditions, Fill and latch
 - **Arrange**: 16 patterns (A to P) chained into a song
@@ -61,7 +61,7 @@ Download the repository and double-click `index.html`: it runs without a server.
 
 **Publishing a change**: edit the sources, run `python tools/build.py` to regenerate `app.bundle.js` and the machine scripts, then raise the version (`VERSION` in `sw.js` and `app.js`, `?v=` in `index.html` and in the `i18n.js` import) so visitors don't keep the old version in cache.
 
-**Updating machines**: with the Open-XY SDK cloned and Clang (wasm32) installed, run `python sdk.py preview --machine <folder> --out <output>` for each machine, copy `engine.wasm`, `panel.svg`, the manifest and the licence into `machines/<id>/`, and regenerate `machines/index.json`.
+**Updating machines**: a GitHub Action (`.github/workflows/update-machines.yml`) checks the Open-XY catalog every Monday, builds new and updated synths and drum kits with `tools/update_machines.py`, and opens a pull request with a summary; Netlify builds a deploy preview of it, and merging publishes. Run it by hand from the Actions tab. Locally: `python tools/update_machines.py --sdk <open-xy checkout>` (Clang with wasm32 and wasm-ld).
 
 ## Credits
 

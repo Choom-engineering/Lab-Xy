@@ -48,12 +48,12 @@ L'interface démarre en anglais ; le sélecteur EN | FR en haut retient le choix
 
 - `index.html`, `app.js` (source) et `app.bundle.js` (généré par `tools/build.py`, c'est lui que la page charge) : l'interface, le séquenceur (8 pistes, jusqu'à 64 pas), Players (arpège, accords), Projects.
 - `worklet.js` : l'audio. Les machines tournent dans l'hôte WebAssembly du SDK Open-XY (`sdk/browser/engine.mjs`), avec des notes datées à l'échantillon près ; les moteurs intégrés (Batterie, Analog, FM, Corde) sont écrits ici.
-- `machines/` : 63 machines compilées (dont 5 kits de batterie, et Champagne, Babel et Flux, les machines de LAB_XY), chacune avec son manifeste, son artwork d'écran et sa licence. Voir `CREDITS.md`.
+- `machines/` : 64 machines compilées (dont 5 kits de batterie, et Champagne, Babel, Flux et Neon Rain, les machines de LAB_XY), chacune avec son manifeste, son artwork d'écran et sa licence. Voir `CREDITS.md`.
 - `sdk/` : modules hôtes du SDK Open-XY (MIT), copiés sans modification.
 
 ## Mettre à jour les machines
 
-Avec le SDK Open-XY cloné et Clang (wasm32) installé : `python sdk.py preview --machine <dossier> --out <sortie>` pour chaque machine du catalogue, puis copier `engine.wasm`, `panel.svg`, le manifeste et la licence dans `machines/<id>/` et régénérer `machines/index.json`.
+C'est automatique : chaque lundi, une GitHub Action (`.github/workflows/update-machines.yml`) consulte le catalogue Open-XY, compile les synthés et kits nouveaux ou mis à jour avec `tools/update_machines.py`, et ouvre une pull request avec un résumé. Netlify en fait une préversion à tester ; la fusionner publie le site. On peut aussi la lancer à la main depuis l'onglet Actions. En local : `python tools/update_machines.py --sdk <dossier open-xy>` (Clang avec wasm32 et wasm-ld).
 
 ## Limites connues
 

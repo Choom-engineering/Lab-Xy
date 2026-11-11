@@ -32,8 +32,9 @@ class MachineProcessor extends AudioWorkletProcessor {
     super();
     this.q = new EventQueue();
     try {
-      const { module, parameters } = options.processorOptions;
+      const { module, parameters, drumKeys } = options.processorOptions;
       this.engine = new PreviewEngine(module, sampleRate, parameters);
+      if (drumKeys) this.kit(drumKeys, parameters);
       this.port.postMessage({ ready: true });
     } catch (error) {
       this.engine = null;
@@ -48,8 +49,39 @@ class MachineProcessor extends AudioWorkletProcessor {
       } catch (error) { this.port.postMessage({ error: error.message }); }
     };
   }
+  // A drum kit plays as on the OP-XY: each of its 24 keys (notes 53..76, the
+  // same at every octave) has its own model and eight controls, and the
+  // track's parameters are offsets to them, neutral in the middle. The
+  // preview has one model for all voices, so each voice's model and controls
+  // are put in place just before that voice renders.
+  kit(keys, parameters) {
+    const api = this.engine.api, engine = this.engine;
+    this.keys = keys;
+    this.offsets = parameters.slice();
+    this.voiceKey = new Map();
+    const words = new Int32Array(8);
+    engine.api = Object.assign({}, api, {
+      opxy_render: (state, output, parameterAddress, pitch) => {
+        const key = keys[this.voiceKey.get(state) ?? 0];
+        api.opxy_preview_model?.(key.model);
+        for (let k = 0; k < engine.parameterCount && k < 8; ++k) {
+          const offset = Math.round((this.offsets[k] / 0x7fffffff - 0.5) * 128);
+          const raw = Math.max(0, Math.min(127, key.controls[k] + offset));
+          words[k] = raw === 127 ? 0x7fffffff : raw << 24;
+        }
+        engine.parameters.set(words.subarray(0, Math.min(8, engine.parameterCount)));
+        return api.opxy_render(state, output, parameterAddress, pitch);
+      },
+    });
+  }
   fire(e) {
-    if (e.type === 'on') this.engine.noteOn(e.note, Math.min(1, Math.max(0.01, e.velocity)));
+    if (e.type === 'on' && this.keys) {
+      this.engine.noteOn(e.note, Math.min(1, Math.max(0.01, e.velocity)));
+      const voice = this.engine.voices.find(v => v.active && v.note === e.note);
+      if (voice) this.voiceKey.set(voice.state, (((e.note - 53) % 24) + 24) % 24);
+    }
+    else if (e.type === 'parameters' && this.keys) this.offsets = e.value.slice();
+    else if (e.type === 'on') this.engine.noteOn(e.note, Math.min(1, Math.max(0.01, e.velocity)));
     else if (e.type === 'off') this.engine.noteOff(e.note);
     else if (e.type === 'parameters') this.engine.setParameters(e.value);
     // The track's envelope: the preview's linear attack and release, in seconds.
