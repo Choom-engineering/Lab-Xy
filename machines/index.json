@@ -600,7 +600,7 @@
   "description": "A soul 45 on a portable record player as a drum kit: every key a hit from the break, played by the player's speed, needle, arm and dust brush.",
   "maintainer": "mmockett",
   "repository": "https://github.com/mmockett/OP-XY-Trigon",
-  "tag": "v1.1.0",
+  "tag": "v1.1.1",
   "keywords": [
    "percussion",
    "lofi",
@@ -626,7 +626,7 @@
   "description": "An old upright piano prepared as Cage prepared his, with bolts, screws, rubber and paper between the strings, played as a drum kit.",
   "maintainer": "mmockett",
   "repository": "https://github.com/mmockett/OP-XY-Trigon",
-  "tag": "v1.1.0",
+  "tag": "v1.1.1",
   "keywords": [
    "physical",
    "percussion",
@@ -687,7 +687,7 @@
   "description": "A drum kit drawn on film: each key a shape inked on a 16 mm soundtrack and played through a projector's sound head.",
   "maintainer": "mmockett",
   "repository": "https://github.com/mmockett/OP-XY-Trigon",
-  "tag": "v1.1.0",
+  "tag": "v1.1.1",
   "keywords": [
    "percussion",
    "experimental",
@@ -1066,7 +1066,7 @@
   "description": "The Machinedrum's KIT machines as a drum kit: each key picks its own machine and keeps its own controls.",
   "maintainer": "mmockett",
   "repository": "https://github.com/mmockett/OP-XY-MNMD",
-  "tag": "v1.3.1",
+  "tag": "v1.3.2",
   "keywords": [
    "emulation",
    "percussion"
@@ -2070,6 +2070,51 @@
   ],
   "presets": [
    "Init"
+  ],
+  "license": "MIT License"
+ },
+ {
+  "id": "nexus",
+  "kind": "synth",
+  "name": "NEXUS",
+  "description": "A two-layer polysynth after the CS-80: brass that blooms and bites, two resonant filters a layer, a sine, ring modulation and the CS-80's stereo chorus.",
+  "maintainer": "mmockett",
+  "repository": "https://github.com/mmockett/OP-XY-Nexus",
+  "tag": "v1.0.0",
+  "keywords": [
+   "analog",
+   "pad",
+   "emulation",
+   "bell",
+   "bass"
+  ],
+  "params": [
+   "Shape",
+   "Detune",
+   "Bright",
+   "Reso",
+   "Chorus",
+   "Ring",
+   "Swell",
+   "Bite"
+  ],
+  "presets": [
+   "Tyrell",
+   "Afterglow",
+   "Long Strings",
+   "Glass Choir",
+   "Toy Bells",
+   "Sixteen Feet",
+   "Searchlight",
+   "Neon Rain",
+   "Sodium Haze",
+   "High Rise",
+   "Vowels",
+   "Ember",
+   "Vapor Choir",
+   "Ice Tower",
+   "Undercity",
+   "Blip Brass"
   ],
   "license": "MIT License"
  }

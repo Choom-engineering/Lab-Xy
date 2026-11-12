@@ -46,6 +46,8 @@ const EN = {
   'Démo : House': 'Demo: House', 'Démo : Techno': 'Demo: Techno', 'Démo : Easy jazz': 'Demo: Easy jazz',
   'Mapping MIDI': 'MIDI mapping', 'Jouer': 'Playing', 'Associer les touches et encodeurs d\'un contrôleur MIDI': 'Map the keys and encoders of a MIDI controller',
   'Rappuie sur M3 : attaque et relâche de la machine.': 'Press M3 again: the machine\'s attack and release.',
+  'Rangée Shift (comme en tenant Shift sur l\'OP-XY). Rappuie sur M1 ou M2 pour revenir.': 'Shift row (as when holding Shift on the OP-XY). Press M1 or M2 again to go back.',
+  'Rappuie sur M1 ou M2 : la rangée Shift, huit réglages de plus.': 'Press M1 or M2 again: the Shift row, eight more controls.',
   'La relâche fait durer le son après le relâchement de la note : les queues de nappes, de cloches, de pianos.': 'Release keeps the sound going after the note is let go: the tails of pads, bells and pianos.',
   'Hasard': 'Random', 'Scramble': 'Scramble', 'Hasard sur la piste {n}': 'Random steps on track {n}', 'Scramble sur la piste {n}': 'Sound scrambled on track {n}',
   'Maj+clic : annuler': 'Shift+click to undo', 'Rien à annuler': 'Nothing to undo', 'Annulé': 'Undone',

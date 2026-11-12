@@ -12,7 +12,7 @@ LAB_XY is a web groovebox built around the community machines of [Open-XY](https
 
 ## Features
 
-- **68 sounds**: 55 Open-XY community synths, 5 Open-XY drum kits, four LAB_XY machines (Champagne; Babel, a speaking machine; Flux, stereo additive resynthesis with FM; Neon Rain, swelling brass and choir through a stereo ensemble) and four built-in engines (drums, analog, FM, string)
+- **69 sounds**: 56 Open-XY community synths, 5 Open-XY drum kits, four LAB_XY machines (Champagne; Babel, a speaking machine; Flux, stereo additive resynthesis with FM; Neon Rain, swelling brass and choir through a stereo ensemble) and four built-in engines (drums, analog, FM, string)
 - **Random** steps and sound **scramble** on any track, with undo
 - **8 tracks** and a **64-step sequencer** with p-locks, chords per step, trig conditions, Fill and latch
 - **Arrange**: 16 patterns (A to P) chained into a song

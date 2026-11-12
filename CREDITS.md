@@ -23,10 +23,10 @@ Chaque machine ci-dessous est compilée depuis son dépôt, au tag référencé 
 | Daath | SammiBabe666 | https://github.com/SammiBabe666/Daath-OP-XY-WitchHouse-engine | 1.0 | MIT License |
 | Drone | Gokux | https://github.com/Gokux/opxy-machines | v1.1.6 | MIT License |
 | Drop | mmockett | https://github.com/mmockett/OP-XY-Nonagon | v0.9.0 | MIT License |
-| DUST (kit de batterie) | mmockett | https://github.com/mmockett/OP-XY-Trigon | v1.1.0 | MIT License |
-| FELT (kit de batterie) | mmockett | https://github.com/mmockett/OP-XY-Trigon | v1.1.0 | MIT License |
+| DUST (kit de batterie) | mmockett | https://github.com/mmockett/OP-XY-Trigon | v1.1.1 | MIT License |
+| FELT (kit de batterie) | mmockett | https://github.com/mmockett/OP-XY-Trigon | v1.1.1 | MIT License |
 | Fermi | mmockett | https://github.com/mmockett/OP-XY-Nonagon | v0.9.1 | MIT License |
-| FLICKER (kit de batterie) | mmockett | https://github.com/mmockett/OP-XY-Trigon | v1.1.0 | MIT License |
+| FLICKER (kit de batterie) | mmockett | https://github.com/mmockett/OP-XY-Trigon | v1.1.1 | MIT License |
 | Flux | LAB_XY | — | local | MIT License |
 | FM DYN | mmockett | https://github.com/mmockett/OP-XY-MNMD | v1.3.1 | MIT License |
 | FM PAR | mmockett | https://github.com/mmockett/OP-XY-MNMD | v1.3.1 | MIT License |
@@ -42,10 +42,11 @@ Chaque machine ci-dessous est compilée depuis son dépôt, au tag référencé 
 | Macro Osc | etcetc000 | https://github.com/etcetc000/open-xy-core-machines | v1.10.0 | MIT License |
 | Mando | kristapskristaps | https://github.com/kristapskristaps/xy-machines | mando-v1.1.0 | MIT License |
 | matriXY | frankoooooooo | https://github.com/frankoooooooo/matrixy | v1.0.2 | MIT License |
-| MD KIT (kit de batterie) | mmockett | https://github.com/mmockett/OP-XY-MNMD | v1.3.1 | MIT License |
+| MD KIT (kit de batterie) | mmockett | https://github.com/mmockett/OP-XY-MNMD | v1.3.2 | MIT License |
 | Metal | johnnywagner | https://github.com/johnnywagner/open-xy-metal | v1.1.0 | MIT License |
 | Moth | mmockett | https://github.com/mmockett/OP-XY-Hexagon | v1.7.0 | MIT License |
 | Neon Rain | LAB_XY | — | local | MIT License |
+| NEXUS | mmockett | https://github.com/mmockett/OP-XY-Nexus | v1.0.0 | MIT License |
 | Nightdrive | V714 | https://github.com/V714/open-xy-nightdrive | v1.0.3 | MIT License |
 | Ohmonk | hatchman | https://github.com/hatchman/open-xy-ohmonk | v1.0.0 | MIT License |
 | Oldsun | etcetc000 | https://github.com/etcetc000/open-xy-oldsun | v0.20.2 | MIT License |

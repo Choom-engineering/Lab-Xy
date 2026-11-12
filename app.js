@@ -2,7 +2,7 @@
 import { createControls, shownControls } from './sdk/browser/controls.mjs';
 import { PreviewDisplay, SvgDisplay, NoteActivity } from './sdk/browser/display.mjs';
 import { selectArtwork } from './sdk/browser/graphics.mjs';
-import { LANG, L, setLang, translatePage } from './i18n.js?v=26';
+import { LANG, L, setLang, translatePage } from './i18n.js?v=27';
 
 const $ = id => document.getElementById(id);
 const cl = (x, a = 0, b = 1) => Math.max(a, Math.min(b, x));
@@ -197,7 +197,7 @@ function demoProjects() {
   return [house, techno, jazz];
 }
 
-const VERSION = '26';
+const VERSION = '27';
 // Remise à zéro : ?reset dans l'adresse, ou le bouton « Réinitialiser ».
 if (new URLSearchParams(location.search).has('reset')) {
   try { localStorage.removeItem('xy-studio-v2'); } catch (e) {}
@@ -273,7 +273,7 @@ function machineValues(t, m) {
   const def = m.controls.defaults();
   // Un kit de batterie : ses réglages de piste sont des décalages des réglages de chaque touche, neutres au milieu (comme sur l'OP-XY).
   if (m.manifest.drumKeys) for (const p of m.controls.parameters) def[p.id] = .5;
-  for (const p of m.controls.parameters) if (Number.isFinite(t.mv?.[p.id])) def[p.id] = cl(t.mv[p.id]);
+  for (const p of [...m.controls.parameters, ...shiftRow(m)]) if (Number.isFinite(t.mv?.[p.id])) def[p.id] = cl(t.mv[p.id]);
   t.mv = def;
   return def;
 }
@@ -696,6 +696,8 @@ function mKey(k) {
   if (S.mode === 'arrange' && k === S.sub && k === 2) { copyPattern(); return; }
   if (S.mode === 'arrange' && k === S.sub && k === 3) { clearPattern(); return; }
   if (S.mode === 'instrument' && k === 2 && S.sub === 2 && isMachine(T().engine)) { S.tpage = S.tpage ? 0 : 1; render(); return; }
+  if (S.mode === 'instrument' && k < 2 && S.sub === k && isMachine(T().engine) && hasShift()) { S.srow = S.srow ? 0 : 1; render(); return; }
+  if (k >= 2) S.srow = 0;
   S.sub = k; render();
 }
 function stepDown(i) {
@@ -799,6 +801,10 @@ function machineSlots(m, second) {
     return s < 0 ? null : s;
   });
 }
+// La rangée Shift d'une machine (SDK 1.13) : huit réglages de plus, 4 par page (sur l'OP-XY, en tenant Shift).
+const shiftRow = m => (m.controls.shift || []).filter(p => !p.absent);
+const shiftSlots = (m, second) => [0, 1, 2, 3].map(k => { const p = m.controls.shift?.[k + (second ? 4 : 0)]; return p && !p.absent ? p : null; });
+function hasShift() { const r = R[S.track]; return !!(r.machine && shiftRow(r.machine).length); }
 function hasPage2() { const r = R[S.track]; return !!(r.machine && machineSlots(r.machine, true).some(s => s !== null)); }
 // Pendant qu'un pas est tenu, un paramètre de son se lit et s'écrit dans les p-locks de ce pas.
 const heldLockStep = () => heldSteps.size ? T().steps[[...heldSteps][0]] || null : null;
@@ -817,7 +823,7 @@ function lockCont(key, label, get, set, fmt) {
   return { ...cont(label + lockMark(key), g, s2, fmt), lockKey: key };
 }
 function machineDesc(i, slot) {
-  const r = R[i], m = r.machine, p = m.controls.parameters[slot], t = S.tracks[i], key = 'm:' + p.id;
+  const r = R[i], m = r.machine, p = typeof slot === 'object' ? slot : m.controls.parameters[slot], t = S.tracks[i], key = 'm:' + p.id;
   const [get, set] = lockable(key, () => t.mv[p.id], v => { t.mv[p.id] = v; pushTrack(i); });
   const text = () => m.controls.displayValue(p.id, { ...machineValues(t, m), [p.id]: get() });
   const label = p.label + lockMark(key);
@@ -834,13 +840,15 @@ function page() {
     case 'instrument': {
       const mach = isMachine(t.engine), drums = t.engine === 'b:drums';
       // Machines : M1 et M2 montrent leurs deux pages de réglages. M3 rappuyé : Piste 2/2, l'attaque et la relâche des machines.
-      const subs = [mach ? 'Machine' : L('Son'), mach ? (hasPage2() ? 'Page 2' : '—') : drums ? '—' : L('Enveloppe'), mach ? L('Piste') + ' ' + (S.tpage ? 2 : 1) + '/2' : L('Piste'), L('Pas')];
+      const sr = mach && S.srow && hasShift();
+      const subs = [mach ? (sr ? 'Shift 1' : 'Machine') : L('Son'), mach ? (sr ? 'Shift 2' : hasPage2() ? 'Page 2' : '—') : drums ? '—' : L('Enveloppe'), mach ? L('Piste') + ' ' + (S.tpage ? 2 : 1) + '/2' : L('Piste'), L('Pas')];
       let encs = nil, msg = '';
       if (S.sub === 0 || (S.sub === 1 && mach)) {
         if (mach) {
           const r = R[i];
           if (!r.machine) msg = r.error ? L('Machine indisponible : ') + r.error : L('Chargement de la machine…');
-          else { const slots = machineSlots(r.machine, S.sub === 1); encs = slots.map(s => s === null ? null : machineDesc(i, s)); }
+          else if (sr) { encs = shiftSlots(r.machine, S.sub === 1).map(p => p && machineDesc(i, p)); msg = L('Rangée Shift (comme en tenant Shift sur l\'OP-XY). Rappuie sur M1 ou M2 pour revenir.'); }
+          else { const slots = machineSlots(r.machine, S.sub === 1); encs = slots.map(s => s === null ? null : machineDesc(i, s)); if (hasShift()) msg = L('Rappuie sur M1 ou M2 : la rangée Shift, huit réglages de plus.'); }
         } else if (S.sub === 0) {
           const b = engineInfo(t.engine);
           encs = [0, 1, 2, 3].map(k => lockCont('p' + k, b.params[k], () => T().p[k], v => { T().p[k] = v; tp(); }, v => fmtBuiltin(T().engine, k, v)));
@@ -1176,9 +1184,11 @@ function drawScreen(time) {
       try {
         const words = r.machine.controls.q31(machineValues(t, r.machine));
         const slots = machineSlots(r.machine, S.sub === 1).map((s, k) => s === null ? k : s);
-        const input = shownControls(words, slots);
+        const input = shownControls(words.slice(0, 8), slots);
         const elapsed = Math.min(8192, Math.max(0, Math.round(elapsedMs * 1.024)));
-        r.scene.apply(r.display.tick(input, elapsed, r.serial, S.track, matchMedia('(prefers-reduced-motion: reduce)').matches, r.activity, r.model || 0));
+        // Une machine à rangée Shift (mots 8..15) l'affiche quand on la règle, comme Shift tenu sur l'OP-XY.
+        const row = words.length > 8 ? { held: S.srow ? 1 : 0, line: S.sub === 1 ? 1 : 0, values: words.slice(8, 16) } : null;
+        r.scene.apply(r.display.tick(input, elapsed, r.serial, S.track, matchMedia('(prefers-reduced-motion: reduce)').matches, r.activity, r.model || 0, 0, [0, 0, 0, 0], null, { pan: 0, level: 0 }, 0, row));
         machineArt = r.scene.svg();
         override = r.scene.header;
       } catch (e) { r.display = r.scene = null; body = bigTitle(engineName(t.engine), L('écran indisponible')); }
@@ -1583,7 +1593,7 @@ function scrambleSound() {
   if (isMachine(t.engine)) {
     const m = R[i].machine; if (!m) { toast(L('Chargement de la machine…')); return; }
     machineValues(t, m);
-    for (const p of m.controls.parameters) {
+    for (const p of [...m.controls.parameters, ...shiftRow(m)]) {
       if (p.absent || /level|volume|^vol|gain|output/i.test(p.label + ' ' + p.id)) continue;
       if (p.mapping?.kind === 'enum') { const c = p.mapping.labels.length; t.mv[p.id] = (rnd(c) + .5) / c; }
       else t.mv[p.id] = mix(t.mv[p.id]);
