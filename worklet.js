@@ -101,6 +101,56 @@ class MachineProcessor extends AudioWorkletProcessor {
 }
 registerProcessor('xy-machine', MachineProcessor);
 
+// An Open-XY send effect (tools/effect_build.py): its own fx.cpp in WebAssembly, fed the
+// effect bus 64 frames at a time as on the OP-XY. Q31 audio with 1.0 at 2^28: the bus keeps
+// 18 dB of headroom, as effects that add gain (shimmer, feedback) need.
+const FX_SCALE = 2 ** 28;
+class EffectProcessor extends AudioWorkletProcessor {
+  constructor(options) {
+    super();
+    try {
+      const { module, words } = options.processorOptions;
+      this.x = new WebAssembly.Instance(module, {}).exports;
+      this.left = this.x.fx_left() >> 2; this.right = this.x.fx_right() >> 2; this.words = this.x.fx_parameters() >> 2;
+      this.x.fx_initialize();
+      this.set(words);
+      this.bpm = 120; this.playing = false; this.ticks = 0;
+      this.inL = new Float32Array(64); this.inR = new Float32Array(64); this.outL = new Float32Array(64); this.outR = new Float32Array(64);
+      this.fill = 0;  // frames gathered towards the next 64-frame block
+      this.port.postMessage({ ready: true });
+    } catch (error) { this.x = null; this.port.postMessage({ error: error.message }); }
+    this.port.onmessage = ({ data }) => {
+      if (!this.x) return;
+      if (data.type === 'parameters') this.set(data.value);
+      else if (data.type === 'tempo') { this.bpm = data.bpm; if (data.playing && !this.playing) this.ticks = 0; this.playing = !!data.playing; }
+      else if (data.type === 'reset') this.x.fx_initialize();
+    };
+  }
+  set(words) { new Int32Array(this.x.memory.buffer).set(words.slice(0, 12), this.words); }
+  block() {
+    const m = new Int32Array(this.x.memory.buffer), q = v => Math.max(-0x80000000, Math.min(0x7fffffff, Math.round(v * FX_SCALE)));
+    for (let i = 0; i < 64; i++) { m[this.left + i] = q(this.inL[i]); m[this.right + i] = q(this.inR[i]); }
+    this.x.fx_tempo(Math.round(this.bpm * 10), Math.floor(this.ticks) >>> 0, this.playing ? 1 : 0);
+    this.x.fx_process();
+    const o = new Int32Array(this.x.memory.buffer);
+    for (let i = 0; i < 64; i++) { this.outL[i] = o[this.left + i] / FX_SCALE; this.outR[i] = o[this.right + i] / FX_SCALE; }
+    if (this.playing) this.ticks += 64 * this.bpm * 96 / 60 / sampleRate;
+  }
+  process(inputs, outputs) {
+    const out = outputs[0], L = out[0], R = out[1] || out[0];
+    if (!this.x) { L.fill(0); R.fill(0); return true; }
+    const input = inputs[0], a = input?.[0], b = input?.[1] || a;
+    // One block of latency: each quantum's frames go in, the last finished block's come out.
+    for (let i = 0; i < L.length; i++) {
+      this.inL[this.fill] = a ? a[i] : 0; this.inR[this.fill] = b ? b[i] : 0;
+      L[i] = this.outL[this.fill]; R[i] = this.outR[this.fill];
+      if (++this.fill === 64) { this.fill = 0; this.block(); }
+    }
+    return true;
+  }
+}
+registerProcessor('xy-effect', EffectProcessor);
+
 /* ---------------- built-in engines ---------------- */
 const TAU = Math.PI * 2;
 const RATIOS = [0.5, 1, 1.5, 2, 3, 4, 5, 7];

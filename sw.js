@@ -1,10 +1,10 @@
 // XY Studio service worker: l'app s'ouvre hors ligne une fois chargée.
 // L'interface est servie depuis le réseau quand il répond (pour recevoir les mises à jour),
 // le reste (fichiers versionnés, machines, polices) depuis le cache, rempli au fil de l'usage.
-const VERSION = '27';
+const VERSION = '33';
 const CACHE = 'xy-studio-' + VERSION;
 const SHELL = ['./', 'index.html', 'app.bundle.js?v=' + VERSION,
-  'machines/index.json', 'manifest.webmanifest', 'icons/icon-192.png', 'icons/icon-512.png'];
+  'machines/index.json', 'effects/index.json', 'manifest.webmanifest', 'icons/icon-192.png', 'icons/icon-512.png'];
 
 self.addEventListener('install', e => {
   e.waitUntil(caches.open(CACHE).then(c => c.addAll(SHELL)).then(() => self.skipWaiting()));
@@ -21,7 +21,7 @@ self.addEventListener('fetch', e => {
   const own = url.origin === location.origin;
   const fonts = /fonts\.(googleapis|gstatic)\.com$/.test(url.hostname);
   if (!own && !fonts) return;
-  const page = req.mode === 'navigate' || (own && (url.pathname.endsWith('/') || url.pathname.endsWith('index.html') || url.pathname.endsWith('machines/index.json')));
+  const page = req.mode === 'navigate' || (own && (url.pathname.endsWith('/') || url.pathname.endsWith('index.html') || url.pathname.endsWith('machines/index.json') || url.pathname.endsWith('effects/index.json')));
   if (page) {
     e.respondWith(fetch(req).then(res => { if (res.ok) caches.open(CACHE).then(c => c.put(req, res.clone())); return res; })
       .catch(() => caches.match(req, { ignoreSearch: req.mode === 'navigate' }).then(r => r || caches.match('index.html'))));

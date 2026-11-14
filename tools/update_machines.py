@@ -2,14 +2,16 @@
 
     python tools/update_machines.py --sdk path/to/open-xy [--summary summary.md]
 
-For every published synth and drum kit in the catalog that LAB_XY does not have
-yet, or has at another version (tag), this clones the machine's repository at
-that tag, builds its browser preview with the Open-XY SDK (Clang with wasm32
-and wasm-ld), and installs it in machines/<id>/. LAB_XY's own machines
+For every published synth, drum kit and send effect in the catalog that LAB_XY
+does not have yet, or has at another version (tag), this clones the machine's
+repository at that tag, builds it for the browser (Clang with wasm32 and
+wasm-ld): a synth or kit with the Open-XY SDK's preview, an effect with
+tools/effect_build.py. Synths and kits go in machines/<id>/, effects in
+effects/<id>/. LAB_XY's own machines
 (Champagne, Babel, Flux…) are left as they are. It also refreshes the SDK's
 browser modules in sdk/browser/.
 
-When anything changed it regenerates machines/index.json, CREDITS.md and the
+When anything changed it regenerates machines/index.json, effects/index.json, CREDITS.md and the
 classic-script files (tools/build.py), raises the version so visitors get the
 new files, and writes a summary of what it did. The weekly GitHub Action
 (.github/workflows/update-machines.yml) runs it and opens a pull request.
@@ -20,13 +22,16 @@ import argparse, json, os, pathlib, re, shutil, subprocess, sys, tempfile
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 from drum_keys import drum_keys
+from effect_build import build_effect
 
 SITE = pathlib.Path(__file__).resolve().parent.parent
 MACHINES = SITE / 'machines'
+EFFECTS = SITE / 'effects'
 # Not distributed here: hurdygurdy's permission covers the Open-XY catalog and
-# firmware only; omnifilter is a filter for the whole instrument, not a sound.
-EXCLUDE = {'hurdygurdy', 'omnifilter'}
-KINDS = {'synth', 'drum'}
+# firmware only; omnifilter is a filter for the whole instrument and conductor a
+# generative sequencer for the device's tracks: neither is a sound.
+EXCLUDE = {'hurdygurdy', 'omnifilter', 'conductor'}
+KINDS = {'synth', 'drum', 'effect'}
 SDK_MODULES = ['engine.mjs', 'controls.mjs', 'display.mjs', 'graphics.mjs']
 
 
@@ -47,9 +52,12 @@ def build(machine, sdk, work):
     if r.returncode: raise RuntimeError('clone failed: ' + r.stderr.strip()[-300:])
     source = clone / path
     out = work / machine['id']
-    r = run([sys.executable, 'sdk.py', 'preview', '--machine', str(source), '--out', str(out)], cwd=sdk)
-    if r.returncode or not (out / 'engine.wasm').exists():
-        raise RuntimeError('preview build failed: ' + (r.stdout + r.stderr).strip()[-400:])
+    if machine.get('kind') == 'effect':
+        build_effect(source, out, sdk)
+    else:
+        r = run([sys.executable, 'sdk.py', 'preview', '--machine', str(source), '--out', str(out)], cwd=sdk)
+        if r.returncode or not (out / 'engine.wasm').exists():
+            raise RuntimeError('preview build failed: ' + (r.stdout + r.stderr).strip()[-400:])
     licence = next((p for p in [clone / 'LICENSE', clone / 'LICENSE.md', clone / 'LICENSE.txt', source / 'LICENSE', source / 'LICENSE.md'] if p.exists()), None)
     if not licence: raise RuntimeError('no licence file: not installed')
     shutil.copy(licence, out / 'LICENSE.txt')
@@ -61,14 +69,17 @@ def build(machine, sdk, work):
 
 
 def install(machine, built):
-    """Copy a built preview into machines/<id>/ and return its index entry."""
-    target = MACHINES / machine['id']
+    """Copy a built preview into machines/<id>/ (an effect: effects/<id>/) and return its index entry."""
+    effect = machine.get('kind') == 'effect'
+    target = (EFFECTS if effect else MACHINES) / machine['id']
     if target.exists(): shutil.rmtree(target)
     target.mkdir(parents=True)
     for name in ['engine.wasm', 'panel.svg', 'panel.grayscale.svg', 'LICENSE.txt', 'RECORDINGS.md']:
         if (built / name).exists(): shutil.copy(built / name, target / name)
     manifest = json.loads((built / 'manifest.json').read_text())
-    slim = {k: manifest[k] for k in ['engine', 'description', 'definition', 'sample_rate', 'graphics'] if k in manifest}
+    keep = ['engine', 'description', 'definition', 'busShift', 'transport', 'dry'] if effect else \
+           ['engine', 'description', 'definition', 'sample_rate', 'graphics']
+    slim = {k: manifest[k] for k in keep if k in manifest}
     slim['hasGray'] = (built / 'panel.grayscale.svg').exists()
     if (built / 'drum_keys.json').exists(): slim['drumKeys'] = json.loads((built / 'drum_keys.json').read_text())
     (target / 'manifest.json').write_text(json.dumps(slim, separators=(',', ':')))
@@ -108,7 +119,8 @@ def write_credits(index):
     start = next(i for i, l in enumerate(lines) if l.startswith('| Machine'))
     end = start + 2
     while end < len(lines) and lines[end].startswith('|'): end += 1
-    rows = [f"| {m['name'] + (' (kit de batterie)' if m.get('kind') == 'drum' else '')} | {m['maintainer']} | "
+    kinds = {'drum': ' (kit de batterie)', 'effect': ' (effet)'}
+    rows = [f"| {m['name'] + kinds.get(m.get('kind'), '')} | {m['maintainer']} | "
             f"{m['repository'] or '—'} | {m['tag']} | {m['license'] or '—'} |" for m in sorted(index, key=lambda m: m['name'].lower())]
     p.write_text('\n'.join(lines[:start + 2] + rows + lines[end:]) + '\n')
 
@@ -122,7 +134,8 @@ def main():
 
     catalog = json.loads((sdk / 'catalog' / 'machines.json').read_text())['machines']
     index = json.loads((MACHINES / 'index.json').read_text())
-    have = {m['id']: m for m in index}
+    effects = json.loads((EFFECTS / 'index.json').read_text()) if (EFFECTS / 'index.json').exists() else []
+    have = {m['id']: m for m in index + effects}
     wanted = [m for m in catalog if m.get('kind') in KINDS and m.get('status') == 'published'
               and m.get('repository') and m['id'] not in EXCLUDE]
     todo = [m for m in wanted if m['id'] not in have or have[m['id']].get('tag') != m.get('tag')]
@@ -152,10 +165,13 @@ def main():
     changed = bool(added or updated or host_changed)
     version = None
     if changed:
-        order = [m['id'] for m in index]
-        new_index = [have[i] for i in order if i in have] + [have[a[0]] for a in added]
+        order = [m['id'] for m in index + effects]
+        everything = [have[i] for i in order if i in have] + [have[a[0]] for a in added]
+        new_index = [m for m in everything if m.get('kind') != 'effect']
         (MACHINES / 'index.json').write_text(json.dumps(new_index, ensure_ascii=False, indent=1))
-        write_credits(new_index)
+        EFFECTS.mkdir(exist_ok=True)
+        (EFFECTS / 'index.json').write_text(json.dumps([m for m in everything if m.get('kind') == 'effect'], ensure_ascii=False, indent=1))
+        write_credits(everything)
         r = run([sys.executable, str(SITE / 'tools' / 'build.py')], cwd=SITE)
         if r.returncode: sys.exit('tools/build.py failed:\n' + r.stdout + r.stderr)
         version = bump_version()

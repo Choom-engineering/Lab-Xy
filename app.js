@@ -1,8 +1,8 @@
 // LAB_XY — Open-XY machines played from an OP-XY in MIDI controller mode.
-import { createControls, shownControls } from './sdk/browser/controls.mjs';
+import { createControls, shownControls, shiftWord } from './sdk/browser/controls.mjs';
 import { PreviewDisplay, SvgDisplay, NoteActivity } from './sdk/browser/display.mjs';
 import { selectArtwork } from './sdk/browser/graphics.mjs';
-import { LANG, L, setLang, translatePage } from './i18n.js?v=27';
+import { LANG, L, setLang, translatePage } from './i18n.js?v=33';
 
 const $ = id => document.getElementById(id);
 const cl = (x, a = 0, b = 1) => Math.max(a, Math.min(b, x));
@@ -20,6 +20,7 @@ const BUILTINS = [
 ];
 const DRUM_NAMES = [L('Grosse caisse'), 'Rim', L('Caisse claire'), 'Clap', L('Cloche'), L('Tom grave'), L('Charley fermé'), L('Tom médium'), 'Zap', L('Tom aigu'), L('Charley ouvert'), L('Cymbale')];
 let MACHINES = [];          // index.json
+let EFFECTS = [];           // effects/index.json : les effets d'envoi Open-XY
 let ENGINE_LIST = [];       // ids, builtins first
 const engineInfo = id => id.startsWith('b:') ? BUILTINS.find(b => b.id === id) : MACHINES.find(m => 'm:' + m.id === id);
 const engineName = id => engineInfo(id)?.name || id.slice(2);
@@ -66,7 +67,10 @@ function syncPattern() {
 }
 // Met un état ancien ou importé au format courant.
 function migrate(s) {
+  // Le bus d'effet Open-XY : l'effet choisi, ses réglages (et sa rangée Shift), son retour ; un envoi par piste.
+  s.ofx = { id: null, v: {}, ret: .7, ...s.ofx };
   s.tracks.forEach(t => {
+    t.ofx = Number.isFinite(t.ofx) ? t.ofx : 0;
     t.player = { type: 0, shape: 0, rate: 1, range: 1, inv: 0, latch: 0, ...t.player };
     t.steps = (t.steps || []).concat(Array(MAX_STEPS).fill(null)).slice(0, MAX_STEPS);
   });
@@ -194,10 +198,41 @@ function demoProjects() {
     { 0: { len: 64, n: jDrums }, 1: { len: 64, n: jBass }, 2: { len: 64, n: jKeys }, 3: { len: 64, n: melody }, 4: { len: 64, n: jPad } },
     { 0: { len: 64, n: jDrums }, 1: { len: 64, n: jBass }, 2: { len: 64, n: jKeys }, 3: { len: 64, n: melody.map(([s, n, v, l]) => [s, n, v, l, null, 3]) } },
   ], [[0, 1], [1, 1], [2, 2], [3, 1], [2, 2], [0, 1]], { div: 1, fb: .3, mix: .25 });
-  return [house, techno, jazz];
+  // Ambient IDM, 88 BPM : Fmaj9 / Am9 / Dm9 / Bbmaj7#11. Galileo et Curio en rythmes cassés, nappe Nexus,
+  // arpège Butterfly et lueurs Moth (en 48 pas contre 64 : elles se décalent à chaque tour), le tout dans Lustre.
+  const iChords = [[41, [53, 57, 60, 64, 67]], [45, [57, 60, 64, 67, 71]], [38, [50, 53, 57, 60, 64]], [46, [50, 53, 57, 62, 64]]];
+  const iKick = bars([[0, 53, .9], [7, 53, .55, 1, null, 3], [10, 54, .8], [14, 53, .4, 1, null, 2]]);
+  const iSnare = bars([[4, 55, .7], [12, 55, .75], [13, 56, .3, 1, null, 3], [15, 75, .25, 1, null, 2]]);
+  const iHats = bars(Array.from({ length: 16 }, (_, k) => [k, k % 4 === 2 ? 60 : 59, k % 2 ? .25 : .4, 1, null, k % 4 === 3 ? 3 : k % 2 ? 4 : 0]));
+  const iTicks = bars([[3, 74, .35, 1, null, 4], [6, 73, .3, 1, null, 3], [11, 74, .3, 1, null, 4], [9, 69, .4, 1, null, 6]]);
+  const iCurio = [[2, 67, .45, 1, null, 3], [9, 73, .5], [18, 55, .4, 1, null, 4], [27, 76, .35, 1, null, 3], [34, 73, .45], [41, 70, .35, 1, null, 2],
+    [50, 67, .4, 1, null, 3], [57, 73, .5], [62, 74, .3, 1, null, 3]];
+  const iBass = iChords.flatMap(([n], b) => [[b * 16, n, .8, 6], [b * 16 + 7, n, .5, 2], [b * 16 + 10, n + 7, .55, 3, null, 3], [b * 16 + 14, n + 12, .4, 1, null, 2]]);
+  const iPad = iChords.map(([n, x], b) => [b * 16, n + 12, .55, 16, x.slice(1, 4)]);
+  // Arpège montant-descendant en doubles croches, quelques notes laissées au hasard.
+  const iArp = iChords.flatMap(([, x], b) => [0, 1, 2, 3, 4, 3, 2, 1, 2, 3, 4, 3, 2, 1, 0, 2].map((k, s) => [b * 16 + s, x[k] + 12, s % 4 ? .45 : .6, 1, null, s % 4 === 3 ? 4 : s === 14 ? 3 : 0]));
+  // Lueurs Moth (preset Lantern : sans frappe, elles gonflent doucement) en noires pointées, sur 48 pas.
+  const iBells = [0, 6, 12, 18, 24, 30, 36, 42].map((s, k) => [s, [76, 72, 69, 79, 74, 72, 67, 71][k], .6 + (k % 3) * .08, 4, null, k % 4 === 3 ? 3 : 0]);
+  const idm = demoState(L('Démo : Ambient IDM'), 88, .06, [
+    ['m:galileo', { vol: 1, send: .06, ofx: .25 }],
+    ['m:curio', { vol: .9, send: .2, ofx: .55, pan: .25 }],
+    ['b:analog', { p: [.05, .12, .22, .15], env: [.02, .5, .55, .35], vol: .85, send: 0 }],
+    ['m:nexus', { mv: { shape: 0, detune: .3, bright: .4, reso: .4, chorus: .8, ring: 0, swell: .55, bite: 0, sine: 0, octave: .625, lowcut: .22, noise: .15, balance: .42, ratio: .3125, spread: .85, drift: .4 },
+      env: [.5, .45, .6, .8], vol: .78, send: .15, ofx: .7 }],
+    ['m:butterfly', { mv: { flux: .8284, coupling: .812, spread: .666, strike: 1, glow: .608, site: .12, tilt: .55, wingbeat: 0 }, env: [0, .45, .6, .45], vol: .9, send: .3, ofx: .6, pan: -.2 }],
+    ['m:moth', { mv: { fold: .45, fm: .15, ratio: .4062, strike: 0, glow: .95, bias: .3, mode: 0, drift: .4 }, env: [.1, .45, .6, .7], vol: .65, send: .4, ofx: .8, pan: .3 }],
+  ], [
+    { 3: { len: 64, n: iPad }, 5: { len: 48, n: iBells } },
+    { 3: { len: 64, n: iPad }, 4: { len: 64, n: iArp }, 5: { len: 48, n: iBells }, 1: { len: 64, n: iCurio } },
+    { 0: { len: 64, n: [...iKick, ...iSnare, ...iHats, ...iTicks] }, 1: { len: 64, n: iCurio }, 2: { len: 64, n: iBass }, 3: { len: 64, n: iPad }, 4: { len: 64, n: iArp }, 5: { len: 48, n: iBells } },
+    { 0: { len: 64, n: [...iKick, ...iTicks] }, 2: { len: 64, n: iBass }, 3: { len: 64, n: iPad }, 4: { len: 64, n: iArp.map(([s, n, v, l]) => [s, n, v * .8, l, null, 3]) }, 5: { len: 48, n: iBells } },
+  ], [[0, 1], [1, 2], [2, 4], [3, 2], [2, 2], [0, 1]], { div: 3, fb: .45, mix: .22, tone: .45 });
+  idm.data.ofx = { id: 'lustre', ret: .85, preset: 1, page: 0,
+    v: { size: .5, swarm: .85, decay: .72, space: .8, shimmer: .35, reverse: .1, drift: .2, tone: .72 } };  // « Glass garden »
+  return [idm, house, techno, jazz];
 }
 
-const VERSION = '27';
+const VERSION = '33';
 // Remise à zéro : ?reset dans l'adresse, ou le bouton « Réinitialiser ».
 if (new URLSearchParams(location.search).has('reset')) {
   try { localStorage.removeItem('xy-studio-v2'); } catch (e) {}
@@ -207,7 +242,7 @@ function loadState() {
   try { const s = JSON.parse(localStorage.getItem('xy-studio-v2') || 'null'); if (s && s.v === 2 && s.tracks?.length === 8) return s; } catch (e) {}
   return null;
 }
-// Premier lancement : la démo house s'ouvre.
+// Premier lancement : la démo Ambient IDM s'ouvre.
 let S = migrate(loadState() || JSON.parse(JSON.stringify(demoProjects()[0].data)));
 linkPattern();
 let keymap = (() => { try { return JSON.parse(localStorage.getItem('xy-keymap') || '{}'); } catch (e) { return {}; } })();
@@ -254,6 +289,70 @@ async function machineFiles(id) {
   ]);
   return { manifest, wasm, art, gray };
 }
+/* Effets d'envoi Open-XY (effects/<id>/, tools/effect_build.py). */
+const effectCache = new Map();
+function loadEffect(id) {
+  if (!effectCache.has(id)) {
+    effectCache.set(id, (async () => {
+      let manifest, wasm;
+      if (LOCAL) {
+        if (!window.XY_EFFECT_DATA?.[id]) await loadScript(`effects/${id}/data.js`);
+        const d = window.XY_EFFECT_DATA[id]; manifest = d.manifest; wasm = b64bytes(d.wasm).buffer;
+      } else {
+        manifest = await (await fetch(`effects/${id}/manifest.json`)).json();
+        wasm = await fetch(`effects/${id}/engine.wasm`).then(r => { if (!r.ok) throw new Error(L('engine.wasm manquant')); return r.arrayBuffer(); });
+      }
+      const module = await WebAssembly.compile(wasm);
+      const controls = createControls(manifest.definition);
+      const shift = (manifest.definition.shift || []).filter(p => !p.absent);
+      return { id, manifest, module, controls, shift, name: manifest.definition.name };
+    })().catch(e => { effectCache.delete(id); throw e; }));
+  }
+  return effectCache.get(id);
+}
+let effect = null, effectNode = null, effectGen = 0, effectError = '';
+// Valeurs complètes de l'effet : ses réglages, puis sa rangée Shift (choix normalisés).
+function effectValues(e) {
+  const v = e.controls.defaults();
+  for (const p of e.shift) v[p.id] = (Math.min(p.mapping.labels.length - 1, Math.round(p.default * (p.mapping.labels.length - 1))) + .5) / p.mapping.labels.length;
+  for (const k in v) if (Number.isFinite(S.ofx.v?.[k])) v[k] = cl(S.ofx.v[k]);
+  S.ofx.v = v;
+  return v;
+}
+// Douze mots comme l'OP-XY les donne à process : les huit réglages, puis la rangée Shift.
+function effectWords(e) {
+  const v = effectValues(e), base = {};
+  for (const p of e.controls.parameters) base[p.id] = v[p.id];
+  const words = e.controls.q31(base).slice(0, 8);
+  const row = e.shift.map(p => shiftWord(p, v[p.id]));
+  return [...words, ...row, 0, 0, 0, 0].slice(0, 12);
+}
+async function buildEffect() {
+  const gen = ++effectGen;
+  if (effectNode) { try { effectNode.disconnect(); effectNode.port.close(); } catch (e) {} effectNode = null; }
+  effect = null; effectError = '';
+  if (!S.ofx.id) { render(); return; }
+  try {
+    const e = await loadEffect(S.ofx.id);
+    if (gen !== effectGen) return;
+    effect = e;
+    if (ctx) {
+      const node = new AudioWorkletNode(ctx, 'xy-effect', { numberOfInputs: 1, numberOfOutputs: 1, outputChannelCount: [2], channelCount: 2,
+        channelCountMode: 'explicit', processorOptions: { module: e.module, words: effectWords(e) } });
+      node.port.onmessage = ({ data }) => { if (data.error) { effectError = data.error; render(); } };
+      ofxIn.connect(node); node.connect(ofxRet);
+      effectNode = node; fxTempo();
+    }
+  } catch (err) { if (gen === effectGen) effectError = String(err.message || err); }
+  render();
+}
+function pushEffect() { save(); if (effect && effectNode) effectNode.port.postMessage({ type: 'parameters', value: effectWords(effect) }); }
+function fxTempo() { effectNode?.port.postMessage({ type: 'tempo', bpm: S.bpm, playing }); }
+function chooseEffect(id) {
+  if (id === S.ofx.id) return;
+  S.ofx.id = id; S.ofx.v = {}; S.ofx.page = 0; S.ofx.preset = 0; save(); buildEffect();
+}
+
 const machineCache = new Map();
 function loadMachine(id) {
   if (!machineCache.has(id)) {
@@ -281,7 +380,7 @@ function machineValues(t, m) {
 /* ============================ audio ============================ */
 let outAn = null, recorder = null, recording = false, recChunks = [], recFrames = 0, recStart = 0;
 let punchNode = null;
-let ctx = null, master, limiter, fxIn, delay, dFb, dWet, dTone, dSat;
+let ctx = null, master, limiter, fxIn, delay, dFb, dWet, dTone, dSat, ofxIn, ofxRet, ofxAn;
 const chain = [];   // par piste : gain, pan, envoi, analyseur
 const R = Array.from({ length: 8 }, () => ({ node: null, gen: 0, machine: null, display: null, scene: null, activity: new NoteActivity(), serial: 0, loading: false, error: '' }));
 const envA = x => 0.002 + x * x * 2, envD = x => 0.02 + x * x * 3, envR = x => 0.02 + x * x * 4;
@@ -304,13 +403,19 @@ async function startAudio() {
   recorder.port.onmessage = ({ data }) => { if (recording) { recChunks.push(data); recFrames += data[0].length; if (recFrames > 44100 * 60 * 20) toggleRecording(); } };
   fxIn = ctx.createGain(); // entrée commune des envois ; le délai derrière peut être reconstruit
   buildDelay();
+  // Le bus d'effet Open-XY : la somme des envois, l'effet choisi, son retour.
+  ofxIn = ctx.createGain(); ofxIn.channelCount = 2; ofxIn.channelCountMode = 'explicit';
+  ofxRet = ctx.createGain(); ofxRet.connect(master);
+  ofxAn = ctx.createAnalyser(); ofxAn.fftSize = 1024; ofxRet.connect(ofxAn);
   for (let i = 0; i < 8; i++) {
-    const g = ctx.createGain(), pan = ctx.createStereoPanner(), send = ctx.createGain(), an = ctx.createAnalyser();
+    const g = ctx.createGain(), pan = ctx.createStereoPanner(), send = ctx.createGain(), osend = ctx.createGain(), an = ctx.createAnalyser();
     an.fftSize = 1024;
     g.connect(pan); pan.connect(master); g.connect(send); send.connect(fxIn); g.connect(an);
-    chain.push({ g, pan, send, an, buf: new Float32Array(1024) });
+    pan.connect(osend); osend.connect(ofxIn);
+    chain.push({ g, pan, send, osend, an, buf: new Float32Array(1024) });
   }
   applyFx();
+  buildEffect();
   await Promise.all(S.tracks.map((_, i) => buildNode(i)));
   startClock();
 }
@@ -396,11 +501,14 @@ function pushTrack(i) {
   c.g.gain.setTargetAtTime(t.mute ? 0 : t.vol * t.vol * boost, now, .01);
   c.pan.pan.setTargetAtTime(t.pan, now, .01);
   c.send.gain.setTargetAtTime(t.send, now, .01);
+  c.osend.gain.setTargetAtTime(t.ofx * t.ofx, now, .01);
 }
 function applyFx() {
   save(); if (!ctx || !delay) return;
   const now = ctx.currentTime;
   delay.delayTime.setTargetAtTime(60 / S.bpm * DIVS[S.fx.div].b, now, .05);
+  if (ofxRet) ofxRet.gain.setTargetAtTime(S.ofx.ret * S.ofx.ret * 1.5, now, .02);
+  fxTempo();
   dFb.gain.setTargetAtTime(Math.min(.8, S.fx.fb * .8), now, .02);
   dWet.gain.setTargetAtTime(S.fx.mix, now, .02);
   dTone.frequency.setTargetAtTime(400 * Math.pow(2, S.fx.tone * 5.5), now, .02);
@@ -546,12 +654,12 @@ function play() {
   stopArmed = false; queue = []; patStep = 0;
   if (S.songMode && S.song.length) { songRow = 0; songRep = 0; if (S.song[0].p !== S.pat) switchPattern(S.song[0].p); }
   clockTime = ctx.currentTime + .06; clockStep = 0;
-  playing = true; render();
+  playing = true; fxTempo(); render();
 }
 function stop() {
   if (!playing || stopArmed) { if (ctx) panicAll(); stopArmed = false; }
   else { stopArmed = true; toast(L('Arrêté · Stop encore pour couper tout le son')); }
-  playing = false; queue = []; curSeq = -1;
+  playing = false; queue = []; curSeq = -1; fxTempo();
   for (let i = 0; i < 8; i++) if (lockSig[i]) { lockSig[i] = ''; sendParams(i, null, 0); }
   render();
 }
@@ -693,6 +801,8 @@ function mKey(k) {
     heldSteps.forEach(j => { const st = T().steps[j]; if (!st?.locks) return; keys.forEach(key => { if (key in st.locks) { delete st.locks[key]; n++; } }); if (!Object.keys(st.locks).length) delete st.locks; stepTouched.add(j); });
     lockSig[S.track] = ''; save(); toast(L('{n} p-lock(s) effacé(s)', { n })); render(); return;
   }
+  if (S.mode === 'auxiliary' && k === 1 && S.sub === 1) { S.ofx.page = S.ofx.page ? 0 : 1; save(); render(); return; }
+  if (S.mode === 'mix' && k === 3 && S.sub === 3) { S.mixFx = S.mixFx ? 0 : 1; render(); return; }
   if (S.mode === 'arrange' && k === S.sub && k === 2) { copyPattern(); return; }
   if (S.mode === 'arrange' && k === S.sub && k === 3) { clearPattern(); return; }
   if (S.mode === 'instrument' && k === 2 && S.sub === 2 && isMachine(T().engine)) { S.tpage = S.tpage ? 0 : 1; render(); return; }
@@ -735,7 +845,7 @@ function applyProject(data) {
   S = migrate({ ...defaultState(), patterns: null, song: [], ...data, projectIdx: keep, mode: 'projects', sub: 0 });
   linkPattern(); nextPat = null;
   S.tracks.forEach((t, i) => buildNode(i));
-  applyFx(); save(); render();
+  applyFx(); buildEffect(); save(); render();
 }
 // Les démos suivent les projets sauvés dans la liste : projets, « nouveau », puis les démos.
 const DEMOS = demoProjects();
@@ -806,6 +916,22 @@ const shiftRow = m => (m.controls.shift || []).filter(p => !p.absent);
 const shiftSlots = (m, second) => [0, 1, 2, 3].map(k => { const p = m.controls.shift?.[k + (second ? 4 : 0)]; return p && !p.absent ? p : null; });
 function hasShift() { const r = R[S.track]; return !!(r.machine && shiftRow(r.machine).length); }
 function hasPage2() { const r = R[S.track]; return !!(r.machine && machineSlots(r.machine, true).some(s => s !== null)); }
+// L'effet Open-XY sur les encodeurs : sa page (positions 0–3), sans son « Dry » (le bus garde le son direct).
+function effectSlots(e, second) {
+  const ps = e.controls.parameters, pos = e.controls.positions;
+  // Les réglages 5 à 8 d'un effet sans « control » vont sur les encodeurs 1 à 4 de sa page 2, comme sur l'OP-XY.
+  return [0, 1, 2, 3].map(k => ps.find((p, j) => pos[j] !== null && pos[j] % 4 === k && (second ? j >= 4 : j < 4) && !p.absent && p.id !== e.manifest.dry) || null);
+}
+function effectDesc(e, p) {
+  const get = () => effectValues(e)[p.id], set = v => { S.ofx.v[p.id] = v; pushEffect(); };
+  const row = e.shift.includes(p);
+  const text = () => row ? p.mapping.labels[Math.min(p.mapping.labels.length - 1, Math.floor(get() * p.mapping.labels.length))] : e.controls.displayValue(p.id, { ...effectValues(e), [p.id]: get() });
+  if (p.mapping?.kind === 'enum') {
+    const count = p.mapping.labels.length;
+    return { label: p.label, int: true, norm: get, text, add: d => set((cl(Math.floor(get() * count) + d, 0, count - 1) + .5) / count) };
+  }
+  return { label: p.label, norm: get, text, add: d => set(cl(get() + d / 100)) };
+}
 // Pendant qu'un pas est tenu, un paramètre de son se lit et s'écrit dans les p-locks de ce pas.
 const heldLockStep = () => heldSteps.size ? T().steps[[...heldSteps][0]] || null : null;
 function lockable(key, get, set) {
@@ -884,14 +1010,33 @@ function page() {
       } else msg = L('Rien sur cette sous-page pour ce moteur.');
       return { subs, encs, msg };
     }
-    case 'auxiliary':
-      return { subs: [L('Délai'), '—', '—', '—'], msg: S.sub ? L('Rien sur cette sous-page.') : '', encs: S.sub ? nil : [
+    case 'auxiliary': {
+      // M1 : le délai. M2 : l'effet Open-XY (rappuyé : sa page 2). M3 : sa rangée Shift. M4 : le bus (effet, preset, retour, envoi).
+      const e = effect, two = e && effectSlots(e, true).some(Boolean);
+      const subs = [L('Délai'), e ? (S.ofx.page && two ? 'FX 2/2' : two ? 'FX 1/2' : 'FX') : 'FX', e?.shift.length ? 'Shift' : '—', 'Bus'];
+      if (S.sub === 0) return { subs, encs: [
         ints('Division', () => S.fx.div, v => { S.fx.div = v; applyFx(); }, 0, DIVS.length - 1, k => DIVS[k].l),
         cont(L('Retour'), () => S.fx.fb, v => { S.fx.fb = v; applyFx(); }, pct),
         cont('Mix', () => S.fx.mix, v => { S.fx.mix = v; applyFx(); }, pct),
         cont(L('Tonalité'), () => S.fx.tone, v => { S.fx.tone = v; applyFx(); }, v => hz(400 * Math.pow(2, v * 5.5)))] };
+      if (S.sub === 3) {
+        const ids = [null, ...EFFECTS.map(m => m.id)], presets = Object.keys(e?.controls.presets || {});
+        return { subs, msg: L('Choisis un effet Open-XY, puis règle l\'envoi de chaque piste (ici ou dans Mix, M4).'), encs: [
+          ints(L('Effet'), () => Math.max(0, ids.indexOf(S.ofx.id)), v => chooseEffect(ids[v]), 0, ids.length - 1, k => ids[k] ? EFFECTS[k - 1].name : L('aucun')),
+          presets.length ? ints('Preset', () => S.ofx.preset ?? 0, v => { S.ofx.preset = v; S.ofx.v = { ...e.controls.presets[presets[v]] }; pushEffect(); }, 0, presets.length - 1, k => presets[k]) : null,
+          cont(L('Retour FX'), () => S.ofx.ret, v => { S.ofx.ret = v; applyFx(); }, pct),
+          cont(L('Envoi piste ') + (i + 1), () => T().ofx, v => { T().ofx = v; tp(); }, pct)] };
+      }
+      if (!e) return { subs, encs: nil, msg: S.ofx.id ? (effectError ? L('Effet indisponible : ') + effectError : L('Chargement de l\'effet…')) : L('Aucun effet : choisis-en un sur M4 (Bus).') };
+      if (S.sub === 2) return e.shift.length
+        ? { subs, msg: L('La rangée Shift de l\'effet : ses modes et son routage (sur l\'OP-XY, Shift tenu).'), encs: [0, 1, 2, 3].map(k => e.shift[k] ? effectDesc(e, e.shift[k]) : null) }
+        : { subs, encs: nil, msg: L('Cet effet n\'a pas de rangée Shift.') };
+      return { subs, msg: two ? L('Rappuie sur M2 pour l\'autre page de l\'effet.') : '', encs: effectSlots(e, !!(S.ofx.page && two)).map(q => q && effectDesc(e, q)) };
+    }
     case 'mix': {
-      const subs = [L('Piste'), L('Pistes 1–4'), L('Pistes 5–8'), '—'];
+      const subs = [L('Piste'), L('Pistes 1–4'), L('Pistes 5–8'), L('Envois FX') + (S.mixFx ? ' 5–8' : ' 1–4')];
+      if (S.sub === 3) { const o = S.mixFx ? 4 : 0; return { subs, msg: (effect ? effect.name : L('Aucun effet')) + ' · ' + L('rappuie sur M4 pour les pistes ') + (S.mixFx ? '1–4' : '5–8'),
+        encs: [0, 1, 2, 3].map(k => cont(L('Piste ') + (o + k + 1), () => S.tracks[o + k].ofx, v => { S.tracks[o + k].ofx = v; pushTrack(o + k); }, pct)) }; }
       if (S.sub === 0) return { subs, msg: L('Rappuie sur la piste sélectionnée pour la couper ou la rétablir.'), encs: [
         cont('Volume', () => T().vol, v => { T().vol = v; tp(); }, pct),
         cont(L('Panoramique'), () => (T().pan + 1) / 2, v => { T().pan = v * 2 - 1; tp(); }, v => { const p = Math.round(v * 200 - 100); return p === 0 ? L('centre') : (p < 0 ? 'G ' : 'D ') + Math.abs(p); }),
@@ -1060,6 +1205,29 @@ function scope(i) {
   const pts = []; for (let k = 0; k < 160; k++) { const v = c.buf[start + k * 3] || 0; pts.push(`${(24 + k * 432 / 159).toFixed(1)},${(150 - cl(v, -1, 1) * 55).toFixed(1)}`); }
   return `<path d="M24 150H456" stroke="#1d1f23"/><polyline points="${pts.join(' ')}" fill="none" stroke="#f2f3f4" stroke-width="1.4"/>`;
 }
+// L'écran du bus d'effet : son nom, le son qui en revient, et l'envoi de chaque piste.
+const ofxBuf = new Float32Array(1024);
+function effectScreen() {
+  const name = effect ? effect.name : S.ofx.id ? (effectError ? L('indisponible') : L('chargement…')) : L('aucun effet');
+  const who = effect ? EFFECTS.find(m => m.id === effect.id)?.maintainer || '' : '';
+  let body = bigTitle('fx' + (who ? ' · ' + who : ''), name);
+  if (effect?.shift.length) {
+    const v = effectValues(effect);
+    body += `<text x="456" y="52" font-size="9" fill="#8b9096" text-anchor="end" ${SCREEN_FONT}>${esc(effect.shift.map(q => q.mapping.labels[Math.min(q.mapping.labels.length - 1, Math.floor(v[q.id] * q.mapping.labels.length))]).join(' · '))}</text>`;
+  }
+  if (ctx && ofxAn) {
+    ofxAn.getFloatTimeDomainData(ofxBuf);
+    const pts = []; for (let k = 0; k < 160; k++) { const x = ofxBuf[k * 6] || 0; pts.push(`${(24 + k * 432 / 159).toFixed(1)},${(124 - cl(x * 3, -1, 1) * 30).toFixed(1)}`); }
+    body += `<path d="M24 124H456" stroke="#1d1f23"/><polyline points="${pts.join(' ')}" fill="none" stroke="${effect ? '#f2f3f4' : '#3a3d42'}" stroke-width="1.2"/>`;
+  }
+  // Les envois des huit pistes, à leurs couleurs.
+  S.tracks.forEach((t, k) => {
+    const x = 24 + k * 55, h = 24 * t.ofx;
+    body += `<rect x="${x}" y="172" width="44" height="24" fill="#141518"/><rect x="${x}" y="${(196 - h).toFixed(1)}" width="44" height="${h.toFixed(1)}" fill="${TRACK_COLORS[k]}" opacity="${t.ofx ? .9 : .3}"/>`;
+    body += `<text x="${x + 3}" y="169" font-size="7" fill="#6b7076" ${SCREEN_FONT}>${k + 1}</text>`;
+  });
+  return body;
+}
 function envGlyph(t) {
   const [a, d, s, r] = t.env, x0 = 24, w = 432, A = 40 + a * 90, D = 40 + d * 90, Sw = 80, Rr = 40 + r * 90, tot = A + D + Sw + Rr, k = w / tot;
   const y0 = 205, h = 100, ys = y0 - h * s;
@@ -1221,6 +1389,8 @@ function drawScreen(time) {
       body += `<text x="28" y="${y}" font-size="11" fill="${sel ? ONACC : '#d6d8db'}" ${SCREEN_FONT}>${esc(name)}</text>`;
       if (list[idx]) body += `<text x="452" y="${y}" font-size="8" fill="${sel ? ONACC : '#6b7076'}" text-anchor="end" ${SCREEN_FONT}>${new Date(list[idx].date).toLocaleDateString(LANG === 'fr' ? 'fr-FR' : 'en-GB')}</text>`;
     });
+  } else if (S.mode === 'auxiliary' && S.sub > 0) {
+    body = effectScreen();
   } else if (S.mode === 'auxiliary') {
     body = bigTitle(L('Délai'), DIVS[S.fx.div].l + L(' · retour ') + Math.round(S.fx.fb * 100) + ' %');
     let a = 1; for (let k = 0; k < 9; k++) { const h = 90 * a; body += `<rect x="${24 + k * 48}" y="${(200 - h).toFixed(1)}" width="10" height="${h.toFixed(1)}" fill="${k ? ACC : '#f2f3f4'}" opacity="${k ? (.3 + .7 * S.fx.mix).toFixed(2) : 1}"/>`; a *= S.fx.fb * .9; }
@@ -1832,6 +2002,7 @@ $('offlineBtn').onclick = async () => {
       await Promise.all([fetch(base + 'engine.wasm'), fetch(base + 'panel.svg'), man.hasGray ? fetch(base + 'panel.grayscale.svg') : null]);
       b.textContent = L('Téléchargement des machines… {n} / {total}', { n: ++n, total: MACHINES.length });
     }
+    await Promise.all(EFFECTS.map(m => Promise.all([fetch(`effects/${m.id}/manifest.json`), fetch(`effects/${m.id}/engine.wasm`)])));
     b.textContent = L('Hors ligne : {n} machines prêtes', { n });
   } catch (e) { toast(L('Hors ligne impossible : ') + e.message); b.textContent = L('Préparer le hors ligne'); b.disabled = false; }
 };
@@ -1855,8 +2026,14 @@ try {
   else MACHINES = await (await fetch('machines/index.json')).json();
 }
 catch (e) { MACHINES = []; toast(L('Liste des machines introuvable : sers ce dossier par HTTP')); }
+try {
+  if (LOCAL) { await loadScript('effects/index.js'); EFFECTS = window.XY_EFFECT_INDEX || []; }
+  else EFFECTS = await (await fetch('effects/index.json')).json();
+} catch (e) { EFFECTS = []; }
 ENGINE_LIST = [...BUILTINS.map(b => b.id), ...MACHINES.map(m => 'm:' + m.id)];
 await openSharedLink();
+if (S.ofx.id && !EFFECTS.some(m => m.id === S.ofx.id)) S.ofx.id = null;
+if (S.ofx.id) buildEffect();  // ses réglages visibles avant d'allumer
 S.tracks.forEach(t => { if (!ENGINE_LIST.includes(t.engine)) t.engine = 'b:analog'; });
 S.tracks.forEach(t => { if (isMachine(t.engine) && !MACHINES.some(m => 'm:' + m.id === t.engine)) t.engine = 'b:analog'; });
 S.tracks.forEach((_, i) => { if (isMachine(S.tracks[i].engine)) buildNode(i); }); // écran des machines visible avant d'allumer
@@ -1865,7 +2042,8 @@ render(); requestAnimationFrame(frame);
 window.xyStudio = Object.freeze({
   seq: () => JSON.parse(JSON.stringify({ pat: S.pat, nextPat, songRow, songMode: S.songMode, song: S.song, track: S.track,
     steps: T().steps.slice(0, T().len), latched: [...latched[S.track].keys()], used: S.patterns.map((p, k) => patternUsed(k)) })),
-  status: () => ({ audio: ctx?.state || 'off', playing,
+  status: () => ({ audio: ctx?.state || 'off', playing, effect: effect?.id || null, effectError,
+    fx: (() => { if (!ofxAn) return 0; const b = new Float32Array(1024); ofxAn.getFloatTimeDomainData(b); return +Math.sqrt(b.reduce((a, x) => a + x * x, 0) / b.length).toFixed(4); })(),
     out: (() => { if (!outAn) return 0; const b = new Float32Array(2048); outAn.getFloatTimeDomainData(b); return +Math.sqrt(b.reduce((a, x) => a + x * x, 0) / b.length).toFixed(4); })(), tracks: S.tracks.map((t, i) => {
     let rms = 0; if (ctx) { const c = chain[i]; c.an.getFloatTimeDomainData(c.buf); rms = Math.sqrt(c.buf.reduce((a, x) => a + x * x, 0) / c.buf.length); }
     return { engine: t.engine, loaded: !!(R[i].node), error: R[i].error, rms: +rms.toFixed(4) }; }) }),

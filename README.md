@@ -12,13 +12,15 @@ LAB_XY is a web groovebox built around the community machines of [Open-XY](https
 
 ## Features
 
-- **69 sounds**: 56 Open-XY community synths, 5 Open-XY drum kits, four LAB_XY machines (Champagne; Babel, a speaking machine; Flux, stereo additive resynthesis with FM; Neon Rain, swelling brass and choir through a stereo ensemble) and four built-in engines (drums, analog, FM, string)
+- **73 sounds**: 56 Open-XY community synths, 9 Open-XY drum kits, four LAB_XY machines (Champagne; Babel, a speaking machine; Flux, stereo additive resynthesis with FM; Neon Rain, swelling brass and choir through a stereo ensemble) and four built-in engines (drums, analog, FM, string)
+- **11 Open-XY send effects** (Halo, Lustre, Stratus, Chroma, Lint, Vibe, Grainfield, Gen Tape, Diffusion, Ring Mod, Ping Pong) on an effect bus beside the delay, with a send per track: Auxiliary mode, M2 to M4
 - **Random** steps and sound **scramble** on any track, with undo
 - **8 tracks** and a **64-step sequencer** with p-locks, chords per step, trig conditions, Fill and latch
 - **Arrange**: 16 patterns (A to P) chained into a song
 - **Punch-in effects** with their own visuals: repeat, roll, reverse, tape stop, filters, bits, gate
 - **Players**: arpeggiator and chords
 - **WAV recording** and **share links** that hold the whole project
+- **Four demo songs** (ambient IDM, which opens first, house, techno, easy jazz) in Projects
 - **Installable** as an app, works **offline**
 - English and French interface
 
@@ -57,11 +59,12 @@ Download the repository and double-click `index.html`: it runs without a server.
 - `i18n.js`: interface texts are written in French in the code and translated by a French → English dictionary; wrap new texts in `L('…')`.
 - `worklet.js`: audio. Machines run in the Open-XY SDK WebAssembly host (`sdk/browser/engine.mjs`) with sample-accurate notes; the built-in engines and punch-in effects live here.
 - `machines/`: compiled machines, each with its manifest, screen artwork and licence. See [CREDITS.md](CREDITS.md).
+- `effects/`: Open-XY send effects, each one's own code compiled for the browser by `tools/effect_build.py` (the SDK's browser preview plays synths and kits only).
 - `sdk/`: Open-XY SDK host modules (MIT), unchanged.
 
 **Publishing a change**: edit the sources, run `python tools/build.py` to regenerate `app.bundle.js` and the machine scripts, then raise the version (`VERSION` in `sw.js` and `app.js`, `?v=` in `index.html` and in the `i18n.js` import) so visitors don't keep the old version in cache.
 
-**Updating machines**: a GitHub Action (`.github/workflows/update-machines.yml`) checks the Open-XY catalog every Monday, builds new and updated synths and drum kits with `tools/update_machines.py`, and opens a pull request with a summary; Netlify builds a deploy preview of it, and merging publishes. Run it by hand from the Actions tab. Locally: `python tools/update_machines.py --sdk <open-xy checkout>` (Clang with wasm32 and wasm-ld).
+**Updating machines**: a GitHub Action (`.github/workflows/update-machines.yml`) checks the Open-XY catalog every Monday, builds new and updated synths, drum kits and send effects with `tools/update_machines.py`, and opens a pull request with a summary; Netlify builds a deploy preview of it, and merging publishes. Run it by hand from the Actions tab. Locally: `python tools/update_machines.py --sdk <open-xy checkout>` (Clang with wasm32 and wasm-ld).
 
 ## Credits
 

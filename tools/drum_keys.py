@@ -38,7 +38,11 @@ def drum_keys(source, machine_id, sdk):
     with tempfile.TemporaryDirectory() as tmp:
         main, exe = pathlib.Path(tmp) / 'keys.cpp', pathlib.Path(tmp) / 'keys'
         main.write_text(PROGRAM.replace('NS::', machine_id + '::'))
-        r = subprocess.run([cxx, '-std=c++11', '-O1', '-w', f'-I{sdk / "sdk" / "include"}', f'-I{source}', str(main), '-o', str(exe)],
+        # A kit may split its code over more sources (machine.json "sources"); they link too.
+        machine = json.loads((source / 'machine.json').read_text())
+        extra = [str(source / s) for s in machine.get('sources', [])]
+        includes = [f'-I{source / i}' for i in machine.get('includes', [])]
+        r = subprocess.run([cxx, '-std=c++11', '-O1', '-w', f'-I{sdk / "sdk" / "include"}', f'-I{source}', *includes, str(main), *extra, '-o', str(exe)],
                            capture_output=True, text=True, timeout=300)
         if r.returncode: raise RuntimeError('compile failed: ' + r.stderr.strip()[-400:])
         r = subprocess.run([str(exe)], capture_output=True, text=True, timeout=60)

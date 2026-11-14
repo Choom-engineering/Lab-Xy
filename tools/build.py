@@ -4,7 +4,7 @@
 
 - app.bundle.js: the SDK browser modules, i18n.js and app.js joined into one classic script
   (browsers refuse ES modules from file://), plus the audio worklet source as text.
-- machines/index.js and machines/<id>/data.js: the machine list and each machine's files as
+- machines/index.js and machines/<id>/data.js (effects/ likewise): the machine list and each machine's files as
   scripts (browsers refuse fetch() from file://). The hosted site keeps using the plain files.
 
 Run it after changing app.js, i18n.js, worklet.js or the machines.
@@ -70,7 +70,20 @@ def build_machines():
         total += len(text)
     return len(index), total
 
+def build_effects():
+    """effects/index.js and effects/<id>/data.js: the Open-XY send effects, as scripts."""
+    edir = SITE / 'effects'
+    index = json.loads((edir / 'index.json').read_text(encoding='utf-8')) if (edir / 'index.json').exists() else []
+    (edir / 'index.js').write_text('window.XY_EFFECT_INDEX = ' + json.dumps(index, ensure_ascii=False) + ';\n', encoding='utf-8')
+    for m in index:
+        d = edir / m['id']
+        data = {'manifest': json.loads((d / 'manifest.json').read_text(encoding='utf-8')),
+                'wasm': base64.b64encode((d / 'engine.wasm').read_bytes()).decode()}
+        (d / 'data.js').write_text(f"(window.XY_EFFECT_DATA = window.XY_EFFECT_DATA || {{}})[{json.dumps(m['id'])}] = {json.dumps(data, separators=(',', ':'))};\n", encoding='utf-8')
+    return len(index)
+
 if __name__ == '__main__':
     size = build_bundle()
     n, total = build_machines()
-    print(f'app.bundle.js: {size // 1024} KB; {n} machine scripts: {total // 1024} KB')
+    e = build_effects()
+    print(f'app.bundle.js: {size // 1024} KB; {n} machine scripts: {total // 1024} KB; {e} effects')

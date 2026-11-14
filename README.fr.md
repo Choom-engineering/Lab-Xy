@@ -26,6 +26,10 @@ HTTPS est requis pour Web MIDI hors `localhost`.
 
 Mode **Punch** : les pas 1 à 8 (à l'écran ou sur l'OP-XY) se tiennent pour jouer un effet sur tout le son ; les touches 1 à 8 du clavier marchent dans tous les modes. Repeat et Roll rejouent une tranche (division réglable), Reverse lit à l'envers, Tape stop ralentit jusqu'à l'arrêt, Low pass et High pass balaient un filtre, Bits dégrade, Gate hache le son. Les effets se combinent ; chacun a son animation à l'écran, et un bandeau rappelle les effets actifs dans les autres modes.
 
+## Effets Open-XY
+
+Mode **Auxiliary** : M1 garde le délai ; M4 (Bus) choisit un des 11 effets d'envoi Open-XY (Halo, Lustre, Stratus, Chroma, Lint, Vibe, Grainfield, Gen Tape, Diffusion, Ring Mod, Ping Pong), son preset, son retour et l'envoi de la piste ; M2 règle l'effet (rappuyé : sa page 2), M3 sa rangée Shift. Les envois de toutes les pistes sont aussi dans **Mix**, M4 (rappuyé : pistes 5 à 8). Chaque effet tourne avec son propre code, compilé pour le navigateur par `tools/effect_build.py`, et reçoit le tempo comme sur l'OP-XY.
+
 ## Encodeurs
 
 La détection relatif/absolu est automatique et suit les derniers messages reçus. Si un encodeur répond mal, choisir son codage à la main dans **Touches et encodeurs MIDI** ; les valeurs reçues s'y affichent pour vérifier.
@@ -48,12 +52,13 @@ L'interface démarre en anglais ; le sélecteur EN | FR en haut retient le choix
 
 - `index.html`, `app.js` (source) et `app.bundle.js` (généré par `tools/build.py`, c'est lui que la page charge) : l'interface, le séquenceur (8 pistes, jusqu'à 64 pas), Players (arpège, accords), Projects.
 - `worklet.js` : l'audio. Les machines tournent dans l'hôte WebAssembly du SDK Open-XY (`sdk/browser/engine.mjs`), avec des notes datées à l'échantillon près ; les moteurs intégrés (Batterie, Analog, FM, Corde) sont écrits ici.
-- `machines/` : 64 machines compilées (dont 5 kits de batterie, et Champagne, Babel, Flux et Neon Rain, les machines de LAB_XY), chacune avec son manifeste, son artwork d'écran et sa licence. Voir `CREDITS.md`.
+- `machines/` : 69 machines compilées (dont 9 kits de batterie, et Champagne, Babel, Flux et Neon Rain, les machines de LAB_XY), chacune avec son manifeste, son artwork d'écran et sa licence. Voir `CREDITS.md`.
+- `effects/` : les 11 effets d'envoi Open-XY, compilés par `tools/effect_build.py` (l'aperçu du SDK ne joue que les synthés et les kits).
 - `sdk/` : modules hôtes du SDK Open-XY (MIT), copiés sans modification.
 
 ## Mettre à jour les machines
 
-C'est automatique : chaque lundi, une GitHub Action (`.github/workflows/update-machines.yml`) consulte le catalogue Open-XY, compile les synthés et kits nouveaux ou mis à jour avec `tools/update_machines.py`, et ouvre une pull request avec un résumé. Netlify en fait une préversion à tester ; la fusionner publie le site. On peut aussi la lancer à la main depuis l'onglet Actions. En local : `python tools/update_machines.py --sdk <dossier open-xy>` (Clang avec wasm32 et wasm-ld).
+C'est automatique : chaque lundi, une GitHub Action (`.github/workflows/update-machines.yml`) consulte le catalogue Open-XY, compile les synthés, kits et effets nouveaux ou mis à jour avec `tools/update_machines.py`, et ouvre une pull request avec un résumé. Netlify en fait une préversion à tester ; la fusionner publie le site. On peut aussi la lancer à la main depuis l'onglet Actions. En local : `python tools/update_machines.py --sdk <dossier open-xy>` (Clang avec wasm32 et wasm-ld).
 
 ## Limites connues
 
