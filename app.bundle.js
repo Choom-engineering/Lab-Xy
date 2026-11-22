@@ -1357,7 +1357,7 @@ function demoProjects() {
   return [idm, house, techno, jazz];
 }
 
-const VERSION = '36';
+const VERSION = '37';
 // Remise à zéro : ?reset dans l'adresse, ou le bouton « Réinitialiser ».
 if (new URLSearchParams(location.search).has('reset')) {
   try { localStorage.removeItem('xy-studio-v2'); } catch (e) {}
@@ -2799,7 +2799,8 @@ function buildKeys() {
 }
 function renderKeys() {
   const set = KEY_ORDER.filter(id => keymap[id] != null).length;
-  $('banner').hidden = set > 6 || wizard;
+  let gone = false; try { gone = localStorage.getItem('xy-banner') === 'off'; } catch (e) {}
+  $('banner').hidden = set > 6 || wizard || gone;
   KEY_ORDER.forEach(id => {
     const c = kcEls[id], cc = keymap[id];
     c.classList.toggle('set', cc != null && cc >= 0); c.classList.toggle('learn', learnId === id);
@@ -2824,6 +2825,7 @@ function showInfo(on) {
   $('infoBtn').classList.toggle('on', on);
 }
 $('infoBtn').onclick = () => showInfo($('infoSec').hidden);
+$('bannerClose').onclick = () => { try { localStorage.setItem('xy-banner', 'off'); } catch (e) {} $('banner').hidden = true; };
 // Thème visuel : mémorisé dans ce navigateur (appliqué avant l'affichage par index.html).
 function applyTheme(v) {
   if (v) document.documentElement.dataset.theme = v; else delete document.documentElement.dataset.theme;
