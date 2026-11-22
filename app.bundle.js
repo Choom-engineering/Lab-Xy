@@ -977,6 +977,16 @@ const EN = {
   'bpm · swing ': 'bpm · swing ',
   // navigateur de machines
   'Moteurs LAB_XY': 'LAB_XY engines', 'Kits de batterie Open-XY': 'Open-XY drum kits',
+  'Instrument': 'Instrument',
+  'Contrôle': 'Control',
+  'Infos': 'Info',
+  'Thème': 'Theme',
+  'Auto': 'Auto',
+  'Papier': 'Paper',
+  'Nuit': 'Night',
+  'Marine': 'Navy',
+  'Sauge': 'Sage',
+  'Brique': 'Brick',
   'Démo : House': 'Demo: House',
   'Démo : Ambient IDM': 'Demo: Ambient IDM', 'Démo : Techno': 'Demo: Techno', 'Démo : Easy jazz': 'Demo: Easy jazz',
   'Mapping MIDI': 'MIDI mapping', 'Jouer': 'Playing', 'Associer les touches et encodeurs d\'un contrôleur MIDI': 'Map the keys and encoders of a MIDI controller',
@@ -1347,7 +1357,7 @@ function demoProjects() {
   return [idm, house, techno, jazz];
 }
 
-const VERSION = '34';
+const VERSION = '36';
 // Remise à zéro : ?reset dans l'adresse, ou le bouton « Réinitialiser ».
 if (new URLSearchParams(location.search).has('reset')) {
   try { localStorage.removeItem('xy-studio-v2'); } catch (e) {}
@@ -2566,7 +2576,8 @@ function buildUI() {
     let y0 = null;
     el.addEventListener('pointerdown', e => { y0 = e.clientY; el.setPointerCapture(e.pointerId); });
     el.addEventListener('pointermove', e => { if (y0 == null) return; const dy = y0 - e.clientY; if (Math.abs(dy) >= 3) { const d = page().encs[k]; turn(k, Math.trunc(dy / 3) * (d?.int ? .34 : (e.shiftKey ? .25 : 1))); y0 = e.clientY; } });
-    el.addEventListener('pointerup', () => { y0 = null; });
+    // Relâché, annulé ou capture perdue (souris lâchée hors de la fenêtre) : l'encodeur ne suit plus la souris.
+    ['pointerup', 'pointercancel', 'lostpointercapture'].forEach(ev => el.addEventListener(ev, () => { y0 = null; }));
     el.addEventListener('wheel', e => { e.preventDefault(); turn(k, e.deltaY < 0 ? 1 : -1); }, { passive: false });
     el.addEventListener('keydown', e => { if (['ArrowUp', 'ArrowRight'].includes(e.key)) { turn(k, 1); e.preventDefault(); } if (['ArrowDown', 'ArrowLeft'].includes(e.key)) { turn(k, -1); e.preventDefault(); } });
     $('encs').append(el); encEls.push(el);
@@ -2804,15 +2815,34 @@ function showMapping(on) {
   $('mapSec').hidden = !on;
   $('mapBtn').setAttribute('aria-expanded', on ? 'true' : 'false');
   $('mapBtn').classList.toggle('on', on);
-  if (on) $('mapSec').scrollIntoView({ behavior: 'smooth', block: 'start' });
-  else { wizard = false; learnId = null; renderKeys(); }
+  if (!on) { wizard = false; learnId = null; renderKeys(); }
 }
+// Infos : l'aide, ce que LAB_XY reproduit et les crédits, dans une fenêtre par-dessus.
+function showInfo(on) {
+  $('infoSec').hidden = !on;
+  $('infoBtn').setAttribute('aria-expanded', on ? 'true' : 'false');
+  $('infoBtn').classList.toggle('on', on);
+}
+$('infoBtn').onclick = () => showInfo($('infoSec').hidden);
+// Thème visuel : mémorisé dans ce navigateur (appliqué avant l'affichage par index.html).
+function applyTheme(v) {
+  if (v) document.documentElement.dataset.theme = v; else delete document.documentElement.dataset.theme;
+  try { v ? localStorage.setItem('xy-theme', v) : localStorage.removeItem('xy-theme'); } catch (e) {}
+  const bar = getComputedStyle(document.documentElement).getPropertyValue('--bar').trim();
+  document.querySelector('meta[name="theme-color"]')?.setAttribute('content', bar || '#16343d');
+}
+$('themeSel').value = document.documentElement.dataset.theme || '';
+$('themeSel').onchange = () => { applyTheme($('themeSel').value); $('themeSel').blur(); };
+applyTheme($('themeSel').value);
+$('infoClose').onclick = () => showInfo(false);
+// Un clic hors de la fenêtre la ferme.
+['infoSec', 'mapSec'].forEach(id => $(id).addEventListener('pointerdown', e => { if (e.target.id === id) (id === 'infoSec' ? showInfo : showMapping)(false); }));
 $('mapBtn').onclick = () => showMapping($('mapSec').hidden);
 $('mapClose').onclick = () => showMapping(false);
 function startWizard() {
   showMapping(true);
   if (!input) { toast(L('Allume d\'abord l\'instrument et branche l\'OP-XY')); return; }
-  wizard = true; learnId = KEY_ORDER[0]; renderKeys(); $('wizard').scrollIntoView({ behavior: 'smooth', block: 'center' });
+  wizard = true; learnId = KEY_ORDER[0]; renderKeys();
 }
 function wizardNext() {
   const i = KEY_ORDER.indexOf(learnId);
@@ -2938,7 +2968,7 @@ function bindInput() {
   renderKeys();
 }
 function setStatus(c, t) { $('dot').className = 'dot ' + (c || ''); $('statusTxt').textContent = t; }
-$('inSel').onchange = bindInput;
+$('inSel').onchange = () => { bindInput(); $('inSel').blur(); };
 let powering = null;
 // Allume l'instrument (son, puis MIDI). Appelé par « Allumer », par le bouton de l'écran,
 // et par la première note, lecture ou effet joués alors que tout est éteint.
@@ -2962,7 +2992,10 @@ async function doPowerOn() {
 /* clavier d'ordinateur : A W S E D F T G Y H U J K, espace = lecture */
 const PC = 'awsedftgyhujk', pcDown = new Set();
 addEventListener('keydown', e => {
-  if (e.target.closest('input,select,textarea,.enc') || e.repeat || e.metaKey || e.ctrlKey || e.altKey) return;
+  // Seuls les champs de saisie gardent leurs touches : un encodeur ou un bouton cliqué ne bloque plus les notes
+  // (les flèches restent à l'encodeur qui a le focus).
+  if (e.target.closest('input,select,textarea') || e.repeat || e.metaKey || e.ctrlKey || e.altKey) return;
+  if (e.target.closest('.enc') && e.key.startsWith('Arrow')) return;
   const i = PC.indexOf(e.key.toLowerCase());
   if (i >= 0 && ctx) { pcDown.add(i); keyNoteOn(60 + i, .8); }
   if (i >= 0 && !ctx) wake();
@@ -2971,7 +3004,7 @@ addEventListener('keydown', e => {
   if (/^Digit[1-8]$/.test(e.code)) punchPress(+e.code.slice(5) - 1);
   if (e.key.toLowerCase() === 'z') { S.oct = Math.max(-36, S.oct - 12); save(); renderBar(); }
   if (e.key.toLowerCase() === 'x') { S.oct = Math.min(36, S.oct + 12); save(); renderBar(); }
-  if (e.key === 'Escape' && ctx) panicAll();
+  if (e.key === 'Escape') { if (!$('infoSec').hidden) showInfo(false); else if (!$('mapSec').hidden) showMapping(false); else if (ctx) panicAll(); }
 });
 addEventListener('keyup', e => { if (/^Digit[1-8]$/.test(e.code)) punchRelease(+e.code.slice(5) - 1); if (e.key.toLowerCase() === 'q') setFill(false); const i = PC.indexOf(e.key.toLowerCase()); if (i >= 0 && pcDown.has(i)) { pcDown.delete(i); keyNoteOff(60 + i); } });
 $('mSearch').addEventListener('input', renderBrowser);
