@@ -312,5 +312,90 @@
    "Tight"
   ],
   "license": "MIT License"
+ },
+ {
+  "id": "earthshine",
+  "kind": "effect",
+  "name": "Earthshine",
+  "description": "A shimmer reverb: a warm, wide tank whose tail is pitch-shifted back into itself, a sub octave under the notes (moon) or climbing above them (sun).",
+  "maintainer": "codebrulee",
+  "repository": "https://github.com/codebrulee/xyphemera",
+  "tag": "earthshine-v1.0.3",
+  "keywords": [
+   "reverb",
+   "ambient"
+  ],
+  "params": [
+   "Decay",
+   "Tone",
+   "Light",
+   "Shimmer",
+   "Dry",
+   "Mod",
+   "Fine",
+   "Width"
+  ],
+  "presets": [],
+  "license": "MIT License"
+ },
+ {
+  "id": "rebound",
+  "kind": "effect",
+  "name": "Rebound",
+  "description": "Tempo-synced stereo delay with feedback to 150%, soft saturation, feedback filters and variable ping-pong.",
+  "maintainer": "kristapskristaps",
+  "repository": "https://github.com/kristapskristaps/xy-machines",
+  "tag": "rebound-v1.1.0",
+  "keywords": [
+   "delay"
+  ],
+  "params": [
+   "Size",
+   "Feedback",
+   "PingPong",
+   "Level",
+   "Fine",
+   "Highpass",
+   "Lowpass",
+   "Dry"
+  ],
+  "presets": [],
+  "license": "MIT License"
+ },
+ {
+  "id": "comet",
+  "kind": "effect",
+  "name": "Comet",
+  "description": "A five-tap stereo delay blurring echoes into combs, choruses, plucked strings and reverb washes through spread, curve, random scatter, ping-pong and diffusion.",
+  "maintainer": "akadanieljoshua",
+  "repository": "https://github.com/akadanieljoshua/comet",
+  "tag": "v1.2.0",
+  "keywords": [
+   "delay",
+   "reverb",
+   "ambient",
+   "physical"
+  ],
+  "params": [
+   "Sync",
+   "Time",
+   "Feedback",
+   "Dry",
+   "Taps",
+   "Deviate",
+   "Curve",
+   "Diffuse"
+  ],
+  "presets": [
+   "Echo",
+   "Ping Pong",
+   "Comb",
+   "Resonator",
+   "Chorus",
+   "Wash",
+   "Smear",
+   "Scatter"
+  ],
+  "license": "MIT License"
  }
 ]

@@ -2,7 +2,7 @@
 import { createControls, shownControls, shiftWord } from './sdk/browser/controls.mjs';
 import { PreviewDisplay, SvgDisplay, NoteActivity } from './sdk/browser/display.mjs';
 import { selectArtwork } from './sdk/browser/graphics.mjs';
-import { LANG, L, setLang, translatePage } from './i18n.js?v=33';
+import { LANG, L, setLang, translatePage } from './i18n.js?v=34';
 
 const $ = id => document.getElementById(id);
 const cl = (x, a = 0, b = 1) => Math.max(a, Math.min(b, x));
@@ -232,7 +232,7 @@ function demoProjects() {
   return [idm, house, techno, jazz];
 }
 
-const VERSION = '33';
+const VERSION = '34';
 // Remise à zéro : ?reset dans l'adresse, ou le bouton « Réinitialiser ».
 if (new URLSearchParams(location.search).has('reset')) {
   try { localStorage.removeItem('xy-studio-v2'); } catch (e) {}

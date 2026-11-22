@@ -1877,7 +1877,7 @@
   "description": "Trap 808 bass and kick: mono glide presets, punch transients, hard band-limited drive, wide tone and boost, with a reactive Vader mask.",
   "maintainer": "kristapskristaps",
   "repository": "https://github.com/kristapskristaps/xy-machines",
-  "tag": "vader-v1.1.0",
+  "tag": "vader-v1.2.0",
   "keywords": [
    "bass",
    "percussion"
@@ -2218,6 +2218,270 @@
    "FRETS",
    "BOUNCE",
    "BALLS"
+  ],
+  "presets": [],
+  "license": "MIT License"
+ },
+ {
+  "id": "tesla",
+  "kind": "synth",
+  "name": "Tesla",
+  "description": "Inspired and improved from the OP-1 Voltage engine. Built in crush and spread for easy sound design and a build in lfo for electric buzz",
+  "maintainer": "lowlevelgamedev",
+  "repository": "https://github.com/meemknight/OPXY-Tesla",
+  "tag": "v1.0.0",
+  "keywords": [
+   "emulation",
+   "analog",
+   "lofi",
+   "modulation",
+   "noise"
+  ],
+  "params": [
+   "Ampere",
+   "Ground",
+   "Filter",
+   "Detune",
+   "Crush",
+   "Spread",
+   "LFO Rate",
+   "LFO Amt"
+  ],
+  "presets": [
+   "Clean",
+   "Arc",
+   "Shortwave",
+   "Rain",
+   "Saw Stack",
+   "Square Arc"
+  ],
+  "license": "MIT License"
+ },
+ {
+  "id": "schedar",
+  "kind": "synth",
+  "name": "Schedar",
+  "description": "Phase distortion after the Casio CZ: simple and clean, eight waves from round sines to brassy saws and resonant sweeps, shaped by Warp, Width and Sweep.",
+  "maintainer": "frankoooooooo",
+  "repository": "https://github.com/frankoooooooo/cassiopeia",
+  "tag": "v1.0.0",
+  "keywords": [
+   "emulation",
+   "bass",
+   "pad"
+  ],
+  "params": [
+   "Warp",
+   "Width",
+   "Wave",
+   "Sweep"
+  ],
+  "presets": [
+   "Schedar",
+   "Brass",
+   "Hollow",
+   "Pluck",
+   "Vox",
+   "Swell",
+   "Bass Drop",
+   "Glass Bell",
+   "Wow Lead",
+   "Organ Stab",
+   "Night Pad",
+   "Tape Keys"
+  ],
+  "license": "MIT License"
+ },
+ {
+  "id": "caph",
+  "kind": "synth",
+  "name": "Caph",
+  "description": "Virtual analogue: a gritty pair of detuned oscillators that morph from triangle to pulse to saw and beat against each other, for rich leads and complex pads.",
+  "maintainer": "frankoooooooo",
+  "repository": "https://github.com/frankoooooooo/cassiopeia",
+  "tag": "v1.0.0",
+  "keywords": [
+   "analog",
+   "pad",
+   "bass"
+  ],
+  "params": [
+   "Shape",
+   "Width",
+   "Detune",
+   "Sweep"
+  ],
+  "presets": [
+   "Caph",
+   "Square",
+   "Reed",
+   "Flute",
+   "Strings",
+   "Brass",
+   "Acid Pair",
+   "Supersaw",
+   "Chord Stab",
+   "Sub Bass",
+   "Warm Pad",
+   "Pulse Lead"
+  ],
+  "license": "MIT License"
+ },
+ {
+  "id": "navi",
+  "kind": "synth",
+  "name": "Navi",
+  "description": "Vector phaseshaping: tunable formants, from vowel-like tones to hard-sync-style leads, shaped by Formant, Inflect and Range.",
+  "maintainer": "frankoooooooo",
+  "repository": "https://github.com/frankoooooooo/cassiopeia",
+  "tag": "v1.0.0",
+  "keywords": [
+   "vocal",
+   "experimental"
+  ],
+  "params": [
+   "Formant",
+   "Inflect",
+   "Range",
+   "Sweep"
+  ],
+  "presets": [
+   "Navi",
+   "Vowel",
+   "Sync",
+   "Hollow",
+   "Glass",
+   "Swell",
+   "Choir",
+   "Talk Bass",
+   "Scream",
+   "Ghost",
+   "Formant Pluck",
+   "Mouth Harp"
+  ],
+  "license": "MIT License"
+ },
+ {
+  "id": "ruchbah",
+  "kind": "synth",
+  "name": "Ruchbah",
+  "description": "Scanned synthesis: each note strikes a ring of 32 masses that moves and settles while a scanner reads it as a living wavetable, with the family's Sweep.",
+  "maintainer": "frankoooooooo",
+  "repository": "https://github.com/frankoooooooo/cassiopeia",
+  "tag": "v1.0.0",
+  "keywords": [
+   "physical",
+   "experimental",
+   "ambient"
+  ],
+  "params": [
+   "Stiff",
+   "Damping",
+   "Excite",
+   "Sweep"
+  ],
+  "presets": [
+   "Ruchbah",
+   "Singing Bowl",
+   "Spark",
+   "Static Drone",
+   "Drift",
+   "Wire Bass",
+   "Kalimba",
+   "Woodblock",
+   "Rain Pad",
+   "Gong",
+   "Sitar Lead",
+   "Breath Organ"
+  ],
+  "license": "MIT License"
+ },
+ {
+  "id": "segin",
+  "kind": "synth",
+  "name": "Segin",
+  "description": "VOSIM: each cycle fires a burst of fading sin² pulses at a fixed formant, so every note speaks the same vowel, with the family's bipolar Sweep.",
+  "maintainer": "frankoooooooo",
+  "repository": "https://github.com/frankoooooooo/cassiopeia",
+  "tag": "v1.0.0",
+  "keywords": [
+   "vocal",
+   "lofi"
+  ],
+  "params": [
+   "Formant",
+   "Decay",
+   "Pulses",
+   "Sweep"
+  ],
+  "presets": [
+   "Segin",
+   "Ah",
+   "Oo",
+   "Chip",
+   "Wah",
+   "Breath",
+   "Robot",
+   "Choir",
+   "Bass Voice",
+   "Whisper Pad",
+   "Throat",
+   "Bleep"
+  ],
+  "license": "MIT License"
+ },
+ {
+  "id": "achird",
+  "kind": "synth",
+  "name": "Achird",
+  "description": "Walsh functions: fifteen square-step waves summed into a 16-step, chip-edged cycle, tilted dark to harsh and folded, with the family's bipolar Sweep.",
+  "maintainer": "frankoooooooo",
+  "repository": "https://github.com/frankoooooooo/cassiopeia",
+  "tag": "v1.0.0",
+  "keywords": [
+   "lofi",
+   "experimental"
+  ],
+  "params": [
+   "Tilt",
+   "Balance",
+   "Fold",
+   "Sweep"
+  ],
+  "presets": [
+   "Achird",
+   "Chip",
+   "Organ",
+   "Grit",
+   "Ladder",
+   "Swell",
+   "8-Bit Bass",
+   "Arcade Lead",
+   "Crushed Pad",
+   "Fold Pluck",
+   "Bit Bell",
+   "Square Drone"
+  ],
+  "license": "MIT License"
+ },
+ {
+  "id": "neuroform",
+  "kind": "synth",
+  "name": "neuroform",
+  "description": "A creature beneath your OP-XY's broken floor, voiced through deep neuro bass, phase-modulation growls, dual moving notch filters and biting saturation.",
+  "maintainer": "V714",
+  "repository": "https://github.com/V714/opxy-synths",
+  "tag": "neuroform-v1.0.0",
+  "keywords": [
+   "bass",
+   "fm",
+   "analog"
+  ],
+  "params": [
+   "neuro",
+   "fracture",
+   "void",
+   "overload"
   ],
   "presets": [],
   "license": "MIT License"

@@ -5,6 +5,7 @@ Chaque machine ci-dessous est compilée depuis son dépôt, au tag référencé 
 | Machine | Auteur | Dépôt | Version | Licence |
 |---|---|---|---|---|
 | 2op FM | etcetc000 | https://github.com/etcetc000/open-xy-core-machines | v1.1.0 | MIT License |
+| Achird | frankoooooooo | https://github.com/frankoooooooo/cassiopeia | v1.0.0 | MIT License |
 | Acid Rain | frankoooooooo | https://github.com/frankoooooooo/acid-rain | v1.0.1 | MIT License |
 | Acidline | kristapskristaps | https://github.com/kristapskristaps/xy-machines | acidline-v1.2.0 | MIT License |
 | Atlas | kristapskristaps | https://github.com/kristapskristaps/xy-machines | collection-v1.0.0 | MIT License |
@@ -14,12 +15,14 @@ Chaque machine ci-dessous est compilée depuis son dépôt, au tag référencé 
 | Bloom | mmockett | https://github.com/mmockett/OP-XY-Hexagon | v1.8.0 | MIT License |
 | breadboard | lowlevelgamedev | https://github.com/meemknight/OPXY-breadboard | v1.1.0 | MIT License |
 | Butterfly | mmockett | https://github.com/mmockett/OP-XY-Nonagon | v0.10.0 | MIT License |
+| Caph | frankoooooooo | https://github.com/frankoooooooo/cassiopeia | v1.0.0 | MIT License |
 | Champagne | LAB_XY | — | local | MIT License |
 | Chimes | carlosedp | https://github.com/carlosedp/open-xy-eurorack | v1.2.0 | MIT License |
 | Choir | kristapskristaps | https://github.com/kristapskristaps/xy-machines | collection-v1.0.0 | MIT License |
 | Chroma (effet) | mmockett | https://github.com/mmockett/OP-XY-ModFX | v1.9.2 | MIT License |
 | Cocoa | mmockett | https://github.com/mmockett/OP-XY-Nonagon | v0.10.0 | MIT License |
 | Coin | mmockett | https://github.com/mmockett/OP-XY-Nonagon | v0.9.2 | MIT License |
+| Comet (effet) | akadanieljoshua | https://github.com/akadanieljoshua/comet | v1.2.0 | MIT License |
 | Crease | kristapskristaps | https://github.com/kristapskristaps/xy-machines | collection-v1.0.0 | MIT License |
 | CURIO (kit de batterie) | mmockett | https://github.com/mmockett/OP-XY-Tetragon | v1.1.2 | MIT License |
 | Daath | SammiBabe666 | https://github.com/SammiBabe666/Daath-OP-XY-WitchHouse-engine | 1.0 | MIT License |
@@ -27,6 +30,7 @@ Chaque machine ci-dessous est compilée depuis son dépôt, au tag référencé 
 | Drone | Gokux | https://github.com/Gokux/opxy-machines | v1.1.6 | MIT License |
 | Drop | mmockett | https://github.com/mmockett/OP-XY-Nonagon | v0.10.0 | MIT License |
 | DUST (kit de batterie) | mmockett | https://github.com/mmockett/OP-XY-Trigon | v1.1.3 | MIT License |
+| Earthshine (effet) | codebrulee | https://github.com/codebrulee/xyphemera | earthshine-v1.0.3 | MIT License |
 | FELT (kit de batterie) | mmockett | https://github.com/mmockett/OP-XY-Trigon | v1.1.3 | MIT License |
 | Fermi | mmockett | https://github.com/mmockett/OP-XY-Nonagon | v0.10.0 | MIT License |
 | FLICKER (kit de batterie) | mmockett | https://github.com/mmockett/OP-XY-Trigon | v1.1.3 | MIT License |
@@ -54,7 +58,9 @@ Chaque machine ci-dessous est compilée depuis son dépôt, au tag référencé 
 | MD KIT (kit de batterie) | mmockett | https://github.com/mmockett/OP-XY-MNMD | v1.3.6 | MIT License |
 | Metal | johnnywagner | https://github.com/johnnywagner/open-xy-metal | v1.1.0 | MIT License |
 | Moth | mmockett | https://github.com/mmockett/OP-XY-Hexagon | v1.7.3 | MIT License |
+| Navi | frankoooooooo | https://github.com/frankoooooooo/cassiopeia | v1.0.0 | MIT License |
 | Neon Rain | LAB_XY | — | local | MIT License |
+| neuroform | V714 | https://github.com/V714/opxy-synths | neuroform-v1.0.0 | MIT License |
 | NEXUS | mmockett | https://github.com/mmockett/OP-XY-Nexus | v1.0.0 | MIT License |
 | Nightdrive | V714 | https://github.com/V714/open-xy-nightdrive | v1.0.3 | MIT License |
 | Ohmonk | hatchman | https://github.com/hatchman/open-xy-ohmonk | v1.0.0 | MIT License |
@@ -63,8 +69,12 @@ Chaque machine ci-dessous est compilée depuis son dépôt, au tag référencé 
 | Papa Srapa | Gokux | https://github.com/Gokux/opxy-machines | v1.1.6 | MIT License |
 | Ping Pong (effet) | etcetc000 | https://github.com/etcetc000/open-xy-core-machines | v1.1.0 | MIT License |
 | Reaction | frankoooooooo | https://github.com/frankoooooooo/reaction | v1.0.0 | MIT License |
+| Rebound (effet) | kristapskristaps | https://github.com/kristapskristaps/xy-machines | rebound-v1.1.0 | MIT License |
 | Ring Mod (effet) | etcetc000 | https://github.com/etcetc000/open-xy-core-machines | v1.1.0 | MIT License |
+| Ruchbah | frankoooooooo | https://github.com/frankoooooooo/cassiopeia | v1.0.0 | MIT License |
 | Sand | mmockett | https://github.com/mmockett/OP-XY-Nonagon | v0.10.0 | MIT License |
+| Schedar | frankoooooooo | https://github.com/frankoooooooo/cassiopeia | v1.0.0 | MIT License |
+| Segin | frankoooooooo | https://github.com/frankoooooooo/cassiopeia | v1.0.0 | MIT License |
 | SID-6581 | mmockett | https://github.com/mmockett/OP-XY-MNMD | v1.3.5 | MIT License |
 | Sift | kristapskristaps | https://github.com/kristapskristaps/xy-machines | collection-v1.0.0 | MIT License |
 | Solar | Gokux | https://github.com/Gokux/opxy-machines | v1.1.6 | MIT License |
@@ -75,9 +85,10 @@ Chaque machine ci-dessous est compilée depuis son dépôt, au tag référencé 
 | SYAHI (kit de batterie) | mmockett | https://github.com/mmockett/OP-XY-Tetragon | v1.1.1 | MIT License |
 | Tandem | kristapskristaps | https://github.com/kristapskristaps/xy-machines | collection-v1.0.0 | MIT License |
 | Tattva | colorsinspace1 | https://github.com/colorsinspace1/tattva | 1.02 | MIT License |
+| Tesla | lowlevelgamedev | https://github.com/meemknight/OPXY-Tesla | v1.0.0 | MIT License |
 | THUNDER (kit de batterie) | mmockett | https://github.com/mmockett/OP-XY-Tetragon | v1.1.1 | MIT License |
 | Troupe | Hecedu | https://github.com/Hecedu/open-xy-troupe | v1.0.1 | MIT License |
-| Vader | kristapskristaps | https://github.com/kristapskristaps/xy-machines | vader-v1.1.0 | MIT License |
+| Vader | kristapskristaps | https://github.com/kristapskristaps/xy-machines | vader-v1.2.0 | MIT License |
 | Vibe (effet) | meemknight | https://github.com/meemknight/vibe | v1.0.0 | GNU GENERAL PUBLIC LICENSE |
 | VO-6 | mmockett | https://github.com/mmockett/OP-XY-MNMD | v1.3.0 | MIT License |
 | Wander | colorsinspace1 | https://github.com/colorsinspace1/wander | 1.0 | MIT License |

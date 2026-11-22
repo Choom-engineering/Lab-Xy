@@ -28,7 +28,7 @@ Mode **Punch** : les pas 1 à 8 (à l'écran ou sur l'OP-XY) se tiennent pour jo
 
 ## Effets Open-XY
 
-Mode **Auxiliary** : M1 garde le délai ; M4 (Bus) choisit un des 11 effets d'envoi Open-XY (Halo, Lustre, Stratus, Chroma, Lint, Vibe, Grainfield, Gen Tape, Diffusion, Ring Mod, Ping Pong), son preset, son retour et l'envoi de la piste ; M2 règle l'effet (rappuyé : sa page 2), M3 sa rangée Shift. Les envois de toutes les pistes sont aussi dans **Mix**, M4 (rappuyé : pistes 5 à 8). Chaque effet tourne avec son propre code, compilé pour le navigateur par `tools/effect_build.py`, et reçoit le tempo comme sur l'OP-XY.
+Mode **Auxiliary** : M1 garde le délai ; M4 (Bus) choisit un des 14 effets d'envoi Open-XY (Halo, Lustre, Earthshine, Stratus, Chroma, Lint, Vibe, Grainfield, Gen Tape, Diffusion, Comet, Rebound, Ring Mod, Ping Pong), son preset, son retour et l'envoi de la piste ; M2 règle l'effet (rappuyé : sa page 2), M3 sa rangée Shift. Les envois de toutes les pistes sont aussi dans **Mix**, M4 (rappuyé : pistes 5 à 8). Chaque effet tourne avec son propre code, compilé pour le navigateur par `tools/effect_build.py`, et reçoit le tempo comme sur l'OP-XY.
 
 ## Encodeurs
 
@@ -52,8 +52,8 @@ L'interface démarre en anglais ; le sélecteur EN | FR en haut retient le choix
 
 - `index.html`, `app.js` (source) et `app.bundle.js` (généré par `tools/build.py`, c'est lui que la page charge) : l'interface, le séquenceur (8 pistes, jusqu'à 64 pas), Players (arpège, accords), Projects.
 - `worklet.js` : l'audio. Les machines tournent dans l'hôte WebAssembly du SDK Open-XY (`sdk/browser/engine.mjs`), avec des notes datées à l'échantillon près ; les moteurs intégrés (Batterie, Analog, FM, Corde) sont écrits ici.
-- `machines/` : 69 machines compilées (dont 9 kits de batterie, et Champagne, Babel, Flux et Neon Rain, les machines de LAB_XY), chacune avec son manifeste, son artwork d'écran et sa licence. Voir `CREDITS.md`.
-- `effects/` : les 11 effets d'envoi Open-XY, compilés par `tools/effect_build.py` (l'aperçu du SDK ne joue que les synthés et les kits).
+- `machines/` : 77 machines compilées (dont 9 kits de batterie, et Champagne, Babel, Flux et Neon Rain, les machines de LAB_XY), chacune avec son manifeste, son artwork d'écran et sa licence. Voir `CREDITS.md`.
+- `effects/` : les 14 effets d'envoi Open-XY, compilés par `tools/effect_build.py` (l'aperçu du SDK ne joue que les synthés et les kits).
 - `sdk/` : modules hôtes du SDK Open-XY (MIT), copiés sans modification.
 
 ## Mettre à jour les machines
